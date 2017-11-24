@@ -1,0 +1,11 @@
+{
+  "id": "folio_search-2.11.0",
+  "name": "User management",
+  "permissionSets": [
+    {
+      "permissionName": "module.search.enabled",
+      "displayName": "UI: Search module is enabled",
+      "visible": true
+    }
+  ]
+}

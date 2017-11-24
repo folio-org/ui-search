@@ -1,0 +1,73 @@
+{
+  "name": "@folio/search",
+  "version": "0.0.1",
+  "description": "Search across the Codex",
+  "repository": "folio-org/ui-search",
+  "publishConfig": {
+    "registry": "https://repository.folio.org/repository/npm-folio/"
+  },
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "main": "src/index.js",
+  "stripes": {
+    "type": "app",
+    "displayName": "Search",
+    "route": "/search",
+    "hasSettings": true,
+    "queryResource": "query",
+    "okapiInterfaces": {
+      "search": "0.1"
+    },
+    "permissionSets": [
+      {
+        "permissionName": "module.search.enabled",
+        "displayName": "UI: Search module is enabled",
+        "visible": true
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint *.js lib settings"
+  },
+  "devDependencies": {
+    "babel-core": "^6.17.0",
+    "babel-eslint": "^7.0.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "babel-register": "^6.18.0",
+    "eslint": "^3.8.0",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-import-resolver-webpack": "^0.8.1",
+    "eslint-plugin-babel": "^3.3.0",
+    "eslint-plugin-import": "^2.0.1",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.4.1"
+  },
+  "dependencies": {
+    "@folio/stripes-components": "^1.9.0",
+    "@folio/stripes-form": "^0.8.1",
+    "@folio/stripes-smart-components": "^1.2.0",
+    "classnames": "^2.2.5",
+    "hashcode": "^1.0.3",
+    "lodash": "^4.17.4",
+    "prop-types": "^15.5.10",
+    "query-string": "^5.0.0",
+    "react": "^15.4.2",
+    "react-bootstrap": "^0.31.1",
+    "react-bootstrap-typeahead": "^1.4.0",
+    "react-flexbox-grid": "^2.0.0",
+    "react-intl": "^2.3.0",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.0.0",
+    "redux-form": "^7.0.3",
+    "uuid": "^3.0.1"
+  },
+  "peerDependencies": {
+    "@folio/stripes-connect": "^3.0.0-pre.1",
+    "@folio/stripes-core": "^2.8.0",
+    "@folio/stripes-logger": "^0.0.2"
+  }
+}

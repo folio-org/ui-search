@@ -1,0 +1,4 @@
+{
+  "extends": "stripes",
+  "parser": "babel-eslint"
+}
