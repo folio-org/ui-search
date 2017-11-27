@@ -29,7 +29,7 @@
     ]
   },
   "scripts": {
-    "lint": "eslint *.js lib settings"
+    "lint": "eslint ."
   },
   "devDependencies": {
     "babel-core": "^6.17.0",
@@ -39,7 +39,7 @@
     "babel-preset-stage-0": "^6.16.0",
     "babel-register": "^6.18.0",
     "eslint": "^3.8.0",
-    "eslint-config-airbnb": "^13.0.0",
+    "eslint-config-stripes": "^0.0.1",
     "eslint-import-resolver-webpack": "^0.8.1",
     "eslint-plugin-babel": "^3.3.0",
     "eslint-plugin-import": "^2.0.1",
