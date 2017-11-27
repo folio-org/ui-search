@@ -25,7 +25,16 @@
         "displayName": "UI: Search module is enabled",
         "visible": true
       }
-    ]
+    ],
+    "translations": {
+      "en": {
+        "search": "Search",
+        "loans.title": "Loans",
+        "loans.openLoans": "open loans",
+        "loans.closedLoans": "closed loans",
+        "resultCount": "{count, number} {count, plural, one {Record found} other {Records found}}"
+      }
+    }
   },
   "scripts": {
     "lint": "eslint .",
