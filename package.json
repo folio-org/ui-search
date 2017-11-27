@@ -15,7 +15,7 @@
     "type": "app",
     "displayName": "Search",
     "route": "/search",
-    "hasSettings": true,
+    "hasSettings": false,
     "queryResource": "query",
     "okapiInterfaces": {
       "search": "0.1"
