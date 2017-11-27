@@ -28,7 +28,8 @@
     ]
   },
   "scripts": {
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "rebuild": "rm -rf node_modules yarn.lock && yarn install && yarn link @folio/stripes-components && yarn link @folio/stripes-smart-components"
   },
   "devDependencies": {
     "babel-core": "^6.17.0",
