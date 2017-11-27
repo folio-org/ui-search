@@ -10,10 +10,7 @@ const filterConfig = [
     label: 'Material Types',
     name: 'item',
     cql: 'materialType.id',
-    values: [
-      { name: 'Book', cql: 'book' },
-      { name: 'DVD', cql: 'dvd' },
-    ],
+    values: [], // will be filled in by componentWillUpdate    
   },
 ];
 
@@ -40,7 +37,19 @@ class Search extends React.Component {
         staticFallback: { params: {} },
       },
     },
+    materialTypes: {
+      type: 'okapi',
+      path: 'material-types',
+      records: 'mtypes',
+    },
   });
+
+  componentWillUpdate() {
+    const mt = (this.props.resources.materialTypes || {}).records || [];
+    if (mt && mt.length) {
+      filterConfig[0].values = mt.map(rec => ({ name: rec.name, cql: rec.id }));
+    }
+  }
 
   render() {
     const props = this.props;
