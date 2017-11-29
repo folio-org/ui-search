@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import React from 'react';
+import PropTypes from 'prop-types';
 import makeQueryFunction from '@folio/stripes-components/util/makeQueryFunction';
 import SearchAndSort from '@folio/stripes-smart-components/lib/SearchAndSort';
 import ViewRecord from './ViewRecord';
@@ -10,12 +11,18 @@ const filterConfig = [
     label: 'Material Types',
     name: 'item',
     cql: 'materialType.id',
-    values: [], // will be filled in by componentWillUpdate    
+    values: [], // will be filled in by componentWillUpdate
   },
 ];
 
-// eslint-disable-next-line react/prefer-stateless-function
 class Search extends React.Component {
+  static propTypes = {
+    resources: PropTypes.shape({
+      materialTypes: PropTypes.arrayOf(PropTypes.object),
+    }),
+    mutator: PropTypes.shape({}),
+  }
+
   static manifest = Object.freeze({
     resultCount: { initialValue: 30 },
     query: { initialValue: {} },
@@ -52,8 +59,6 @@ class Search extends React.Component {
   }
 
   render() {
-    const props = this.props;
-
     const resultsFormatter = {
       'Material Type': x => _.get(x, ['materialType', 'name']),
       status: x => _.get(x, ['status', 'name']) || '--',
@@ -74,8 +79,8 @@ class Search extends React.Component {
       resultsFormatter={resultsFormatter}
       viewRecordPerms="users.item.get"
       disableRecordCreation
-      parentResources={props.resources}
-      parentMutator={props.mutator}
+      parentResources={this.props.resources}
+      parentMutator={this.props.mutator}
     />);
   }
 }
