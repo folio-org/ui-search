@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import React from 'react';
+import PropTypes from 'prop-types';
 import makeQueryFunction from '@folio/stripes-components/util/makeQueryFunction';
 import SearchAndSort from '@folio/stripes-smart-components/lib/SearchAndSort';
 import ViewRecord from './ViewRecord';
@@ -10,15 +11,20 @@ const filterConfig = [
     label: 'Material Types',
     name: 'item',
     cql: 'materialType.id',
-    values: [
-      { name: 'Book', cql: 'book' },
-      { name: 'DVD', cql: 'dvd' },
-    ],
+    values: [], // will be filled in by componentWillUpdate
   },
 ];
 
-// eslint-disable-next-line react/prefer-stateless-function
 class Search extends React.Component {
+  static propTypes = {
+    resources: PropTypes.shape({
+      materialTypes: PropTypes.shape({
+        records: PropTypes.arrayOf(PropTypes.object),
+      }),
+    }),
+    mutator: PropTypes.shape({}),
+  }
+
   static manifest = Object.freeze({
     resultCount: { initialValue: 30 },
     query: { initialValue: {} },
@@ -40,11 +46,21 @@ class Search extends React.Component {
         staticFallback: { params: {} },
       },
     },
+    materialTypes: {
+      type: 'okapi',
+      path: 'material-types',
+      records: 'mtypes',
+    },
   });
 
-  render() {
-    const props = this.props;
+  componentWillUpdate() {
+    const mt = (this.props.resources.materialTypes || {}).records || [];
+    if (mt && mt.length) {
+      filterConfig[0].values = mt.map(rec => ({ name: rec.name, cql: rec.id }));
+    }
+  }
 
+  render() {
     const resultsFormatter = {
       'Material Type': x => _.get(x, ['materialType', 'name']),
       status: x => _.get(x, ['status', 'name']) || '--',
@@ -65,8 +81,8 @@ class Search extends React.Component {
       resultsFormatter={resultsFormatter}
       viewRecordPerms="users.item.get"
       disableRecordCreation
-      parentResources={props.resources}
-      parentMutator={props.mutator}
+      parentResources={this.props.resources}
+      parentMutator={this.props.mutator}
     />);
   }
 }

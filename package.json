@@ -15,6 +15,7 @@
     "type": "app",
     "displayName": "Search",
     "route": "/search",
+    "home": "/search?sort=title",
     "hasSettings": false,
     "queryResource": "query",
     "okapiInterfaces": {
