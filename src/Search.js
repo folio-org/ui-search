@@ -18,7 +18,9 @@ const filterConfig = [
 class Search extends React.Component {
   static propTypes = {
     resources: PropTypes.shape({
-      materialTypes: PropTypes.arrayOf(PropTypes.object),
+      materialTypes: PropTypes.shape({
+        records: PropTypes.arrayOf(PropTypes.object),
+      }),
     }),
     mutator: PropTypes.shape({}),
   }
