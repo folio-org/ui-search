@@ -1,6 +1,7 @@
 # Change history for ui-search
 
-## 1.0.0 (IN PROGRESS)
+## [1.0.0](https://github.com/folio-org/ui-search/tree/v1.0.0) (2017-11-29)
+[Full Changelog](https://github.com/folio-org/ui-search/compare/v0.0.2...v1.0.0)
 
 * Set up use of `<SearchAndSort>` component for browsing and sorting. Fixes UISE-11.
 * Align URL parameter names, making searching work. Fixes UISE-13.
