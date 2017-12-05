@@ -4,6 +4,7 @@
 
 * Retarget Okapi operation to use new mod-codex-mock, not inventory; and to depend on Okapi interface `codex` v1.0. Fixes UISE-19.
 * Modify short-record display and filters to work with present data. Fixes UISE-20.
+* Display "full records" using dummy data from mod-codex-mock. Fixes UISE-21.
 
 ## [1.0.0](https://github.com/folio-org/ui-search/tree/v1.0.0) (2017-11-29)
 [Full Changelog](https://github.com/folio-org/ui-search/compare/v0.0.2...v1.0.0)
