@@ -30,8 +30,8 @@ class Search extends React.Component {
     query: { initialValue: {} },
     records: {
       type: 'okapi',
-      records: 'items',
-      path: 'inventory/items',
+      records: 'instances',
+      path: 'codex-instances',
       recordsRequired: '%{resultCount}',
       perRequest: 30,
       GET: {
