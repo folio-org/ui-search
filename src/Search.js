@@ -8,7 +8,7 @@ import packageInfo from '../package';
 
 const filterConfig = [
   {
-   label: 'Source',
+    label: 'Source',
     name: 'source',
     cql: 'source',
     values: [
@@ -42,7 +42,7 @@ class Search extends React.Component {
           query: makeQueryFunction(
             'cql.allRecords=1',
             'title="$QUERY*" or contributor.name="$QUERY*"',
-            { 'Title': 'title' },
+            { Title: 'title' },
             filterConfig,
           ),
         },
