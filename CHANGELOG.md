@@ -1,6 +1,7 @@
 # Change history for ui-search
 
-## 1.1.0 (IN PROGRESS)
+## [1.1.0](https://github.com/folio-org/ui-search/tree/v1.1.0) (2017-12-05)
+[Full Changelog](https://github.com/folio-org/ui-search/compare/v1.0.0...v1.1.0)
 
 * Retarget Okapi operation to use new mod-codex-mock, not inventory; and to depend on Okapi interface `codex` v1.0. Fixes UISE-19.
 * Modify short-record display and filters to work with present data. Fixes UISE-20.
