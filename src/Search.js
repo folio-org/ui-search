@@ -20,11 +20,7 @@ const filterConfig = [
 
 class Search extends React.Component {
   static propTypes = {
-    resources: PropTypes.shape({
-      materialTypes: PropTypes.shape({
-        records: PropTypes.arrayOf(PropTypes.object),
-      }),
-    }),
+    resources: PropTypes.shape({}),
     mutator: PropTypes.shape({}),
   }
 
@@ -48,11 +44,6 @@ class Search extends React.Component {
         },
         staticFallback: { params: {} },
       },
-    },
-    materialTypes: {
-      type: 'okapi',
-      path: 'material-types',
-      records: 'mtypes',
     },
   });
 
