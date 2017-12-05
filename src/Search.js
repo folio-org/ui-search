@@ -8,10 +8,13 @@ import packageInfo from '../package';
 
 const filterConfig = [
   {
-    label: 'Material Types',
-    name: 'item',
-    cql: 'materialType.id',
-    values: [], // will be filled in by componentWillUpdate
+    label: 'Source',
+    name: 'source',
+    cql: 'source',
+    values: [
+      { name: 'Local', cql: 'local' },
+      { name: 'Knowledge Base', cql: 'kb' },
+    ],
   },
 ];
 
@@ -38,8 +41,8 @@ class Search extends React.Component {
         params: {
           query: makeQueryFunction(
             'cql.allRecords=1',
-            'materialType.name="$QUERY" or barcode="$QUERY*" or title="$QUERY*"',
-            { 'Material Type': 'materialType.name' },
+            'title="$QUERY*" or contributor.name="$QUERY*"',
+            { Title: 'title' },
             filterConfig,
           ),
         },
@@ -53,17 +56,9 @@ class Search extends React.Component {
     },
   });
 
-  componentWillUpdate() {
-    const mt = (this.props.resources.materialTypes || {}).records || [];
-    if (mt && mt.length) {
-      filterConfig[0].values = mt.map(rec => ({ name: rec.name, cql: rec.id }));
-    }
-  }
-
   render() {
     const resultsFormatter = {
-      'Material Type': x => _.get(x, ['materialType', 'name']),
-      status: x => _.get(x, ['status', 'name']) || '--',
+      contributor: x => (x.contributor || []).map(y => `'${y.name}'`).join(', '),
     };
 
     return (<SearchAndSort
@@ -77,7 +72,7 @@ class Search extends React.Component {
       initialResultCount={30}
       resultCountIncrement={30}
       viewRecordComponent={ViewRecord}
-      visibleColumns={['Material Type', 'barcode', 'title', 'status']}
+      visibleColumns={['id', 'source', 'title', 'contributor']}
       resultsFormatter={resultsFormatter}
       viewRecordPerms="users.item.get"
       disableRecordCreation
