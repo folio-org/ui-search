@@ -19,6 +19,7 @@
     "hasSettings": false,
     "queryResource": "query",
     "okapiInterfaces": {
+      "codex": "1.0"
     },
     "permissionSets": [
       {
