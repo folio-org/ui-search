@@ -13,9 +13,9 @@
   "main": "src/index.js",
   "stripes": {
     "type": "app",
-    "displayName": "Search",
-    "route": "/search",
-    "home": "/search?sort=title",
+    "displayName": "Codex Search",
+    "route": "/codexsearch",
+    "home": "/codexsearch?sort=title",
     "hasSettings": false,
     "queryResource": "query",
     "okapiInterfaces": {
@@ -24,7 +24,7 @@
     "permissionSets": [
       {
         "permissionName": "module.search.enabled",
-        "displayName": "UI: Search module is enabled",
+        "displayName": "UI: Codex Search module is enabled",
         "visible": true
       }
     ],
