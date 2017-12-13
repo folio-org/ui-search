@@ -52,7 +52,7 @@ A module that is a Codex provider must declare that it implements the `codex` in
 Note that this interface declaration, within the `declares` array, specifies:
 
 * The id `codex`.
-* The interface-Type `multiple`. This is required in order to avoid clashing with the multiplexer, and to declare availability for that module to access this one. See [the relevant section of the the Okapi Guide](https://github.com/folio-org/okapi/blob/master/doc/guide.md#multiple-interfaces).
+* The interface-type `multiple`. This is required in order to allow multiple modules in the same FOLIO installation to provide the same interface. (It also avoids clashing with the multiplexer itself, which declares the `codex` interface in non-multiple mode.) See [the relevant section of the the Okapi Guide](https://github.com/folio-org/okapi/blob/master/doc/guide.md#multiple-interfaces).
 * The paths `/codex-instances` and `/codex-instances/{id}`, for searching and full-record retrieval respectively.
 
 The paths that must be supported are specified in more detail in [the RAML for this interface](https://github.com/folio-org/raml/blob/master/ramls/codex/codex.raml)and the linked schemas.
@@ -63,7 +63,7 @@ Note that Codex provider modules may additional provide other interfaces, which 
 
 ## 3. Accept queries meeting the Codex query schema
 
-As indicated by [the `searchable` trait](https://github.com/folio-org/raml/blob/master/traits/searchable.raml) of [the RAML specification](https://github.com/folio-org/raml/blob/master/ramls/codex/codex.raml), the `/codex-instances` endpoint of a Codex provider must accept a `query` parameter whose value is a [CQL](http://zing.z3950.org/cql/intro.html) query. The details of what parts of CQL should be accepted and which indexes are supported by a given implementation can be expressed in machine-readable form in accordance with [the CQL schema](https://github.com/folio-org/raml/blob/master/schemas/CQLSchema.schema).
+As indicated by [the `searchable` trait](https://github.com/folio-org/raml/blob/master/traits/searchable.raml) of [the RAML specification](https://github.com/folio-org/raml/blob/master/ramls/codex/codex.raml), the `/codex-instances` endpoint of a Codex provider must accept a `query` parameter whose value is a [CQL](http://zing.z3950.org/cql/intro.html) query. The details of what parts of CQL should be accepted and which indexes should be supported are expressed in machine-readable form in accordance with [the CQL schema](https://github.com/folio-org/raml/blob/master/schemas/codex/codex_instance_cqlschema.json) -- which is in turn described by [the CQL schema schema](https://github.com/folio-org/raml/blob/master/schemas/CQLSchema.schema).
 
 Codex providers must accept searches that include the index `selected`, whose value is a boolean (`true` or `false`) -- for example, `title=pala* and selected=true`. For providers that inherently support this index, it should be interpreted in the usual way: for example, in the EBSCO knowledge-base where some titles are selected and some are not, the example search should find titles begining with "pala" that have been selected, omitted any "pala" matches that are not selected. Providers for which the notion of "selected" is not meaningful should treat any search on that index as an identity search that can be ignored, so that `foo and selected=value` and `foo or selected=value` are both exactly equivalent to just `foo`.
 
@@ -81,6 +81,6 @@ These two fields, taken together, will be used by the Codex UI to display full r
 
 * [The RAML definition of the Codex WSAPI](https://github.com/folio-org/raml/blob/master/ramls/codex/codex.raml)
 * [the Codex instance schema](https://github.com/folio-org/raml/blob/master/schemas/codex/instance.json)
-* [The Codex CQL schema](https://github.com/folio-org/raml/blob/master/schemas/CQLSchema.schema)
+* [The Codex CQL schema](https://github.com/folio-org/raml/blob/master/schemas/codex/codex_instance_cqlschema.json) and [schema schema](https://github.com/folio-org/raml/blob/master/schemas/CQLSchema.schema)
 * [MODINVSTOR-39](https://issues.folio.org/browse/MODINVSTOR-39), the Jira issue to create a Codex-conformant API for the Inventory module.
 * [`mod-codex-ekb`](https://github.com/folio-org/mod-codex-ekb), the project to create a Codex-conformant facade to the EBSCO knowledge-base; and [MODCXEKB](https://issues.folio.org/projects/MODCXEKB/issues), the Jira issues pertaining to that project.
