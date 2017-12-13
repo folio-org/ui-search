@@ -11,9 +11,16 @@
     "node": ">=6.0.0"
   },
   "main": "src/index.js",
+  "bugs": {
+    "url": "https://issues.folio.org/projects/UISE",
+    "email": "mike@indexdata.com"
+  },
   "stripes": {
     "type": "app",
     "displayName": "Codex Search",
+    "fullName": "Codex Search",
+    "defaultPreviewWidth": "40%",
+    "helpPage": "https://wiki.folio.org/pages/viewpage.action?pageId=1415393",
     "route": "/codexsearch",
     "home": "/codexsearch?sort=title",
     "hasSettings": false,
@@ -33,7 +40,33 @@
         "search": "Search",
         "resultCount": "{count, number} {count, plural, one {Record found} other {Records found}}"
       }
-    }
+    },
+    "icons": [
+      {
+        "name": "local-source",
+        "alt": "local inventory",
+        "title": "a local source of items that can be checked out"
+      },
+      {
+        "name": "kb",
+        "fileName": "generic",
+        "alt": "knowledge base",
+        "title": "a knowledge base of e-resources available for viewing"
+      }
+    ],
+    "welcomePageEntries": [
+      {
+        "iconName": "happyFace",
+        "headline": "Search local inventory and e-resources together!",
+        "description": "The Codex Search application lets you search across multiple sources of physical and electronic resources ina unified way"
+      },
+      {
+        "iconName": "exclamation",
+        "headline": "This is a technology preview",
+        "description": "The present version of this application is incomplete, and will subsequently be expanded in a number of ways."
+      }
+    ],
+    "libraryCredits": "This application is made possible by [the React library](https://reactjs.org/)."
   },
   "scripts": {
     "lint": "eslint .",
