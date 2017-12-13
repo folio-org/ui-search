@@ -49,11 +49,15 @@ Note that this interface declaration, within the `declares` array, specifies:
 
 The paths that must be supported are specified in more detail in [the RAML for this interface](https://github.com/folio-org/raml/blob/master/ramls/codex/codex.raml)and the linked schemas.
 
-Note that COdex provider modules may additional provide other interfaces, which are ignored for the purpose of Codex multiplexing. For example, the Inventory Storage module [`mod-inventory-storage`](https://github.com/folio-org/mod-inventory-storage), which already implements 13 interfaces include `item-storage` and `instance-storage` will be extended to also implement the `codex` interface in multiple mode -- see [MODINVSTOR-39](https://issues.folio.org/browse/MODINVSTOR-39). Conversely, the dedicated EBSCO KB Codex module [`mod-codex-ekb](https://github.com/folio-org/mod-codex-ekb) will provide a Codex-compliant facade to the existing EBSCO knowledge-base, providing only the `codex` interface. Both strategies are valid.
+Note that Codex provider modules may additional provide other interfaces, which are ignored for the purpose of Codex multiplexing. For example, the Inventory Storage module [`mod-inventory-storage`](https://github.com/folio-org/mod-inventory-storage), which already implements 13 interfaces include `item-storage` and `instance-storage` will be extended to also implement the `codex` interface in multiple mode -- see [MODINVSTOR-39](https://issues.folio.org/browse/MODINVSTOR-39). Conversely, the dedicated EBSCO KB Codex module [`mod-codex-ekb](https://github.com/folio-org/mod-codex-ekb) will provide a Codex-compliant facade to the existing EBSCO knowledge-base, providing only the `codex` interface. Both strategies are valid.
+
+(The notion of an "interface" in FOLIO will become reified as a first-class object in the future: see [OKAPI-418](https://issues.folio.org/browse/OKAPI-418).)
 
 ## 3. Accept queries meeting the Codex query schema
 
-XXX ignore "selected" or whatever it's called
+As indicated by [the `searchable` trait](https://github.com/folio-org/raml/blob/master/traits/searchable.raml) of [the RAML specification](https://github.com/folio-org/raml/blob/master/ramls/codex/codex.raml), the `/codex-instances` endpoint of a Codex provider must accept a `query` parameter whose value is a [CQL](http://zing.z3950.org/cql/intro.html) query. The details of what parts of CQL should be accepted and which indexes are supported by a given implementation can be expressed in machine-readable form in accordance with [the CQL schema](https://github.com/folio-org/raml/blob/master/schemas/CQLSchema.schema).
+
+Codex providers must accept searches that include the index `selected`, whose value is a boolean (`true` or `false`) -- for example, `title=pala* and selected=true`. For providers that inherently support this index, it should be interpreted in the usual way: for example, in the EBSCO knowledge-base where some titles are selected and some are not, the example search should find titles begining with "pala" that have been selected, omitted any "pala" matches that are not selected. Providers for which the notion of "selected" is not meaningful should treat any search on that index as an identity search that can be ignored, so that `foo and selected=value` and `foo or selected=value` are both exactly equivalent to just `foo`.
 
 ## 4. Supply records in the Codex record schema
 
@@ -62,4 +66,4 @@ XXX https://github.com/folio-org/raml/tree/master/schemas/codex).
 ## See Also
 
 https://issues.folio.org/browse/MODINVSTOR-39
-
+mod-codex-ekb
