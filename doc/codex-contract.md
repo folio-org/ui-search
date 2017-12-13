@@ -69,9 +69,18 @@ Codex providers must accept searches that include the index `selected`, whose va
 
 ## 4. Supply records in the Codex record schema
 
-XXX https://github.com/folio-org/raml/tree/master/schemas/codex).
+Codex providers must supply instance records in the format specified by [the Codex instance schema](https://github.com/folio-org/raml/blob/master/schemas/codex/instance.json) -- and collections of records in the format specified by [the Codex instance-collection schema](https://github.com/folio-org/raml/blob/master/schemas/codex/instanceCollection.json).
+
+Specifically, and most importantly:
+* `id` must be set to the ID of the record within its own appliction
+* `source` must be set to a short unique string identifying the provider -- for xample, `ekb` for the EBSCO knowledge-base or `local` for the local inventory.
+
+These two fields, taken together, will be used by the Codex UI to display full records by linking into the applications that natively deal with the relevant records: [`ui-inventory`](https://github.com/folio-org/ui-inventory) for local inventory records, and [`ui-eholdings`](https://github.com/thefrontside/ui-eholdings) for the EBSCO knowledge-base.
 
 ## See Also
 
-https://issues.folio.org/browse/MODINVSTOR-39
-mod-codex-ekb
+* [The RAML definition of the Codex WSAPI](https://github.com/folio-org/raml/blob/master/ramls/codex/codex.raml)
+* [the Codex instance schema](https://github.com/folio-org/raml/blob/master/schemas/codex/instance.json)
+* [The Codex CQL schema](https://github.com/folio-org/raml/blob/master/schemas/CQLSchema.schema)
+* [MODINVSTOR-39](https://issues.folio.org/browse/MODINVSTOR-39), the Jira issue to create a Codex-conformant API for the Inventory module.
+* [`mod-codex-ekb`](https://github.com/folio-org/mod-codex-ekb), the project to create a Codex-conformant facade to the EBSCO knowledge-base; and [MODCXEKB](https://issues.folio.org/projects/MODCXEKB/issues), the Jira issues pertaining to that project.
