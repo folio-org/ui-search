@@ -1,5 +1,13 @@
 # The Codex contract
 
+<!-- md2toc -l 2 codex-contract.md -->
+* [Introduction](#introduction)
+* [1. Be a FOLIO module](#1-be-a-folio-module)
+* [2. Implement the `codex` interface](#2-implement-the-codex-interface)
+* [3. Accept queries meeting the Codex query schema](#3-accept-queries-meeting-the-codex-query-schema)
+* [4. Supply records in the Codex record schema](#4-supply-records-in-the-codex-record-schema)
+* [See Also](#see-also)
+
 ## Introduction
 
 The FOLIO Codex is a layer that presents resources from various providers in an integrated way, unifying local inventories, eletronic holdings from knowledge bases, institutional repositories and more.
