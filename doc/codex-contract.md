@@ -10,9 +10,9 @@
 
 ## Introduction
 
-The FOLIO Codex is a layer that presents resources from various providers in an integrated way, unifying local inventories, eletronic holdings from knowledge bases, institutional repositories and more.
+The FOLIO Codex is a layer that presents resources from various providers in an integrated way, unifying local inventories, electronic holdings from knowledge bases, institutional repositories and more.
 
-There is no physical Codex database: records are not harvested from participating providers, but searched in real time. In order to participate in the Codex, a provider must satisfy a specific contract. This document describes that contract, outlining the reponsibilities that each source must meet.
+There is no physical Codex database: records are not harvested from participating providers, but searched in real time. In order to participate in the Codex, a provider must satisfy a specific contract. This document describes that contract, outlining the responsibilities that each source must meet.
 
 ## 1. Be a FOLIO module
 
@@ -52,12 +52,12 @@ A module that is a Codex provider must declare that it implements the `codex` in
 Note that this interface declaration, within the `declares` array, specifies:
 
 * The id `codex`.
-* The interface-type `multiple`. This is required in order to allow multiple modules in the same FOLIO installation to provide the same interface. (It also avoids clashing with the multiplexer itself, which declares the `codex` interface in non-multiple mode.) See [the relevant section of the the Okapi Guide](https://github.com/folio-org/okapi/blob/master/doc/guide.md#multiple-interfaces).
+* The interface-type `multiple`. This is required in order to allow multiple modules in the same FOLIO installation to provide the same interface. (It also avoids clashing with the multiplexer itself, which declares the `codex` interface in non-multiple mode.) See [the relevant section of the Okapi Guide](https://github.com/folio-org/okapi/blob/master/doc/guide.md#multiple-interfaces).
 * The paths `/codex-instances` and `/codex-instances/{id}`, for searching and full-record retrieval respectively.
 
-The paths that must be supported are specified in more detail in [the RAML for this interface](https://github.com/folio-org/raml/blob/master/ramls/codex/codex.raml)and the linked schemas.
+The paths that must be supported are specified in more detail in [the RAML for this interface](https://github.com/folio-org/raml/blob/master/ramls/codex/codex.raml) and the linked schemas.
 
-Note that Codex provider modules may additional provide other interfaces, which are ignored for the purpose of Codex multiplexing. For example, the Inventory Storage module [`mod-inventory-storage`](https://github.com/folio-org/mod-inventory-storage), which already implements 13 interfaces include `item-storage` and `instance-storage` will be extended to also implement the `codex` interface in multiple mode -- see [MODINVSTOR-39](https://issues.folio.org/browse/MODINVSTOR-39). Conversely, the dedicated EBSCO KB Codex module [`mod-codex-ekb](https://github.com/folio-org/mod-codex-ekb) will provide a Codex-compliant facade to the existing EBSCO knowledge-base, providing only the `codex` interface. Both strategies are valid.
+Note that Codex provider modules may provide additional other interfaces, which are ignored for the purpose of Codex multiplexing. For example, the Inventory Storage module [`mod-inventory-storage`](https://github.com/folio-org/mod-inventory-storage), which already implements 13 interfaces include `item-storage` and `instance-storage` will be extended to also implement the `codex` interface in multiple mode -- see [MODINVSTOR-39](https://issues.folio.org/browse/MODINVSTOR-39). Conversely, the dedicated EBSCO KB Codex module [`mod-codex-ekb](https://github.com/folio-org/mod-codex-ekb) will provide a Codex-compliant facade to the existing EBSCO knowledge-base, providing only the `codex` interface. Both strategies are valid.
 
 (The notion of an "interface" in FOLIO will become reified as a first-class object in the future: see [OKAPI-418](https://issues.folio.org/browse/OKAPI-418).)
 
@@ -81,14 +81,14 @@ Codex providers must supply instance records in the format specified by [the Cod
 
 Specifically, and most importantly:
 * `id` must be set to the ID of the record within its own appliction
-* `source` must be set to a short unique string identifying the provider -- for xample, `ekb` for the EBSCO knowledge-base or `local` for the local inventory.
+* `source` must be set to a short unique string identifying the provider -- for example, `ekb` for the EBSCO knowledge-base or `local` for the local inventory.
 
 These two fields, taken together, will be used by the Codex UI to display full records by linking into the applications that natively deal with the relevant records: [`ui-inventory`](https://github.com/folio-org/ui-inventory) for local inventory records, and [`ui-eholdings`](https://github.com/thefrontside/ui-eholdings) for the EBSCO knowledge-base.
 
 ## See Also
 
 * [The RAML definition of the Codex WSAPI](https://github.com/folio-org/raml/blob/master/ramls/codex/codex.raml)
-* [the Codex instance schema](https://github.com/folio-org/raml/blob/master/schemas/codex/instance.json)
+* [The Codex instance schema](https://github.com/folio-org/raml/blob/master/schemas/codex/instance.json)
 * The Codex CQL [core schema](https://github.com/folio-org/raml/blob/master/schemas/codex/codex_instance_cqlschema.json) and [extension schema](https://github.com/folio-org/raml/blob/master/schemas/codex/codex_instance_cqlschema-ext.json), and the [schema schema](https://github.com/folio-org/raml/blob/master/schemas/CQLSchema.schema) that describes them both
 * [MODINVSTOR-39](https://issues.folio.org/browse/MODINVSTOR-39), the Jira issue to create a Codex-conformant API for the Inventory module.
 * [`mod-codex-ekb`](https://github.com/folio-org/mod-codex-ekb), the project to create a Codex-conformant facade to the EBSCO knowledge-base; and [MODCXEKB](https://issues.folio.org/projects/MODCXEKB/issues), the Jira issues pertaining to that project.
