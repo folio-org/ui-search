@@ -22,7 +22,7 @@
 * Make full-record-view work properly, using a `<Pane>`. Fixes UISE-15.
 * Make reset-search button work, honoring the `stripes.home` setting. Fixes UISE-16.
 
-Note that this release, while it successfully runs within Stripes, needs a great deal of work before it's ready for users. In particular, it presently searches the inventory's `items` endpoint rather then the Codex endpoint (because that doesn't exist yet), and its full-record display is a placeholder.
+Note that this release, while it successfully runs within Stripes, needs a great deal of work before it's ready for users. In particular, it presently searches the inventory's `items` endpoint rather than the Codex endpoint (because that doesn't exist yet), and its full-record display is a placeholder.
 
 ## [0.0.2](https://github.com/folio-org/ui-search/tree/v0.0.2) (2017-11-25)
 
