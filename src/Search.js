@@ -72,7 +72,7 @@ class Search extends React.Component {
       resultCountIncrement={30}
       viewRecordComponent={ViewRecord}
       visibleColumns={['source', 'title', 'contributor']}
-      columnWidths={{ 'source': '60px' }}
+      columnWidths={{ source: '60px' }}
       resultsFormatter={resultsFormatter}
       viewRecordPerms="users.item.get"
       disableRecordCreation
