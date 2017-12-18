@@ -5,6 +5,8 @@ import makeQueryFunction from '@folio/stripes-components/util/makeQueryFunction'
 import SearchAndSort from '@folio/stripes-smart-components/lib/SearchAndSort';
 import ViewRecord from './ViewRecord';
 import packageInfo from '../package';
+import localIcon from '../icons/local-source.svg';
+import kbIcon from '../icons/generic.svg';
 
 const filterConfig = [
   {
@@ -49,6 +51,12 @@ class Search extends React.Component {
 
   render() {
     const resultsFormatter = {
+      source: x => (<img
+        src={x.source === 'local' ? localIcon : kbIcon}
+        alt={x.source}
+        height="18"
+        width="18"
+      />),
       contributor: x => (x.contributor || []).map(y => `'${y.name}'`).join(', '),
     };
 
@@ -63,7 +71,7 @@ class Search extends React.Component {
       initialResultCount={30}
       resultCountIncrement={30}
       viewRecordComponent={ViewRecord}
-      visibleColumns={['id', 'source', 'title', 'contributor']}
+      visibleColumns={['source', 'title', 'contributor']}
       resultsFormatter={resultsFormatter}
       viewRecordPerms="users.item.get"
       disableRecordCreation
