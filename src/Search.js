@@ -39,7 +39,7 @@ class Search extends React.Component {
         params: {
           query: makeQueryFunction(
             'cql.allRecords=1',
-            'title="$QUERY*" or contributor.name="$QUERY*"',
+            'title="$QUERY*"',
             { Title: 'title' },
             filterConfig,
           ),
