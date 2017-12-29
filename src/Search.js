@@ -49,6 +49,11 @@ class Search extends React.Component {
     },
   });
 
+  onChangeField = (e) => {
+    const field = e.target.value;
+    console.log('changed field to', field);
+  }
+
   render() {
     const resultsFormatter = {
       source: x => (<img
@@ -60,6 +65,26 @@ class Search extends React.Component {
       contributor: x => (x.contributor || []).map(y => `'${y.name}'`).join(', '),
     };
 
+    // ['author', 'title', 'subject']
+    const searchableFields = [
+      {
+        label: '---',
+        value: '',
+      },
+      {
+        label: 'Author',
+        value: 'author',
+      },
+      {
+        label: 'Title',
+        value: 'title',
+      },
+      {
+        label: 'Subject',
+        value: 'subject',
+      },
+    ];
+
     return (<SearchAndSort
       moduleName={packageInfo.name.replace(/.*\//, '')}
       moduleTitle={packageInfo.stripes.displayName}
@@ -67,6 +92,8 @@ class Search extends React.Component {
       baseRoute={packageInfo.stripes.route}
       initialPath={(_.get(packageInfo, ['stripes', 'home']) ||
                     _.get(packageInfo, ['stripes', 'route']))}
+      searchableFields={searchableFields}
+      onChangeField={this.onChangeField}
       filterConfig={filterConfig}
       initialResultCount={30}
       resultCountIncrement={30}
