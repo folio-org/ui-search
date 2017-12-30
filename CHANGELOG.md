@@ -8,6 +8,7 @@
 * Dummy up the package file to provide an example of app metadata bundle. Fixes UISE-29, towards STCOR-117.
 * Display source-type icons instead of 'local', 'kb'. Fixes UISE-6.
 * Modify set of available indexes based on selected target types. Fixes UISE-34.
+* Offer specified set of indexes for local-only searches. Fixes UISE-31.
 
 ## [1.1.0](https://github.com/folio-org/ui-search/tree/v1.1.0) (2017-12-05)
 [Full Changelog](https://github.com/folio-org/ui-search/compare/v1.0.0...v1.1.0)
