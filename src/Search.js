@@ -23,7 +23,16 @@ const filterConfig = [
 class Search extends React.Component {
   static propTypes = {
     resources: PropTypes.shape({}),
-    mutator: PropTypes.shape({}),
+    mutator: PropTypes.shape({
+      query: PropTypes.shape({
+        update: PropTypes.func.isRequired,
+      }),
+    }),
+    stripes: PropTypes.shape({
+      logger: PropTypes.shape({
+        log: PropTypes.func.isRequired,
+      }).isRequired,
+    }).isRequired,
   }
 
   static manifest = Object.freeze({
