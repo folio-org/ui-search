@@ -39,8 +39,8 @@ class Search extends React.Component {
         params: {
           query: makeQueryFunction(
             'cql.allRecords=1',
-            'title="$QUERY*"',
-            { Title: 'title' },
+            'title="$QUERY*" or altTitle="$QUERY*" or contributor.name="$QUERY*" or publisher="$QUERY*"',
+            { Title: 'title', Contributor: 'contributor.name' },
             filterConfig,
           ),
         },
@@ -50,8 +50,10 @@ class Search extends React.Component {
   });
 
   onChangeField = (e) => {
-    const field = e.target.value;
-    console.log('changed field to', field);
+    const qfield = e.target.value;
+    const logger = this.props.stripes.logger;
+    logger.log('action', `changed query-field to '${qfield}'`);
+    this.props.mutator.query.update({ qfield });
   }
 
   render() {
@@ -65,25 +67,39 @@ class Search extends React.Component {
       contributor: x => (x.contributor || []).map(y => `'${y.name}'`).join(', '),
     };
 
-    // ['author', 'title', 'subject']
-    const searchableFields = [
-      {
-        label: '---',
-        value: '',
-      },
-      {
-        label: 'Author',
-        value: 'author',
-      },
-      {
-        label: 'Title',
-        value: 'title',
-      },
-      {
-        label: 'Subject',
-        value: 'subject',
-      },
-    ];
+    const filters = _.get(this.props.resources, ['query', 'filters']);
+    // possible values:
+    //  undefined
+    //  'source.Local'
+    //  'source.Local,source.Knowledge Base'
+    //  'source.Knowledge Base'
+    //  ''
+
+    let searchableFields;
+    if (filters === undefined ||
+        filters === '' ||
+        filters === 'source.Local,source.Knowledge Base') {
+      searchableFields = [
+        { label: '---', value: '' },
+        { label: 'Author', value: 'author' },
+        { label: 'Title', value: 'title' },
+        { label: 'Subject', value: 'subject' },
+      ];
+    } else if (filters === 'source.Local') {
+      searchableFields = [
+        { label: '---', value: '' },
+        { label: 'Title', value: 'title' },
+        { label: 'Subject', value: 'subject' },
+        { label: 'Author', value: 'author' },
+      ];
+    } else if (filters === 'source.Knowledge Base') {
+      searchableFields = [
+        { label: '---', value: '' },
+        { label: 'Subject', value: 'subject' },
+        { label: 'Author', value: 'author' },
+        { label: 'Title', value: 'title' },
+      ];
+    }
 
     return (<SearchAndSort
       moduleName={packageInfo.name.replace(/.*\//, '')}
