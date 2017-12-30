@@ -90,16 +90,22 @@ class Search extends React.Component {
         filters === 'source.Local,source.Knowledge Base') {
       searchableFields = [
         { label: '---', value: '' },
-        { label: 'Author', value: 'author' },
         { label: 'Title', value: 'title' },
         { label: 'Subject', value: 'subject' },
+        { label: 'Author', value: 'author' },
       ];
     } else if (filters === 'source.Local') {
       searchableFields = [
         { label: '---', value: '' },
+        { label: 'ID', value: 'id' },
         { label: 'Title', value: 'title' },
-        { label: 'Subject', value: 'subject' },
-        { label: 'Author', value: 'author' },
+        { label: 'Identifier', value: 'identifier' },
+        { label: 'ISBN', value: 'unimplemented.isbn' },
+        { label: 'ISSN', value: 'unimplemented.issn' },
+        { label: 'Contributor', value: 'contributor.name' },
+        { label: 'Subject', value: 'unimplemented.subject' },
+        { label: 'Classification', value: 'unimplemented.classification' },
+        { label: 'Publisher', value: 'publisher' },
       ];
     } else if (filters === 'source.Knowledge Base') {
       searchableFields = [
