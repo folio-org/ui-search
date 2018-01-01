@@ -87,33 +87,38 @@ class Search extends React.Component {
     let searchableFields;
     if (filters === undefined ||
         filters === '' ||
-        filters === 'source.Local,source.Knowledge Base') {
+        filters === 'source.Local,source.Knowledge Base' ||
+        filters === 'source.Knowledge Base,source.Local') {
       searchableFields = [
-        { label: '---', value: '' },
+        { label: 'ID', value: 'id' }, // not in query profile
         { label: 'Title', value: 'title' },
-        { label: 'Subject', value: 'subject' },
-        { label: 'Author', value: 'author' },
+        { label: 'ISBN', value: 'unimplemented.isbn' },
+        { label: 'ISSN', value: 'unimplemented.issn' },
+        { label: 'Publisher', value: 'publisher' },
       ];
     } else if (filters === 'source.Local') {
       searchableFields = [
-       { label: '---', value: '' },
-       { label: 'ID', value: 'id' }, // not in query profile
-       { label: 'Title', value: 'title' },
-       { label: 'Identifier', value: 'identifier' },
-       { label: 'ISBN', value: 'unimplemented.isbn' },
-       { label: 'ISSN', value: 'unimplemented.issn' },
-       { label: 'Contributor', value: 'contributor' }, // not in query profile
-       { label: 'Subject', value: 'subject' },
-       { label: 'Classification', value: 'unimplemented.classification' }, // not in query profile
-       { label: 'Publisher', value: 'publisher' },
+        { label: '---', value: '' },
+        { label: 'ID', value: 'id' }, // not in query profile
+        { label: 'Title', value: 'title' },
+        { label: 'Identifier', value: 'identifier' },
+        { label: 'ISBN', value: 'unimplemented.isbn' },
+        { label: 'ISSN', value: 'unimplemented.issn' },
+        { label: 'Contributor', value: 'contributor' }, // not in query profile
+        { label: 'Subject', value: 'subject' },
+        { label: 'Classification', value: 'unimplemented.classification' }, // not in query profile
+        { label: 'Publisher', value: 'publisher' },
       ];
     } else if (filters === 'source.Knowledge Base') {
       searchableFields = [
-        { label: '---', value: '' },
-        { label: 'Subject', value: 'subject' },
-        { label: 'Author', value: 'author' },
+        { label: 'ID', value: 'id' }, // not in query profile
         { label: 'Title', value: 'title' },
+        { label: 'ISBN', value: 'unimplemented.isbn' },
+        { label: 'ISSN', value: 'unimplemented.issn' },
+        { label: 'Publisher', value: 'publisher' },
       ];
+    } else {
+      console.log(`unexpected filters value '${filters}'`);
     }
 
     return (<SearchAndSort
