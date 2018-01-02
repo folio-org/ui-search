@@ -94,31 +94,31 @@ class Search extends React.Component {
         filters === 'source.Local,source.Knowledge Base' ||
         filters === 'source.Knowledge Base,source.Local') {
       searchableIndexes = [
-        { label: 'ID', value: 'id' }, // not in query profile
+        { label: 'ID', value: 'id' },
         { label: 'Title', value: 'title' },
-        { label: 'ISBN', value: 'unimplemented.isbn' },
-        { label: 'ISSN', value: 'unimplemented.issn' },
+        { label: 'ISBN', value: 'identifier/type=isbn' },
+        { label: 'ISSN', value: 'identifier/type=issn' },
         { label: 'Publisher', value: 'publisher' },
       ];
     } else if (filters === 'source.Local') {
       searchableIndexes = [
         { label: '---', value: '' },
-        { label: 'ID', value: 'id' }, // not in query profile
+        { label: 'ID', value: 'id' },
         { label: 'Title', value: 'title' },
         { label: 'Identifier', value: 'identifier' },
-        { label: 'ISBN', value: 'unimplemented.isbn' },
-        { label: 'ISSN', value: 'unimplemented.issn' },
-        { label: 'Contributor', value: 'contributor' }, // not in query profile
+        { label: 'ISBN', value: 'identifier/type=isbn' },
+        { label: 'ISSN', value: 'identifier/type=issn' },
+        { label: 'Contributor', value: 'contributor' },
         { label: 'Subject', value: 'subject' },
-        { label: 'Classification', value: 'unimplemented.classification' }, // not in query profile
+        { label: 'Classification', value: 'classification' },
         { label: 'Publisher', value: 'publisher' },
       ];
     } else if (filters === 'source.Knowledge Base') {
       searchableIndexes = [
-        { label: 'ID', value: 'id' }, // not in query profile
+        { label: 'ID', value: 'id' },
         { label: 'Title', value: 'title' },
-        { label: 'ISBN', value: 'unimplemented.isbn' },
-        { label: 'ISSN', value: 'unimplemented.issn' },
+        { label: 'ISBN', value: 'identifier/type=isbn' },
+        { label: 'ISSN', value: 'identifier/type=issn' },
         { label: 'Publisher', value: 'publisher' },
       ];
     } else {
