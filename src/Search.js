@@ -22,7 +22,11 @@ const filterConfig = [
 
 class Search extends React.Component {
   static propTypes = {
-    resources: PropTypes.shape({}),
+    resources: PropTypes.shape({
+      query: PropTypes.shape({
+        qindex: PropTypes.stripes,
+      }),
+    }),
     mutator: PropTypes.shape({
       query: PropTypes.shape({
         update: PropTypes.func.isRequired,
