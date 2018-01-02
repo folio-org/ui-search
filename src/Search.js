@@ -58,11 +58,11 @@ class Search extends React.Component {
     },
   });
 
-  onChangeField = (e) => {
-    const qfield = e.target.value;
+  onChangeIndex = (e) => {
+    const qindex = e.target.value;
     const logger = this.props.stripes.logger;
-    logger.log('action', `changed query-field to '${qfield}'`);
-    this.props.mutator.query.update({ qfield });
+    logger.log('action', `changed query-index to '${qindex}'`);
+    this.props.mutator.query.update({ qindex });
   }
 
   render() {
@@ -84,12 +84,12 @@ class Search extends React.Component {
     //  'source.Knowledge Base'
     //  ''
 
-    let searchableFields;
+    let searchableIndexes;
     if (filters === undefined ||
         filters === '' ||
         filters === 'source.Local,source.Knowledge Base' ||
         filters === 'source.Knowledge Base,source.Local') {
-      searchableFields = [
+      searchableIndexes = [
         { label: 'ID', value: 'id' }, // not in query profile
         { label: 'Title', value: 'title' },
         { label: 'ISBN', value: 'unimplemented.isbn' },
@@ -97,7 +97,7 @@ class Search extends React.Component {
         { label: 'Publisher', value: 'publisher' },
       ];
     } else if (filters === 'source.Local') {
-      searchableFields = [
+      searchableIndexes = [
         { label: '---', value: '' },
         { label: 'ID', value: 'id' }, // not in query profile
         { label: 'Title', value: 'title' },
@@ -110,7 +110,7 @@ class Search extends React.Component {
         { label: 'Publisher', value: 'publisher' },
       ];
     } else if (filters === 'source.Knowledge Base') {
-      searchableFields = [
+      searchableIndexes = [
         { label: 'ID', value: 'id' }, // not in query profile
         { label: 'Title', value: 'title' },
         { label: 'ISBN', value: 'unimplemented.isbn' },
@@ -128,8 +128,9 @@ class Search extends React.Component {
       baseRoute={packageInfo.stripes.route}
       initialPath={(_.get(packageInfo, ['stripes', 'home']) ||
                     _.get(packageInfo, ['stripes', 'route']))}
-      searchableFields={searchableFields}
-      onChangeField={this.onChangeField}
+      searchableIndexes={searchableIndexes}
+      selectedIndex={_.get(this.props.resources.query, 'qindex')}
+      onChangeIndex={this.onChangeIndex}
       filterConfig={filterConfig}
       initialResultCount={30}
       resultCountIncrement={30}
