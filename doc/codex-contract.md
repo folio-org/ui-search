@@ -75,6 +75,8 @@ Codex providers must _recognise_ searches that include any of the indexes specif
 
 This variation in how unsupported indexes are handled is the key difference between the core and extension context sets, and the principle reason that the distinction exists.
 
+Queries against the `resourceType` index must use one of the values specified for the `type` field in [the Codex Instance schema](https://github.com/folio-org/raml/blob/master/schemas/codex/instance.json): `audio`, `audiobooks`, etc.
+
 ## 4. Supply records in the Codex record schema
 
 Codex providers must supply instance records in the format specified by [the Codex instance schema](https://github.com/folio-org/raml/blob/master/schemas/codex/instance.json) -- and collections of records in the format specified by [the Codex instance-collection schema](https://github.com/folio-org/raml/blob/master/schemas/codex/instanceCollection.json).
