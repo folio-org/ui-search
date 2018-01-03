@@ -172,7 +172,7 @@ class Search extends React.Component {
     const disableFilters = {};
     if (filters === 'source.Local') {
       disableFilters.h = true;
-    } else if (filters == 'source.Knowledge Base') {
+    } else if (filters === 'source.Knowledge Base') {
       disableFilters.l = true;
       disableFilters.lang = true;
     } else {
