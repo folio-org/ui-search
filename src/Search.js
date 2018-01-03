@@ -88,41 +88,24 @@ class Search extends React.Component {
     //  'source.Knowledge Base'
     //  ''
 
-    let searchableIndexes;
-    if (filters === undefined ||
-        filters === '' ||
-        filters === 'source.Local,source.Knowledge Base' ||
-        filters === 'source.Knowledge Base,source.Local') {
-      searchableIndexes = [
-        { label: 'ID', value: 'id' },
-        { label: 'Title', value: 'title' },
-        { label: 'ISBN', value: 'identifier/type=isbn' },
-        { label: 'ISSN', value: 'identifier/type=issn' },
-        { label: 'Publisher', value: 'publisher' },
-      ];
-    } else if (filters === 'source.Local') {
-      searchableIndexes = [
-        { label: '---', value: '' },
-        { label: 'ID', value: 'id' },
-        { label: 'Title', value: 'title' },
-        { label: 'Identifier', value: 'identifier' },
-        { label: 'ISBN', value: 'identifier/type=isbn' },
-        { label: 'ISSN', value: 'identifier/type=issn' },
-        { label: 'Contributor', value: 'contributor' },
-        { label: 'Subject', value: 'subject' },
-        { label: 'Classification', value: 'classification' },
-        { label: 'Publisher', value: 'publisher' },
-      ];
-    } else if (filters === 'source.Knowledge Base') {
-      searchableIndexes = [
-        { label: 'ID', value: 'id' },
-        { label: 'Title', value: 'title' },
-        { label: 'ISBN', value: 'identifier/type=isbn' },
-        { label: 'ISSN', value: 'identifier/type=issn' },
-        { label: 'Publisher', value: 'publisher' },
-      ];
-    } else {
-      console.log(`unexpected filters value '${filters}'`);
+    const searchableIndexes = Object.assign([], [
+      { label: '---', value: '' },
+      { label: 'ID', value: 'id' },
+      { label: 'Title', value: 'title' },
+      { label: 'Identifier', value: 'identifier' },
+      { label: 'ISBN', value: 'identifier/type=isbn' },
+      { label: 'ISSN', value: 'identifier/type=issn' },
+      { label: 'Contributor', value: 'contributor' },
+      { label: 'Subject', value: 'subject' },
+      { label: 'Classification', value: 'classification' },
+      { label: 'Publisher', value: 'publisher' },
+    ]);
+
+    if (filters === undefined || filters === '' ||
+        filters.match('source.Knowledge Base')) {
+      for (const i of [0, 3, 6, 7, 8]) {
+        searchableIndexes[i].disabled = true;
+      }
     }
 
     return (<SearchAndSort
