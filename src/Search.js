@@ -11,11 +11,72 @@ import kbIcon from '../icons/generic.svg';
 const filterConfig = [
   {
     label: 'Source',
-    name: 'source',
+    name: 's',
     cql: 'source',
     values: [
       { name: 'Local', cql: 'local' },
       { name: 'Knowledge Base', cql: 'kb' },
+    ],
+  },
+  {
+    label: 'Resource Type',
+    name: 't',
+    cql: 'resourceType',
+    values: [
+      { name: 'Audio', cql: 'audio' },
+      { name: 'Audiobooks', cql: 'audiobooks' },
+      { name: 'Books', cql: 'books' },
+      { name: 'Bookseries', cql: 'bookseries' },
+      { name: 'Databases', cql: 'databases' },
+      { name: 'eBooks', cql: 'ebooks' },
+      { name: 'Kits', cql: 'kits' },
+      { name: 'Maps', cql: 'maps' },
+      { name: 'Music', cql: 'music' },
+      { name: 'Newspapers', cql: 'newspapers' },
+      { name: 'Newsletters', cql: 'newsletters' },
+      { name: 'Periodicals', cql: 'periodicals' },
+      { name: 'Posters', cql: 'posters' },
+      { name: 'Reports', cql: 'reports' },
+      { name: 'Proceedings', cql: 'proceedings' },
+      { name: 'Thesis and Dissertation', cql: 'thesisanddissertation' },
+      { name: 'Unspecified', cql: 'unspecified' },
+      { name: 'Video', cql: 'video' },
+      { name: 'Web Resources', cql: 'webresources' },
+    ],
+  },
+  {
+    label: 'Location',
+    name: 'l',
+    cql: 'location',
+    values: [
+      { name: 'Annex', cql: '1' },
+      { name: 'Main Library', cql: '2' },
+      { name: 'ORWIG ETHNO CD', cql: '3' },
+      { name: 'Popular Reading Collection', cql: '4' },
+      { name: 'SECOND FLOOR', cql: '5' },
+    ],
+  },
+  {
+    label: 'Holding Status',
+    name: 'h',
+    cql: 'ext.available',
+    values: [
+      { name: 'Available online', cql: 'true' },
+      { name: 'Not Available', cql: 'false' },
+    ],
+  },
+  {
+    label: 'Language',
+    name: 'lang',
+    cql: 'ext.available',
+    values: [
+      { name: 'English', cql: 'en' },
+      { name: 'Spanish', cql: 'es' },
+      { name: 'French', cql: 'fr' },
+      { name: 'German', cql: 'de' },
+      { name: 'Mandarin', cql: 'zh' },
+      { name: 'Russian', cql: 'ru' },
+      { name: 'Arabic', cql: 'ar' },
     ],
   },
 ];
@@ -108,6 +169,16 @@ class Search extends React.Component {
       }
     }
 
+    const disableFilters = {};
+    if (filters === 'source.Local') {
+      disableFilters.h = true;
+    } else if (filters === 'source.Knowledge Base') {
+      disableFilters.l = true;
+      disableFilters.lang = true;
+    } else {
+      disableFilters.lang = true;
+    }
+
     return (<SearchAndSort
       moduleName={packageInfo.name.replace(/.*\//, '')}
       moduleTitle={packageInfo.stripes.displayName}
@@ -119,6 +190,7 @@ class Search extends React.Component {
       selectedIndex={_.get(this.props.resources.query, 'qindex')}
       onChangeIndex={this.onChangeIndex}
       filterConfig={filterConfig}
+      disableFilters={disableFilters}
       initialResultCount={30}
       resultCountIncrement={30}
       viewRecordComponent={ViewRecord}
