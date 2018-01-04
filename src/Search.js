@@ -11,7 +11,7 @@ import kbIcon from '../icons/generic.svg';
 const filterConfig = [
   {
     label: 'Source',
-    name: 's',
+    name: 'source',
     cql: 'source',
     values: [
       { name: 'Local', cql: 'local' },
@@ -20,7 +20,7 @@ const filterConfig = [
   },
   {
     label: 'Resource Type',
-    name: 't',
+    name: 'type',
     cql: 'resourceType',
     values: [
       { name: 'Audio', cql: 'audio' },
@@ -46,7 +46,7 @@ const filterConfig = [
   },
   {
     label: 'Location',
-    name: 'l',
+    name: 'location',
     cql: 'location',
     values: [
       { name: 'Annex', cql: '1' },
@@ -58,7 +58,7 @@ const filterConfig = [
   },
   {
     label: 'Holding Status',
-    name: 'h',
+    name: 'available',
     cql: 'ext.available',
     values: [
       { name: 'Available online', cql: 'true' },
@@ -171,9 +171,9 @@ class Search extends React.Component {
 
     const disableFilters = {};
     if (filters === 'source.Local') {
-      disableFilters.h = true;
+      disableFilters.available = true;
     } else if (filters === 'source.Knowledge Base') {
-      disableFilters.l = true;
+      disableFilters.location = true;
       disableFilters.lang = true;
     } else {
       disableFilters.lang = true;
