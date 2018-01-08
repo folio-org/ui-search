@@ -14,6 +14,7 @@
 * Set value of query-index from the `qindex` URL query parameter. Fixes UISE-38.
 * Grey out unavailable indexes instead of omitting them entirely. Fixes UISE-40.
 * Implement correct filters for local-only targets. Fixes UISE-3.
+* Default query for local-only mode is now Codex profile-compliant. Fixes UISE-43.
 
 ## [1.1.0](https://github.com/folio-org/ui-search/tree/v1.1.0) (2017-12-05)
 [Full Changelog](https://github.com/folio-org/ui-search/compare/v1.0.0...v1.1.0)
