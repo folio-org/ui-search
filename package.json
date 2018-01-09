@@ -26,7 +26,7 @@
     "hasSettings": false,
     "queryResource": "query",
     "okapiInterfaces": {
-      "codex": "2.0"
+      "codex": "3.0"
     },
     "permissionSets": [
       {
@@ -102,7 +102,7 @@
     "uuid": "^3.0.1"
   },
   "peerDependencies": {
-    "@folio/stripes-connect": "^3.0.0",
+    "@folio/stripes-connect": "^3.1.0",
     "@folio/stripes-core": "^2.8.0",
     "@folio/stripes-logger": "^0.0.2"
   }
