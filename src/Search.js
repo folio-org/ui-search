@@ -190,6 +190,7 @@ class Search extends React.Component {
       searchableIndexes={searchableIndexes}
       selectedIndex={_.get(this.props.resources.query, 'qindex')}
       onChangeIndex={this.onChangeIndex}
+      maxSortKeys={1}
       filterConfig={filterConfig}
       disableFilters={disableFilters}
       initialResultCount={30}
