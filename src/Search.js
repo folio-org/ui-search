@@ -116,6 +116,7 @@ class Search extends React.Component {
             'title="$QUERY*" or identifier="$QUERY*" or contributor="$QUERY*" or publisher="$QUERY*"',
             { Title: 'title', Contributor: 'contributor.name' },
             filterConfig,
+            true,
           ),
         },
         staticFallback: { params: {} },
