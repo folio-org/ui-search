@@ -116,6 +116,7 @@ class Search extends React.Component {
             'title="$QUERY*" or identifier="$QUERY*" or contributor="$QUERY*" or publisher="$QUERY*"',
             { Title: 'title', Contributor: 'contributor.name' },
             filterConfig,
+            true,
           ),
         },
         staticFallback: { params: {} },
@@ -189,6 +190,7 @@ class Search extends React.Component {
       searchableIndexes={searchableIndexes}
       selectedIndex={_.get(this.props.resources.query, 'qindex')}
       onChangeIndex={this.onChangeIndex}
+      maxSortKeys={1}
       filterConfig={filterConfig}
       disableFilters={disableFilters}
       initialResultCount={30}
