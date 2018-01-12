@@ -165,7 +165,7 @@ class Search extends React.Component {
 
     if (filters === undefined || filters === '' ||
         filters.match('source.Knowledge Base')) {
-      for (const i of [0, 3, 6, 7, 8]) {
+      for (const i of [0, 1, 6, 7, 8]) {
         searchableIndexes[i].disabled = true;
       }
     }
