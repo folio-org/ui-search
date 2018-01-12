@@ -1,6 +1,8 @@
 # Change history for ui-search
 
+## 1.2.0 (IN PROGRESS)
 * Change app name to "Codex Search". Applies in the application list in the Stripes menu-bar, within the application itself, and in the top-level route `codexsearch`. Fixes UISE-23.
+* Use more-current stripes-components. Refs STRIPES-495.
 
 ## [1.1.0](https://github.com/folio-org/ui-search/tree/v1.1.0) (2017-12-05)
 [Full Changelog](https://github.com/folio-org/ui-search/compare/v1.0.0...v1.1.0)
