@@ -81,6 +81,21 @@ const filterConfig = [
   },
 ];
 
+
+const availableIndexes = [
+  { label: '---', value: '', localOnly: true },
+  { label: 'ID', value: 'id' },
+  { label: 'Title', value: 'title' },
+  { label: 'Identifier', value: 'identifier', localOnly: true },
+  { label: 'ISBN', value: 'identifier/type=isbn' },
+  { label: 'ISSN', value: 'identifier/type=issn' },
+  { label: 'Contributor', value: 'contributor', localOnly: true },
+  { label: 'Subject', value: 'subject', localOnly: true },
+  { label: 'Classification', value: 'classification', localOnly: true },
+  { label: 'Publisher', value: 'publisher' },
+];
+
+
 class Search extends React.Component {
   static propTypes = {
     resources: PropTypes.shape({
@@ -124,11 +139,46 @@ class Search extends React.Component {
     },
   });
 
+  componentWillMount() {
+    // XXX Hardwired knowledge here of the default filters. Should parse it out of initialPath
+    this.filtersHaveChanged({});
+    // The change to the anointed resource in filtersHaveChanged()
+    // does not, for some reason, get reflected in the URL: perhaps
+    // thish happens too early in the lifecycle, before the
+    // anointedness has been established. But this doesn't matter,
+    // because no search is executed until a query is entered, and at
+    // that moment the relevant qindex change also enters the URL.
+  }
+
   onChangeIndex = (e) => {
     const qindex = e.target.value;
     const logger = this.props.stripes.logger;
     logger.log('action', `changed query-index to '${qindex}'`);
     this.props.mutator.query.update({ qindex });
+  }
+
+  filtersHaveChanged = (newFilters) => {
+    if (newFilters['source.Local'] && !newFilters['source.Knowledge Base']) return;
+
+    const qindex = _.get(this.props.resources.query, 'qindex') || '';
+    let indexObject;
+    for (const index of availableIndexes) {
+      if (index.value === qindex) {
+        indexObject = index;
+        break;
+      }
+    }
+
+    if (!indexObject) return;
+    if (!indexObject.localOnly) return;
+
+    // Find first available index that is not localOnly
+    for (const index of availableIndexes) {
+      if (!index.localOnly) {
+        this.props.mutator.query.update({ qindex: index.value });
+        return;
+      }
+    }
   }
 
   render() {
@@ -142,6 +192,7 @@ class Search extends React.Component {
       contributor: x => (x.contributor || []).map(y => `'${y.name}'`).join(', '),
     };
 
+    const searchableIndexes = availableIndexes.map(index => Object.assign({}, index));
     const filters = _.get(this.props.resources, ['query', 'filters']);
     // possible values:
     //  undefined
@@ -149,24 +200,10 @@ class Search extends React.Component {
     //  'source.Local,source.Knowledge Base'
     //  'source.Knowledge Base'
     //  ''
-
-    const searchableIndexes = Object.assign([], [
-      { label: '---', value: '' },
-      { label: 'ID', value: 'id' },
-      { label: 'Title', value: 'title' },
-      { label: 'Identifier', value: 'identifier' },
-      { label: 'ISBN', value: 'identifier/type=isbn' },
-      { label: 'ISSN', value: 'identifier/type=issn' },
-      { label: 'Contributor', value: 'contributor' },
-      { label: 'Subject', value: 'subject' },
-      { label: 'Classification', value: 'classification' },
-      { label: 'Publisher', value: 'publisher' },
-    ]);
-
     if (filters === undefined || filters === '' ||
         filters.match('source.Knowledge Base')) {
-      for (const i of [0, 3, 6, 7, 8]) {
-        searchableIndexes[i].disabled = true;
+      for (const index of searchableIndexes) {
+        if (index.localOnly) index.disabled = true;
       }
     }
 
@@ -193,6 +230,7 @@ class Search extends React.Component {
       maxSortKeys={1}
       filterConfig={filterConfig}
       disableFilters={disableFilters}
+      filterChangeCallback={this.filtersHaveChanged}
       initialResultCount={30}
       resultCountIncrement={30}
       viewRecordComponent={ViewRecord}
