@@ -17,6 +17,7 @@
 * Default query for local-only mode is now Codex profile-compliant. Fixes UISE-43.
 * When starting the Codex Search UI, do not search for `cql.allRecords=1`. Fixes UISE-41.
 * Limit to a single sort-key. Avoids causing problems for mod-ebsco-ekb, and fixes UISE-47.
+* Prevent selection of query-index not supported by source. Fixes UISE-46.
 
 ## [1.1.0](https://github.com/folio-org/ui-search/tree/v1.1.0) (2017-12-05)
 [Full Changelog](https://github.com/folio-org/ui-search/compare/v1.0.0...v1.1.0)
