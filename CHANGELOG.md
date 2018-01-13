@@ -1,7 +1,6 @@
 # Change history for ui-search
 
 ## 1.2.0 (IN PROGRESS)
-
 * Update Okapi dependency, `codex`: 2.0
 * Change app name to "Codex Search". Applies in the application list in the Stripes menu-bar, within the application itself, and in the top-level route `codexsearch`. Fixes UISE-23.
 * New document, [the Codex contract](doc/codex-contract.md), which admittedly sounds like a Dan Brown book. Fixes UISE-28.
@@ -17,6 +16,7 @@
 * Default query for local-only mode is now Codex profile-compliant. Fixes UISE-43.
 * When starting the Codex Search UI, do not search for `cql.allRecords=1`. Fixes UISE-41.
 * Limit to a single sort-key. Avoids causing problems for mod-ebsco-ekb, and fixes UISE-47.
+* Use more-current stripes-components. Refs STRIPES-495.
 * Prevent selection of query-index not supported by source. Fixes UISE-46.
 
 ## [1.1.0](https://github.com/folio-org/ui-search/tree/v1.1.0) (2017-12-05)
