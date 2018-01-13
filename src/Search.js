@@ -158,11 +158,9 @@ class Search extends React.Component {
   }
 
   filtersHaveChanged = (newFilters) => {
-    console.log('filters have changed to ', newFilters);
     if (newFilters['source.Local'] && !newFilters['source.Knowledge Base']) return;
 
     const qindex = _.get(this.props.resources.query, 'qindex') || '';
-    console.log(`Knowledge Base included; checking whether qindex '${qindex}' is supported`);
     let indexObject;
     for (const index of availableIndexes) {
       if (index.value === qindex) {
@@ -171,27 +169,16 @@ class Search extends React.Component {
       }
     }
 
-    if (!indexObject) {
-      console.log(`cannot find qindex '${qindex}' in availableIndexes`);
-      return;
-    }
+    if (!indexObject) return;
+    if (!indexObject.localOnly) return;
 
-    if (!indexObject.localOnly) {
-      console.log(`qindex '${qindex}' is OK outside of local inventory`);
-      return;
-    }
-
-    console.log(`qindex '${qindex}' cannot be used: replacing`);
     // Find first available index that is not localOnly
     for (const index of availableIndexes) {
       if (!index.localOnly) {
-        console.log(`replacing qindex '${qindex}' with '${index.value}'`);
         this.props.mutator.query.update({ qindex: index.value });
         return;
       }
     }
-
-    console.log('Could not find a non-disabled value for qindex');
   }
 
   render() {
