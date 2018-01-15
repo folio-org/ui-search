@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Redirect } from 'react-router'
 import Pane from '@folio/stripes-components/lib/Pane';
 import Icon from '@folio/stripes-components/lib/Icon';
 
@@ -50,6 +51,21 @@ class ViewRecord extends React.Component {
     const records = _.get(this.props.resources, ['record', 'records']) || [];
     const record = records[0];
 
+    if (record) {
+      const query = _.get(this.props.resources, 'query') || {};
+      // XXX should use queryString utils to build this
+      let url =
+          (record.source === 'kb') ? `/eholdings/titles/${record.id}` :
+          (record.source === 'kb') ? `/inventory/${record.id}` :
+          undefined;
+      if (url) {
+        if (query.qindex === 'title')
+          url += `?searchType=titles&q=${query.query}`;
+        return <Redirect to={url} />
+      }
+    }
+
+    // Fallback: render the Codex record itself
     return (
       <Pane
         id="pane-recorddetails"
