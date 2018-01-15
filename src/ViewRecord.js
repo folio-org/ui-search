@@ -1,7 +1,8 @@
 import _ from 'lodash';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Redirect } from 'react-router'
+import queryString from 'query-string';
+import { Redirect } from 'react-router';
 import Pane from '@folio/stripes-components/lib/Pane';
 import Icon from '@folio/stripes-components/lib/Icon';
 
@@ -53,14 +54,17 @@ class ViewRecord extends React.Component {
 
     if (record) {
       const query = _.get(this.props.resources, 'query') || {};
-      // XXX should use queryString utils to build this
       let url =
           (record.source === 'kb') ? `/eholdings/titles/${record.id}` :
           (record.source === 'kb') ? `/inventory/${record.id}` :
           undefined;
       if (url) {
-        if (query.qindex === 'title')
-          url += `?searchType=titles&q=${query.query}`;
+        const obj = {};
+        if (query.qindex === 'title') {
+          obj.searchType = 'title';
+          obj.q = query.query;
+        }
+        url += '?' + queryString.stringify(obj);
         return <Redirect to={url} />
       }
     }
