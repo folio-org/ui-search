@@ -1,6 +1,7 @@
 # Change history for ui-search
 
 ## 1.2.0 (IN PROGRESS)
+
 * Update Okapi dependency, `codex`: 2.0
 * Change app name to "Codex Search". Applies in the application list in the Stripes menu-bar, within the application itself, and in the top-level route `codexsearch`. Fixes UISE-23.
 * New document, [the Codex contract](doc/codex-contract.md), which admittedly sounds like a Dan Brown book. Fixes UISE-28.
