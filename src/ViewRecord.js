@@ -61,7 +61,7 @@ class ViewRecord extends React.Component {
       if (url) {
         const obj = {};
         if (query.qindex === 'title') {
-          obj.searchType = 'title';
+          obj.searchType = 'titles';
           obj.q = query.query;
         }
         url += '?' + queryString.stringify(obj);
