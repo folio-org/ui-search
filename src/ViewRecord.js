@@ -31,13 +31,15 @@ function renderBody(record) {
 }
 
 
-// eslint-disable-next-line react/prefer-stateless-function
 class ViewRecord extends React.Component {
   static propTypes = {
     paneWidth: PropTypes.string.isRequired,
     onClose: PropTypes.func.isRequired,
     resources: PropTypes.shape({
       record: PropTypes.object,
+    }),
+    parentResources: PropTypes.shape({
+      query: PropTypes.object,
     }),
   }
 
@@ -53,7 +55,7 @@ class ViewRecord extends React.Component {
     const record = records[0];
 
     if (record) {
-      const query = _.get(this.props.resources, 'query') || {};
+      const query = _.get(this.props.parentResources, 'query') || {};
       let url =
           (record.source === 'kb') ? `/eholdings/titles/${record.id}` :
           (record.source === 'kb') ? `/inventory/${record.id}` :
@@ -64,8 +66,9 @@ class ViewRecord extends React.Component {
           obj.searchType = 'titles';
           obj.q = query.query;
         }
+        // eslint-disable-next-line prefer-template
         url += '?' + queryString.stringify(obj);
-        return <Redirect to={url} />
+        return <Redirect to={url} />;
       }
     }
 
