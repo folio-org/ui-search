@@ -80,7 +80,7 @@
     "babel-preset-stage-0": "^6.16.0",
     "babel-register": "^6.18.0",
     "eslint": "^3.8.0",
-    "eslint-config-stripes": "^0.0.1"
+    "eslint-config-stripes": "^1.0.0"
   },
   "dependencies": {
     "@folio/stripes-components": "^2.0.0",
