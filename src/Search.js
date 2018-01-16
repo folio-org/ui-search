@@ -181,6 +181,29 @@ class Search extends React.Component {
     }
   }
 
+  onSelectRow = (e, record) => {
+    const logger = this.props.stripes.logger;
+
+    const obj = {};
+    if (record.source === 'kb') {
+      obj._path = `/eholdings/titles/${record.id}`;
+    } else if (record.source === 'kb') {
+      obj._path = `/inventory/${record.id}`;
+    } else {
+      logger.log('action', `unsupported source '${record.source}': doing nothing`);
+      return;
+    }
+
+    logger.log('action', `clicked ${record.id}, jumping to '${record.source}' version`);
+    const query = _.get(this.props.resources, 'query') || {};
+    if (query.qindex === 'title') {
+      obj.searchType = 'titles';
+      obj.q = query.query;
+    }
+
+    this.props.mutator.query.update(obj);
+  }
+
   render() {
     const resultsFormatter = {
       source: x => (<img
@@ -237,6 +260,7 @@ class Search extends React.Component {
       visibleColumns={['source', 'title', 'contributor']}
       columnWidths={{ source: '10%', title: '40%', contributor: '50%' }}
       resultsFormatter={resultsFormatter}
+      onSelectRow={this.onSelectRow}
       viewRecordPerms="users.item.get"
       disableRecordCreation
       parentResources={this.props.resources}
