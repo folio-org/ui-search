@@ -191,7 +191,7 @@ class Search extends React.Component {
       obj._path = `/inventory/${record.id}`;
     } else {
       logger.log('action', `unsupported source '${record.source}': doing nothing`);
-      return;
+      return true;
     }
 
     logger.log('action', `clicked ${record.id}, jumping to '${record.source}' version`);
