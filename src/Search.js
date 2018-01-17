@@ -187,21 +187,22 @@ class Search extends React.Component {
     const obj = {};
     if (record.source === 'kb') {
       obj._path = `/eholdings/titles/${record.id}`;
-    } else if (record.source === 'kb') {
-      obj._path = `/inventory/${record.id}`;
+      obj.searchType = 'titles';
+      obj.q = _.get(this.props.resources, ['query', 'query']);
+      obj.query = null;
+    } else if (record.source === 'local') {
+      obj._path = `/inventory/view/${record.id}`;
+      obj.searchType = null;
+      obj.q = null;
+      // The 'query' parameter should already be correct
     } else {
       logger.log('action', `unsupported source '${record.source}': doing nothing`);
-      return;
+      return true;
     }
 
-    logger.log('action', `clicked ${record.id}, jumping to '${record.source}' version`);
-    const query = _.get(this.props.resources, 'query') || {};
-    if (query.qindex === 'title') {
-      obj.searchType = 'titles';
-      obj.q = query.query;
-    }
-
+    logger.log('action', `clicked ${record.id}, jumping to '${record.source}' version with obj`, obj);
     this.props.mutator.query.update(obj);
+    return false;
   }
 
   render() {

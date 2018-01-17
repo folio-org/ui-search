@@ -19,7 +19,8 @@
 * Limit to a single sort-key. Avoids causing problems for mod-ebsco-ekb, and fixes UISE-47.
 * Use more-current stripes-components. Refs STRIPES-495.
 * Prevent selection of query-index not supported by source. Fixes UISE-46.
-* Link from ui-search's KB records into ui-eholdings. Fixes UISE-51, UISE-53 and UISE-54.
+* Link from ui-search's KB records into ui-eholdings. Fixes UISE-51, UISE-53, UISE-54 and UISE-55.
+* Link from ui-search's local records into ui-inventory. Fixes UISE-50.
 
 ## [1.1.0](https://github.com/folio-org/ui-search/tree/v1.1.0) (2017-12-05)
 [Full Changelog](https://github.com/folio-org/ui-search/compare/v1.0.0...v1.1.0)
