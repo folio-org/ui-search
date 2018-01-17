@@ -1,7 +1,6 @@
 import _ from 'lodash';
 import React from 'react';
 import PropTypes from 'prop-types';
-import queryString from 'query-string';
 import Pane from '@folio/stripes-components/lib/Pane';
 import Icon from '@folio/stripes-components/lib/Icon';
 
@@ -36,9 +35,6 @@ class ViewRecord extends React.Component {
     onClose: PropTypes.func.isRequired,
     resources: PropTypes.shape({
       record: PropTypes.object,
-    }),
-    parentResources: PropTypes.shape({
-      query: PropTypes.object,
     }),
   }
 
