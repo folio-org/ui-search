@@ -1,6 +1,8 @@
 import _ from 'lodash';
 import React from 'react';
 import PropTypes from 'prop-types';
+import queryString from 'query-string';
+import { withRouter } from 'react-router';
 import makeQueryFunction from '@folio/stripes-components/util/makeQueryFunction';
 import SearchAndSort from '@folio/stripes-smart-components/lib/SearchAndSort';
 import ViewRecord from './ViewRecord';
@@ -201,7 +203,18 @@ class Search extends React.Component {
     }
 
     logger.log('action', `clicked ${record.id}, jumping to '${record.source}' version with obj`, obj);
-    this.props.mutator.query.update(obj);
+    if (false) {
+      // XXX This should work but does not: see UISE-56
+      this.props.mutator.query.update(obj);
+    } else {
+      // Ugly by-hand hack instead, for now
+      const path = obj._path;
+      delete obj._path;
+      const query = queryString.stringify(obj);
+      const url = `${path}?${query}`;
+      console.log(`destination: ${url}, this =`, this);
+      this.props.history.push(url);
+    }
     return false;
   }
 
@@ -270,4 +283,4 @@ class Search extends React.Component {
   }
 }
 
-export default Search;
+export default withRouter(Search);
