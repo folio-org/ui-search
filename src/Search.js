@@ -123,7 +123,16 @@ class Search extends React.Component {
 
   static manifest = Object.freeze({
     resultCount: { initialValue: 30 },
-    query: {},
+    query: {
+      // XXX This should have no initialValue, but should be set from the URL. STCOR-134
+/*
+      initialValue: {
+        // filters: 'available.Available online',
+        qindex: 'title',
+        sort: 'title',
+      },
+*/
+    },
     records: {
       type: 'okapi',
       records: 'instances',
