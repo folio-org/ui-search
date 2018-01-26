@@ -123,7 +123,7 @@ class Search extends React.Component {
 
   static manifest = Object.freeze({
     resultCount: { initialValue: 30 },
-    query: { initialValue: {} },
+    query: {},
     records: {
       type: 'okapi',
       records: 'instances',
@@ -146,11 +146,12 @@ class Search extends React.Component {
   });
 
   componentWillMount() {
-    // XXX Hardwired knowledge here of the default filters. Should parse it out of initialPath
+    // XXX Hardwired knowledge here of the default source filters
+    // (i.e. none). Should parse it out of initialPath
     this.filtersHaveChanged({});
     // The change to the anointed resource in filtersHaveChanged()
     // does not, for some reason, get reflected in the URL: perhaps
-    // thish happens too early in the lifecycle, before the
+    // this happens too early in the lifecycle, before the
     // anointedness has been established. But this doesn't matter,
     // because no search is executed until a query is entered, and at
     // that moment the relevant qindex change also enters the URL.
