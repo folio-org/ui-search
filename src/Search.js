@@ -103,6 +103,7 @@ class Search extends React.Component {
     resources: PropTypes.shape({
       query: PropTypes.shape({
         qindex: PropTypes.string,
+        query: PropTypes.string,
       }),
     }),
     mutator: PropTypes.shape({
