@@ -22,7 +22,7 @@
     "defaultPreviewWidth": "40%",
     "helpPage": "https://wiki.folio.org/pages/viewpage.action?pageId=1415393",
     "route": "/codexsearch",
-    "home": "/codexsearch?sort=title",
+    "home": "/codexsearch?qindex=title&sort=title",
     "hasSettings": false,
     "queryResource": "query",
     "okapiInterfaces": {
