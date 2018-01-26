@@ -115,6 +115,9 @@ class Search extends React.Component {
         log: PropTypes.func.isRequired,
       }).isRequired,
     }).isRequired,
+    history: PropTypes.shape({
+      push: PropTypes.func.isRequired,
+    }).isRequired,
   }
 
   static manifest = Object.freeze({
@@ -203,6 +206,7 @@ class Search extends React.Component {
     }
 
     logger.log('action', `clicked ${record.id}, jumping to '${record.source}' version with obj`, obj);
+    // eslint-disable-next-line no-constant-condition
     if (false) {
       // XXX This should work but does not: see UISE-56
       this.props.mutator.query.update(obj);
