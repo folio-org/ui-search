@@ -61,7 +61,7 @@ const filterConfig = [
   {
     label: 'Holding Status',
     name: 'available',
-    cql: 'ext.available',
+    cql: 'ext.selected',
     values: [
       { name: 'Available online', cql: 'true' },
       { name: 'Not Available', cql: 'false' },
