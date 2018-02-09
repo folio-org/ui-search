@@ -23,6 +23,7 @@
 * Link from ui-search's local records into ui-inventory. Fixes UISE-50.
 * Use correct index (`ext.selected`) for Holding-Status searches. Fixes UISE-60.
 * "Available online" filter is selected by default. Fixes UISE-59.
+* Enable both _FOLIO ID_ search and _Identifier_ search in EBSCO KB. Fixes UISE-49.
 
 ## [1.1.0](https://github.com/folio-org/ui-search/tree/v1.1.0) (2017-12-05)
 [Full Changelog](https://github.com/folio-org/ui-search/compare/v1.0.0...v1.1.0)
