@@ -5,6 +5,7 @@ import queryString from 'query-string';
 import { withRouter } from 'react-router';
 import makeQueryFunction from '@folio/stripes-components/util/makeQueryFunction';
 import SearchAndSort from '@folio/stripes-smart-components/lib/SearchAndSort';
+import { filterState } from '@folio/stripes-components/lib/FilterGroups';
 import ViewRecord from './ViewRecord';
 import packageInfo from '../package';
 import localIcon from '../icons/local-source.svg';
@@ -244,14 +245,8 @@ class Search extends React.Component {
 
     const searchableIndexes = availableIndexes.map(index => Object.assign({}, index));
     const filters = _.get(this.props.resources, ['query', 'filters']);
-    // possible values:
-    //  undefined
-    //  'source.Local'
-    //  'source.Local,source.Knowledge Base'
-    //  'source.Knowledge Base'
-    //  ''
-    if (filters === undefined || filters === '' ||
-        filters.match('source.Knowledge Base')) {
+    const filterKeys = filterState(filters);
+    if (!filterKeys['source.Local'] || filterKeys['source.Knowledge Base']) {
       for (const index of searchableIndexes) {
         if (index.localOnly) index.disabled = true;
       }
