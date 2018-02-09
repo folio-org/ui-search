@@ -1,5 +1,6 @@
 const nullTest = require('./null.js');
 
-module.exports.test = function meh(uitestctx) {
-  nullTest.test(uitestctx);
+module.exports.test = (context) => {
+  nullTest.test(context);
+  // ... and even more exciting tests to follow!
 };
