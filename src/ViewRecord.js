@@ -57,7 +57,8 @@ class ViewRecord extends React.Component {
         lastMenu={<span />}
         dismissible
         onClose={this.props.onClose}
-      >{renderBody(record)}</Pane>
+      >{renderBody(record)}
+      </Pane>
     );
   }
 }
