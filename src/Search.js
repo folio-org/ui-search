@@ -86,9 +86,9 @@ const filterConfig = [
 
 const availableIndexes = [
   { label: '---', value: '', localOnly: true },
-  { label: 'ID', value: 'id' },
+  { label: 'FOLIO ID', value: 'id' },
   { label: 'Title', value: 'title' },
-  { label: 'Identifier', value: 'identifier', localOnly: true },
+  { label: 'Identifier', value: 'identifier' },
   { label: 'ISBN', value: 'identifier/type=isbn' },
   { label: 'ISSN', value: 'identifier/type=issn' },
   { label: 'Contributor', value: 'contributor', localOnly: true },
