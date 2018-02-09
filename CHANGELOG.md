@@ -25,6 +25,7 @@
 * "Available online" filter is selected by default. Fixes UISE-59.
 * Enable both _FOLIO ID_ search and _Identifier_ search in EBSCO KB. Fixes UISE-49.
 * Upgrade `eslint` dependency to v4.7.2, allowing `eslint-config-stripes` v1.0.0 to work. Fixes UISE-65.
+* Add completely trivial testing framework (enabling real tests to follow). Fixes UISE-61.
 
 ## [1.1.0](https://github.com/folio-org/ui-search/tree/v1.1.0) (2017-12-05)
 [Full Changelog](https://github.com/folio-org/ui-search/compare/v1.0.0...v1.1.0)
