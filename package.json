@@ -70,7 +70,8 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "rebuild": "rm -rf node_modules yarn.lock && yarn install && yarn link @folio/stripes-components && yarn link @folio/stripes-smart-components"
+    "rebuild": "rm -rf node_modules yarn.lock && yarn install && yarn link @folio/stripes-components && yarn link @folio/stripes-smart-components",
+    "test": "(cd ../ui-testing; env FOLIO_UI_URL=http://localhost:8080 FOLIO_UI_WAIT_TIMEOUT=10000 yarn test-module -- -o --run=search)"
   },
   "devDependencies": {
     "babel-core": "^6.17.0",
