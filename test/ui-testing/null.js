@@ -1,23 +1,23 @@
-module.exports.test = function meh(uitestctx) {
-  describe('Module test: users:new_user', function bar() {
-    const { config, helpers: { namegen, openApp }, meta: { testVersion } } = uitestctx;
+const Nightmare = require('nightmare');
+const { describe, it } = require('mocha');
+
+module.exports.test = (uitestctx) => {
+  describe('Testing apparatus works', function bar() {
+    const { config } = uitestctx;
 
     this.timeout(Number(config.test_timeout));
     const nightmare = new Nightmare(config.nightmare);
 
-    let pgroup = null;
-    const user = namegen();
-
-    describe('Testing apparatus works', () => {
+    describe('View login page', () => {
       it('should load login page', (done) => {
         nightmare
-        .on('page', (type = 'alert', message) => {
-          throw new Error(message);
-        })
-        .goto(config.url)
-        .wait(Number(config.login_wait))
-        .then(() => { done(); })
-        .catch(done);
+          .on('page', (_type = 'alert', message) => {
+            throw new Error(message);
+          })
+          .goto(config.url)
+          .wait(Number(config.login_wait))
+          .then(() => { done(); })
+          .catch(done);
       });
     });
   });
