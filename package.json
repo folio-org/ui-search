@@ -70,7 +70,7 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "test": "(cd ../ui-testing; env FOLIO_UI_URL=http://localhost:8080 FOLIO_UI_WAIT_TIMEOUT=10000 yarn test-module -- -o --run=search)"
+    "test": "(cd ../ui-testing; env FOLIO_UI_URL=http://localhost:8080 FOLIO_UI_WAIT_TIMEOUT=10000 yarn test-module -o --run=search)"
   },
   "devDependencies": {
     "babel-core": "^6.17.0",
