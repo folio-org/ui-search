@@ -8,6 +8,10 @@ module.exports.test = (uitestctx) => {
     this.timeout(Number(config.test_timeout));
     const nightmare = new Nightmare(config.nightmare);
 
+    describe('Mocha', () => {
+      it('works', () => {});
+    });
+
     describe('View login page', () => {
       it('should load login page', (done) => {
         nightmare
