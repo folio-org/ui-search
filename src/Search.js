@@ -274,6 +274,7 @@ class Search extends React.Component {
       onChangeIndex={this.onChangeIndex}
       maxSortKeys={1}
       filterConfig={filterConfig}
+      initialFilters={this.constructor.manifest.query.initialValue.filters}
       disableFilters={disableFilters}
       filterChangeCallback={this.filtersHaveChanged}
       initialResultCount={30}
