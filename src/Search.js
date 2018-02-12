@@ -226,7 +226,6 @@ class Search extends React.Component {
       delete obj._path;
       const query = queryString.stringify(obj);
       const url = `${path}?${query}`;
-      console.log(`destination: ${url}, this =`, this);
       this.props.history.push(url);
     }
     return false;
@@ -274,6 +273,7 @@ class Search extends React.Component {
       onChangeIndex={this.onChangeIndex}
       maxSortKeys={1}
       filterConfig={filterConfig}
+      initialFilters={this.constructor.manifest.query.initialValue.filters}
       disableFilters={disableFilters}
       filterChangeCallback={this.filtersHaveChanged}
       initialResultCount={30}
