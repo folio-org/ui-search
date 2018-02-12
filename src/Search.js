@@ -226,7 +226,6 @@ class Search extends React.Component {
       delete obj._path;
       const query = queryString.stringify(obj);
       const url = `${path}?${query}`;
-      console.log(`destination: ${url}, this =`, this);
       this.props.history.push(url);
     }
     return false;
