@@ -20,6 +20,7 @@ const filterConfig = [
       { name: 'Local', cql: 'local' },
       { name: 'Knowledge Base', cql: 'kb' },
     ],
+    restrictWhenAllSelected: true,
   },
   {
     label: 'Resource Type',
