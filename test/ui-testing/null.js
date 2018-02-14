@@ -1,4 +1,3 @@
-const Nightmare = require('nightmare');
 const { describe, it } = require('mocha');
 
 module.exports.test = (context) => {
@@ -6,8 +5,6 @@ module.exports.test = (context) => {
     const { config } = context;
 
     this.timeout(Number(config.test_timeout));
-    const nightmare = new Nightmare(config.nightmare);
-
     describe('Mocha', () => {
       it('works', () => {});
     });
