@@ -1,6 +1,6 @@
-const nullTest = require('./null.js');
+const codex = require('./codex.js');
 
 module.exports.test = (context) => {
-  nullTest.test(context);
+  codex.test(context);
   // ... and even more exciting tests to follow!
 };
