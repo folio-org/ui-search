@@ -21,7 +21,11 @@ module.exports.test = (context) => {
         nightmare
           .wait('#input-record-search-qindex')
           .select('#input-record-search-qindex', 'title')
-          .then(result => result)
+	  .insert('#input-record-search', 'monkey')
+	  .wait('div[role="listitem"] div[title*="onkey"]')
+          .then(result => {
+	    done();
+	  })
 	  .catch(done)
       });
     });
