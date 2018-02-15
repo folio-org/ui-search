@@ -117,9 +117,6 @@ class Search extends React.Component {
         log: PropTypes.func.isRequired,
       }).isRequired,
     }).isRequired,
-    history: PropTypes.shape({
-      push: PropTypes.func.isRequired,
-    }).isRequired,
   }
 
   static manifest = Object.freeze({
