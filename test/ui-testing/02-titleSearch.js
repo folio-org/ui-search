@@ -16,7 +16,7 @@ module.exports.test = (context) => {
           .use(openApp(nightmare, config, done, 'search', testVersion))
           .then(result => result);
       });
-      it('should select title search', (done) => {      
+      it('should select title search', (done) => {
         nightmare
           .screenshot('x.png')
           .html('x.html', 'HTMLComplete')
