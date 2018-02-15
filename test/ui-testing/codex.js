@@ -21,8 +21,8 @@ module.exports.test = (context) => {
         nightmare
           .wait('#input-record-search-qindex')
           .select('#input-record-search-qindex', 'title')
-	  .insert('#input-record-search', 'monkey')
-	  .wait('div[role="listitem"] div[title*="onkey"]')
+	  .insert('#input-record-search', 'monster')
+	  .wait('div[role="listitem"] div[title*="comics"]')
           .then(result => {
 	    done();
 	  })
