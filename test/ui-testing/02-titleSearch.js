@@ -14,14 +14,19 @@ module.exports.test = (context) => {
       it('should open module "Search" and find version tag', (done) => {
         nightmare
           .use(openApp(nightmare, config, done, 'search', testVersion))
-          .then(result => result);
+          .then(result => result)
+	  .catch(done);
       });
       it('should select title search', (done) => {
         nightmare
-          .screenshot('x.png')
-          .html('x.html', 'HTMLComplete')
+          .wait('#input-record-search-qindex')
           .select('#input-record-search-qindex', 'title')
-          .then(console.log);
+	  .insert('#input-record-search', 'monster')
+	  .wait('div[role="listitem"] div[title*="comics"]')
+          .then(result => {
+	    done();
+	  })
+	  .catch(done);
       });
     });
   });
