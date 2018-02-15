@@ -1,7 +1,6 @@
 import _ from 'lodash';
 import React from 'react';
 import PropTypes from 'prop-types';
-import queryString from 'query-string';
 import { withRouter } from 'react-router';
 import makeQueryFunction from '@folio/stripes-components/util/makeQueryFunction';
 import SearchAndSort from '@folio/stripes-smart-components/lib/SearchAndSort';
@@ -118,21 +117,11 @@ class Search extends React.Component {
         log: PropTypes.func.isRequired,
       }).isRequired,
     }).isRequired,
-    history: PropTypes.shape({
-      push: PropTypes.func.isRequired,
-    }).isRequired,
   }
 
   static manifest = Object.freeze({
     resultCount: { initialValue: 30 },
-    query: {
-      // XXX This should have no initialValue, but should be set from the URL. STCOR-134
-      initialValue: {
-        filters: 'available.Available online',
-        qindex: 'title',
-        sort: 'title',
-      },
-    },
+    query: { initialValue: {} },
     records: {
       type: 'okapi',
       records: 'instances',
@@ -153,18 +142,6 @@ class Search extends React.Component {
       },
     },
   });
-
-  componentWillMount() {
-    // XXX Hardwired knowledge here of the default source filters
-    // (i.e. none). Should parse it out of initialPath
-    this.filtersHaveChanged({});
-    // The change to the anointed resource in filtersHaveChanged()
-    // does not, for some reason, get reflected in the URL: perhaps
-    // this happens too early in the lifecycle, before the
-    // anointedness has been established. But this doesn't matter,
-    // because no search is executed until a query is entered, and at
-    // that moment the relevant qindex change also enters the URL.
-  }
 
   onChangeIndex = (e) => {
     const qindex = e.target.value;
@@ -217,18 +194,8 @@ class Search extends React.Component {
     }
 
     logger.log('action', `clicked ${record.id}, jumping to '${record.source}' version with obj`, obj);
-    // eslint-disable-next-line no-constant-condition
-    if (false) {
-      // XXX This should work but does not: see UISE-56
-      this.props.mutator.query.update(obj);
-    } else {
-      // Ugly by-hand hack instead, for now
-      const path = obj._path;
-      delete obj._path;
-      const query = queryString.stringify(obj);
-      const url = `${path}?${query}`;
-      this.props.history.push(url);
-    }
+
+    this.props.mutator.query.update(obj);
     return false;
   }
 
