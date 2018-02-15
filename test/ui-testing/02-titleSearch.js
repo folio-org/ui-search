@@ -15,18 +15,18 @@ module.exports.test = (context) => {
         nightmare
           .use(openApp(nightmare, config, done, 'search', testVersion))
           .then(result => result)
-	  .catch(done);
+          .catch(done);
       });
-      it('should select title search', (done) => {
+      it('should find "monster comics" title', (done) => {
         nightmare
           .wait('#input-record-search-qindex')
           .select('#input-record-search-qindex', 'title')
-	  .insert('#input-record-search', 'monster')
-	  .wait('div[role="listitem"] div[title*="comics"]')
-          .then(result => {
-	    done();
-	  })
-	  .catch(done);
+          .insert('#input-record-search', 'monster')
+          .wait('div[role="listitem"] div[title*="comics"]')
+          .then(() => {
+            done();
+          })
+          .catch(done);
       });
     });
   });
