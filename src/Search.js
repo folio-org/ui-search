@@ -195,6 +195,9 @@ class Search extends React.Component {
 
     logger.log('action', `clicked ${record.id}, jumping to '${record.source}' version with obj`, obj);
 
+    // TODO: reseting filters is a temp solution until
+    // https://issues.folio.org/browse/UISE-67 is fixed
+    obj.filters = '';
     this.props.mutator.query.update(obj);
     return false;
   }
