@@ -198,9 +198,9 @@ class Search extends React.Component {
     }
 
     logger.log('action', `clicked ${record.id}, jumping to '${record.source}' version with obj`, obj);
-    // eslint-disable-next-line no-constant-condition
 
     this.props.mutator.query.update(obj);
+    return false;
   }
 
   render() {
