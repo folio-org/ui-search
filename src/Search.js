@@ -197,7 +197,7 @@ class Search extends React.Component {
 
     // TODO: reseting filters is a temp solution until
     // https://issues.folio.org/browse/UISE-67 is fixed
-    obj.filters = "";
+    obj.filters = '';
     this.props.mutator.query.update(obj);
     return false;
   }
