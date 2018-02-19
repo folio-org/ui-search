@@ -21,7 +21,7 @@ module.exports.test = (context) => {
         nightmare
           .wait('#input-record-search-qindex')
           .select('#input-record-search-qindex', 'title')
-          .click('#source\\.Local-ItemFilter')
+          .click('#clickable-filter-source-Local')
           .insert('#input-record-search', 'monster')
           .wait('div[role="listitem"] div[title*="comics"]')
           .then(() => {
