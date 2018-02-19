@@ -17,12 +17,12 @@ module.exports.test = (context) => {
           .then(result => result)
           .catch(done);
       });
-      it('should find "monster comics" title', (done) => {
+      it('should find "Loch Ness" title', (done) => {
         nightmare
           .wait('#input-record-search-qindex')
           .select('#input-record-search-qindex', 'title')
           .insert('#input-record-search', 'monster')
-          .wait('div[role="listitem"] div[title*="comics"]')
+          .wait('div[role="listitem"] div[title*="Loch Ness"]')
           .then(() => {
             done();
           })
