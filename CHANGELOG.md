@@ -30,6 +30,7 @@
 * When both "Available online" and "Not available" are checked do not restrict results. Fixes UISE-66.
 * Add the very beginnings of a unit-test suite. Fixes UISE-61.
 * No more strange redirects after following a link into Inventory or eHoldings! Fixes UISE-56 and UISE-26.
+* Initially selected index is "Title", not "ID". Fixes UISE-57.
 
 ## [1.1.0](https://github.com/folio-org/ui-search/tree/v1.1.0) (2017-12-05)
 [Full Changelog](https://github.com/folio-org/ui-search/compare/v1.0.0...v1.1.0)
