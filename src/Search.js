@@ -2,6 +2,7 @@ import _ from 'lodash';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
+import queryString from 'query-string';
 import makeQueryFunction from '@folio/stripes-components/util/makeQueryFunction';
 import SearchAndSort from '@folio/stripes-smart-components/lib/SearchAndSort';
 import { filterState } from '@folio/stripes-components/lib/FilterGroups';
@@ -232,19 +233,25 @@ class Search extends React.Component {
       disableFilters.lang = true;
     }
 
+    const initialPath = (_.get(packageInfo, ['stripes', 'home']) ||
+                         _.get(packageInfo, ['stripes', 'route']));
+    const initialSearch = (initialPath.indexOf('?') == -1 ?
+                           initialPath :
+                           initialPath.substr(initialPath.indexOf('?') + 1));
+    const initialQuery = queryString.parse(initialSearch);
+
     return (<SearchAndSort
       moduleName={packageInfo.name.replace(/.*\//, '')}
       moduleTitle={packageInfo.stripes.displayName}
       objectName="record"
       baseRoute={packageInfo.stripes.route}
-      initialPath={(_.get(packageInfo, ['stripes', 'home']) ||
-                    _.get(packageInfo, ['stripes', 'route']))}
+      initialPath={initialPath}
       searchableIndexes={searchableIndexes}
       selectedIndex={_.get(this.props.resources.query, 'qindex')}
       onChangeIndex={this.onChangeIndex}
       maxSortKeys={1}
       filterConfig={filterConfig}
-      initialFilters={this.constructor.manifest.query.initialValue.filters}
+      initialFilters={initialQuery.filters}
       disableFilters={disableFilters}
       filterChangeCallback={this.filtersHaveChanged}
       initialResultCount={30}
