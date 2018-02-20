@@ -235,9 +235,8 @@ class Search extends React.Component {
 
     const initialPath = (_.get(packageInfo, ['stripes', 'home']) ||
                          _.get(packageInfo, ['stripes', 'route']));
-    const initialSearch = (initialPath.indexOf('?') == -1 ?
-                           initialPath :
-                           initialPath.substr(initialPath.indexOf('?') + 1));
+    const initialSearch = initialPath.indexOf('?') === -1 ? initialPath :
+      initialPath.substr(initialPath.indexOf('?') + 1);
     const initialQuery = queryString.parse(initialSearch);
 
     return (<SearchAndSort
