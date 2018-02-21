@@ -3,6 +3,7 @@ import _ from 'lodash';
 function redirectParamsKB(record, resources) {
   const obj = {
     _path: `/eholdings/titles/${record.id}`,
+    qindex: null,
     searchType: 'titles',
     q: _.get(resources, ['query', 'query']),
     query: null,
@@ -18,8 +19,7 @@ function redirectParamsKB(record, resources) {
 function redirectParamsLocal(record, _resources) {
   const obj = {
     _path: `/inventory/view/${record.id}`,
-    searchType: null,
-    q: null,
+    qindex: null,
     // The 'query' parameter takes the same value in inventory as here
   };
 
