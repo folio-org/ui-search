@@ -53,6 +53,11 @@
         "fileName": "generic",
         "alt": "knowledge base",
         "title": "a knowledge base of e-resources available for viewing"
+      },
+      {
+        "name": "app",
+        "alt": "Codex Search",
+        "title": "Search across the Codex"
       }
     ],
     "welcomePageEntries": [
