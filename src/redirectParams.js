@@ -29,8 +29,9 @@ function redirectParams(record, resources) {
     return redirectParamsKB(record, resources);
   } else if (record.source === 'local') {
     return redirectParamsLocal(record, resources);
+  } else {
+    return null;
   }
-  return null;
 }
 
 export default redirectParams;
