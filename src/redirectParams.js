@@ -11,6 +11,7 @@ function redirectParams(record, resources) {
     // TODO: reseting filters is a temp solution until
     // https://issues.folio.org/browse/UISE-67 is fixed
     obj.filters = '';
+    return obj;
   } else if (record.source === 'local') {
     obj._path = `/inventory/view/${record.id}`;
     obj.searchType = null;
@@ -19,10 +20,9 @@ function redirectParams(record, resources) {
     // TODO: reseting filters is a temp solution until
     // https://issues.folio.org/browse/UISE-67 is fixed
     obj.filters = '';
-  } else {
-    return null;
+    return obj;
   }
-  return obj;
+  return null;
 }
 
 export default redirectParams;
