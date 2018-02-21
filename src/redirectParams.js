@@ -1,26 +1,32 @@
 import _ from 'lodash';
 
 function redirectParamsKB(record, resources) {
-  const obj = {};
-  obj._path = `/eholdings/titles/${record.id}`;
-  obj.searchType = 'titles';
-  obj.q = _.get(resources, ['query', 'query']);
-  obj.query = null;
+  const obj = {
+    _path: `/eholdings/titles/${record.id}`,
+    searchType: 'titles',
+    q: _.get(resources, ['query', 'query']),
+    query: null,
+  };
+
   // TODO: reseting filters is a temp solution until
   // https://issues.folio.org/browse/UISE-67 is fixed
   obj.filters = '';
+
   return obj;
 }
 
 function redirectParamsLocal(record, _resources) {
-  const obj = {};
-  obj._path = `/inventory/view/${record.id}`;
-  obj.searchType = null;
-  obj.q = null;
-  // The 'query' parameter should already be correct
+  const obj = {
+    _path: `/inventory/view/${record.id}`,
+    searchType: null,
+    q: null,
+    // The 'query' parameter takes the same value in inventory as here
+  };
+
   // TODO: reseting filters is a temp solution until
   // https://issues.folio.org/browse/UISE-67 is fixed
   obj.filters = '';
+
   return obj;
 }
 
