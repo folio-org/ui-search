@@ -38,9 +38,7 @@ module.exports.test = (context) => {
           .click('#clickable-filter-source-Local')
           .insert('#input-record-search', false)
           .insert('#input-record-search', 'a')
-          .screenshot('/tmp/a1.png')
           .wait('div[role="listitem"] div[title*="14 cows"]') // Inventory
-          .screenshot('/tmp/a2.png')
           .wait('div[role="listitem"] div[title*="Assholeology"]') // ESBCO KB
           .then(done)
           .catch(done);
@@ -50,9 +48,7 @@ module.exports.test = (context) => {
         nightmare
           .click('div[role="listitem"] div[title*="14 cows"]')
           .wait('#inventory-module-display')
-          .screenshot('/tmp/inv1.png')
           .wait('div[role="gridcell"][title*="Deedy"]')
-          .screenshot('/tmp/inv2.png')
           // This would be a good moment to verify the state of the filters
           .back()
           .wait('div[role="listitem"] div[title*="14 cows"]')
@@ -64,9 +60,7 @@ module.exports.test = (context) => {
         nightmare
           .click('div[role="listitem"] div[title*="Assholeology"]')
           .wait('#eholdings-module-display')
-          .screenshot('/tmp/eh1.png')
           .wait('h1[data-test-eholdings-details-view-name="title"]')
-          .screenshot('/tmp/eh2.png')
           .wait(() => {
             const title = document.querySelector('h1[data-test-eholdings-details-view-name="title"]').textContent;
             const res = title.match('Asshole');
