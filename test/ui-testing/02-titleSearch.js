@@ -59,6 +59,27 @@ module.exports.test = (context) => {
           .then(done)
           .catch(done);
       });
+
+      it('should link into the eHoldings app and return', (done) => {
+        nightmare
+          .click('div[role="listitem"] div[title*="Assholeology"]')
+          .wait('#eholdings-module-display')
+          .screenshot('/tmp/eh1.png')
+          .wait('h1[data-test-eholdings-details-view-name="title"]')
+          .screenshot('/tmp/eh2.png')
+          .wait(() => {
+            const title = document.querySelector('h1[data-test-eholdings-details-view-name="title"]').textContent;
+            const res = title.match('Asshole');
+            console.log(`title='${title}', res='${res}'`);
+            if (!res) throw new Error('incorrect title in eHoldings');
+            return true;
+          })
+          // This would be a good moment to verify the state of the filters
+          .back()
+          .wait('div[role="listitem"] div[title*="Assholeology"]')
+          .then(done)
+          .catch(done);
+      });
     });
   });
 };
