@@ -21,7 +21,6 @@ function mapFilters(filters, mapping) {
 
   Object.keys(filterKeys).forEach((fullName) => {
     const [groupName, fieldName] = fullName.split('.');
-    console.log(`considering '${groupName}' filter '${fieldName}'`);
     const group = mapping[groupName];
     if (group) {
       if (!group.values) {
