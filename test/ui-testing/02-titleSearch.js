@@ -49,6 +49,22 @@ module.exports.test = (context) => {
           })
           .catch(done);
       });
+
+      it('should link into the Inventory app and return', (done) => {
+        nightmare
+          .click('div[role="listitem"] div[title*="14 cows"]')
+          .wait('#inventory-module-display')
+          .screenshot('/tmp/inv1.png')
+          .wait('div[role="gridcell"][title*="Deedy"]')
+          .screenshot('/tmp/inv2.png')
+          // This would be a good moment to verify the state of the filters
+          .back()
+          .wait('div[role="listitem"] div[title*="14 cows"]')
+          .then(() => {
+            done();
+          })
+          .catch(done);
+      });
     });
   });
 };
