@@ -27,9 +27,7 @@ module.exports.test = (context) => {
           .click('#clickable-filter-source-Local')
           .insert('#input-record-search', 'monster')
           .wait('div[role="listitem"] div[title*="comics"]')
-          .then(() => {
-            done();
-          })
+          .then(done)
           .catch(done);
       });
 
@@ -44,9 +42,7 @@ module.exports.test = (context) => {
           .wait('div[role="listitem"] div[title*="14 cows"]') // Inventory
           .screenshot('/tmp/a2.png')
           .wait('div[role="listitem"] div[title*="Assholeology"]') // ESBCO KB
-          .then(() => {
-            done();
-          })
+          .then(done)
           .catch(done);
       });
 
@@ -60,9 +56,7 @@ module.exports.test = (context) => {
           // This would be a good moment to verify the state of the filters
           .back()
           .wait('div[role="listitem"] div[title*="14 cows"]')
-          .then(() => {
-            done();
-          })
+          .then(done)
           .catch(done);
       });
     });
