@@ -38,7 +38,7 @@ function mapFilters(filters, mapping) {
   });
 
   const res = acc.join(',');
-  console.log(`mapped '${filters}' -> '${res}'`);
+  // console.log(`mapped '${filters}' -> '${res}'`);
   return res;
 }
 
@@ -51,7 +51,11 @@ function redirectParamsKB(record, resources) {
     q: _.get(resources, ['query', 'query']),
     query: null,
     filters: mapFilters(_.get(resources, ['query', 'filters']), {
-      // add config
+      // We would like to add a configuration for this, but it turns
+      // out that the eHoldings app represents its filters in a
+      // radically different way from mainstream Stripes apps, and in
+      // particular has no state representation in the URL. So there
+      // is nothing for us to map to.
     }),
   };
 
