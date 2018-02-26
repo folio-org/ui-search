@@ -61,7 +61,7 @@ module.exports.test = (context) => {
           .click('div[role="listitem"] div[title*="Assholeology"]')
           .wait('#eholdings-module-display')
           .wait('h1[data-test-eholdings-details-view-name="title"]')
-          .wait(() => {
+          .evaluate(() => {
             const title = document.querySelector('h1[data-test-eholdings-details-view-name="title"]').textContent;
             const res = title.match('Asshole');
             console.log(`title='${title}', res='${res}'`);
