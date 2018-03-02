@@ -88,7 +88,7 @@ const filterConfig = [
 
 
 const availableIndexes = [
-  { label: '---', value: '', localOnly: true },
+  { label: 'Search all fields', value: '', localOnly: true },
   { label: 'FOLIO ID', value: 'id' },
   { label: 'Title', value: 'title' },
   { label: 'Identifier', value: 'identifier' },
@@ -234,6 +234,7 @@ class Search extends React.Component {
       initialPath={initialPath}
       searchableIndexes={searchableIndexes}
       selectedIndex={_.get(this.props.resources.query, 'qindex')}
+      searchableIndexesPlaceholder={null}
       onChangeIndex={this.onChangeIndex}
       maxSortKeys={1}
       filterConfig={filterConfig}
