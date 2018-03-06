@@ -33,6 +33,7 @@
 * Initially selected index is "Title", not "ID". Fixes UISE-57.
 * When linking into the Inventory app, map filters. Fixes UISE-67.
 * "Search all fields" query-index can be selected. Fixes UISE-72.
+* Pass packageInfo to SearchAndSort; it's simpler. Refs STSMACOM-64. Available after v1.1.1.
 
 ## [1.1.0](https://github.com/folio-org/ui-search/tree/v1.1.0) (2017-12-05)
 [Full Changelog](https://github.com/folio-org/ui-search/compare/v1.0.0...v1.1.0)
