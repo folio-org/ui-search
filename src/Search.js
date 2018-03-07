@@ -192,12 +192,17 @@ class Search extends React.Component {
 
   render() {
     const resultsFormatter = {
-      source: x => (<img
-        src={x.source === 'local' ? localIcon : kbIcon}
-        alt={x.source}
-        height="18"
-        width="18"
-      />),
+      source: x => (
+        <span>
+          <img
+            src={x.source === 'local' ? localIcon : kbIcon}
+            alt={x.source}
+            height="18"
+            width="18"
+          />
+          &nbsp;
+          {x.source === 'local' ? 'Local' : 'KB'}
+        </span>),
       contributor: x => (x.contributor || []).map(y => `'${y.name}'`).join(', '),
     };
 
