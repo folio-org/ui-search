@@ -1,6 +1,6 @@
 {
   "name": "@folio/search",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Search across the Codex",
   "repository": "folio-org/ui-search",
   "publishConfig": {
@@ -91,7 +91,7 @@
   "dependencies": {
     "@folio/stripes-components": "^2.0.1",
     "@folio/stripes-form": "^0.8.1",
-    "@folio/stripes-smart-components": "^1.4.0",
+    "@folio/stripes-smart-components": "^1.4.3",
     "classnames": "^2.2.5",
     "hashcode": "^1.0.3",
     "lodash": "^4.17.4",

@@ -225,25 +225,15 @@ class Search extends React.Component {
       disableFilters.lang = true;
     }
 
-    const initialPath = (_.get(packageInfo, ['stripes', 'home']) ||
-                         _.get(packageInfo, ['stripes', 'route']));
-    const initialSearch = initialPath.indexOf('?') === -1 ? initialPath :
-      initialPath.substr(initialPath.indexOf('?') + 1);
-    const initialQuery = queryString.parse(initialSearch);
-
     return (<SearchAndSort
-      moduleName={packageInfo.name.replace(/.*\//, '')}
-      moduleTitle={packageInfo.stripes.displayName}
+      packageInfo={packageInfo}
       objectName="record"
-      baseRoute={packageInfo.stripes.route}
-      initialPath={initialPath}
       searchableIndexes={searchableIndexes}
       selectedIndex={_.get(this.props.resources.query, 'qindex')}
       searchableIndexesPlaceholder={null}
       onChangeIndex={this.onChangeIndex}
       maxSortKeys={1}
       filterConfig={filterConfig}
-      initialFilters={initialQuery.filters}
       disableFilters={disableFilters}
       filterChangeCallback={this.filtersHaveChanged}
       initialResultCount={30}
