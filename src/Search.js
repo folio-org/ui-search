@@ -2,7 +2,6 @@ import _ from 'lodash';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
-import queryString from 'query-string';
 import makeQueryFunction from '@folio/stripes-components/util/makeQueryFunction';
 import SearchAndSort from '@folio/stripes-smart-components/lib/SearchAndSort';
 import { filterState } from '@folio/stripes-components/lib/FilterGroups';
