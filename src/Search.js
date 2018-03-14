@@ -133,7 +133,7 @@ class Search extends React.Component {
         params: {
           query: makeQueryFunction(
             'cql.allRecords=1',
-            'title="$QUERY*" or identifier="$QUERY*" or contributor="$QUERY*" or publisher="$QUERY*"',
+            'title="%{query.query}*" or identifier="%{query.query}*" or contributor="%{query.query}*" or publisher="%{query.query}*"',
             { Title: 'title', Contributor: 'contributor.name' },
             filterConfig,
             true,
