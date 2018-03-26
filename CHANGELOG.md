@@ -36,6 +36,7 @@
 * Pass packageInfo to SearchAndSort; it's simpler. Refs STSMACOM-64. Available after v1.1.1.
 * Include text labels along with record-source icons. Fixes UISE-58.
 * Use `%{query.query}` instead of `$QUERY` in makeQueryFunction template. Fixes UISE-75.
+* Ignore yarn-error.log file. Refs STRIPES-517. 
 
 ## [1.1.0](https://github.com/folio-org/ui-search/tree/v1.1.0) (2017-12-05)
 [Full Changelog](https://github.com/folio-org/ui-search/compare/v1.0.0...v1.1.0)
