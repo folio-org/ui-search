@@ -5,11 +5,10 @@ import { withRouter } from 'react-router';
 import makeQueryFunction from '@folio/stripes-components/util/makeQueryFunction';
 import SearchAndSort from '@folio/stripes-smart-components/lib/SearchAndSort';
 import { filterState } from '@folio/stripes-components/lib/FilterGroups';
+import AppIcon from '@folio/stripes-components/lib/AppIcon';
 import ViewRecord from './ViewRecord';
 import redirectParams from './redirectParams';
 import packageInfo from '../package';
-import localIcon from '../icons/local-source.svg';
-import kbIcon from '../icons/generic.svg';
 
 const filterConfig = [
   {
@@ -193,12 +192,12 @@ class Search extends React.Component {
     const resultsFormatter = {
       source: x => (
         <span>
-          <img
-            src={x.source === 'local' ? localIcon : kbIcon}
-            alt={x.source}
-            height="18"
-            width="18"
+          <AppIcon
+            app={x.source === 'local' ? 'inventory' : 'eholdings'}
+            iconKey={x.source === 'local' ? 'instance' : 'app'}
+            size="small"
           />
+          &nbsp;
           &nbsp;
           {x.source === 'local' ? 'Local' : 'KB'}
         </span>),
