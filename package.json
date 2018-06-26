@@ -17,7 +17,7 @@
   },
   "stripes": {
     "type": "app",
-    "displayName": "Codex Search",
+    "displayName": "ui-search.meta.title",
     "fullName": "Codex Search",
     "defaultPreviewWidth": "40%",
     "helpPage": "https://wiki.folio.org/pages/viewpage.action?pageId=1415393",
