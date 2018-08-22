@@ -245,6 +245,7 @@ class Search extends React.Component {
       disableRecordCreation
       parentResources={this.props.resources}
       parentMutator={this.props.mutator}
+      notLoadedMessage="Enter search query to show results"
     />);
   }
 }
