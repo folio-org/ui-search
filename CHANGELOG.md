@@ -39,6 +39,7 @@
 * Ignore yarn-error.log file. Refs STRIPES-517.
 * Use `<AppIcon>` for Local/KB icons. Fixes UISE-74.
 * Bump stripes-components dependency to `^3.0.7`, pulling in the STCOM-321 regression fix, which makes ISSN searching work again. Fixes UISE-82. Available from v1.1.2.
+* Removed unused react-bootstrap dep that was pulling in an incompatible babel-runtime release. Refs FOLIO-1425.
 * Change default search-area message not to refer to selecting filter. Fixes UISE-81. Available from v1.1.3.
 * Specify a custom search-not-yet-loaded message that does not misleadingly refer to filters. Fixes UISE-81.
 
