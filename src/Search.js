@@ -191,16 +191,14 @@ class Search extends React.Component {
   render() {
     const resultsFormatter = {
       source: x => (
-        <span>
-          <AppIcon
-            app={x.source === 'local' ? 'inventory' : 'eholdings'}
-            iconKey={x.source === 'local' ? 'instance' : 'app'}
-            size="small"
-          />
-          &nbsp;
-          &nbsp;
+        <AppIcon
+          app={x.source === 'local' ? 'inventory' : 'eholdings'}
+          iconKey={x.source === 'local' ? 'instance' : 'app'}
+          size="small"
+        >
           {x.source === 'local' ? 'Local' : 'KB'}
-        </span>),
+        </AppIcon>
+      ),
       contributor: x => (x.contributor || []).map(y => `'${y.name}'`).join(', '),
     };
 
