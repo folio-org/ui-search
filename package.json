@@ -61,12 +61,12 @@
     ],
     "welcomePageEntries": [
       {
-        "iconName": "happyFace",
+        "iconName": "local-source",
         "headline": "Search local inventory and e-resources together!",
         "description": "The Codex Search application lets you search across multiple sources of physical and electronic resources ina unified way"
       },
       {
-        "iconName": "exclamation",
+        "iconName": "kb",
         "headline": "This is a technology preview",
         "description": "The present version of this application is incomplete, and will subsequently be expanded in a number of ways."
       }
