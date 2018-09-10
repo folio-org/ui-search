@@ -1,15 +1,20 @@
 import _ from 'lodash';
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Pane from '@folio/stripes-components/lib/Pane';
 import Icon from '@folio/stripes-components/lib/Icon';
+import KeyValue from '@folio/stripes-components/lib/KeyValue';
 
 
 function renderContributors(contributors) {
   if (!contributors) return '(none)';
   return (
     <ul>
-      {contributors.map((c, key) => <li key={key}>{c.type}: {c.name}</li>)}
+      {contributors.map((c, key) => (
+        <li key={key}>
+          {`${c.type}: ${c.name}`}
+        </li>
+      ))}
     </ul>
   );
 }
@@ -17,14 +22,31 @@ function renderContributors(contributors) {
 function renderBody(record) {
   if (!record) return '(unknown)';
   return (
-    <ul>
-      <li><b>ID</b>: {record.id}</li>
-      <li><b>Title</b>: {record.title}</li>
-      <li><b>Publisher</b>: {record.publisher}</li>
-      <li><b>Type</b>: {record.type}</li>
-      <li><b>Source</b>: {record.source}</li>
-      <li><b>Contributors</b>: {renderContributors(record.contributor)}</li>
-    </ul>
+    <Fragment>
+      <KeyValue label="ID">
+        {record.id}
+      </KeyValue>
+
+      <KeyValue label="Title">
+        {record.title}
+      </KeyValue>
+
+      <KeyValue label="Publisher">
+        {record.publisher}
+      </KeyValue>
+
+      <KeyValue label="Type">
+        {record.type}
+      </KeyValue>
+
+      <KeyValue label="Source">
+        {record.source}
+      </KeyValue>
+
+      <KeyValue label="Contributors">
+        {renderContributors(record.contributor)}
+      </KeyValue>
+    </Fragment>
   );
 }
 
@@ -53,11 +75,17 @@ class ViewRecord extends React.Component {
       <Pane
         id="pane-recorddetails"
         defaultWidth={this.props.paneWidth}
-        paneTitle={<span><Icon icon="profile" /> {record ? record.title : 'Record'}</span>}
+        paneTitle={(
+          <span>
+            <Icon icon="profile" />
+            {record ? record.title : 'Record'}
+          </span>
+        )}
         lastMenu={<span />}
         dismissible
         onClose={this.props.onClose}
-      >{renderBody(record)}
+      >
+        {renderBody(record)}
       </Pane>
     );
   }
