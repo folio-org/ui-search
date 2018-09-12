@@ -1,12 +1,14 @@
 # Change history for ui-search
 
-## 1.2.0 (IN PROGRESS)
+## 1.2.0 (https://github.com/folio-org/ui-search/tree/v1.2.0) (2018-09-12)
+[Full Changelog](https://github.com/folio-org/ui-search/compare/v1.1.0...v1.2.0)
 
 * Update Okapi dependency, `codex`: 2.0
 * Change app name to "Codex Search". Applies in the application list in the Stripes menu-bar, within the application itself, and in the top-level route `codexsearch`. Fixes UISE-23.
 * New document, [the Codex contract](doc/codex-contract.md), which admittedly sounds like a Dan Brown book. Fixes UISE-28.
 * Dummy up the package file to provide an example of app metadata bundle. Fixes UISE-29, towards STCOR-117.
 * Display source-type icons instead of 'local', 'kb'. Fixes UISE-6.
+* Fix unsupported query to Codex API. Fixes UISE-30.
 * Modify set of available indexes based on selected target types. Fixes UISE-34.
 * Provide indexes suitable for local-only search. Fixes UISE-31.
 * Provide indexes suitable for KB search. Fixes UISE-32.
