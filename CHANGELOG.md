@@ -1,5 +1,9 @@
 # Change history for ui-search
 
+## 1.3.0 (IN PROGRESS)
+
+* Update to stripes-form 0.9.0. Refs STRIPES-555.
+
 ## 1.2.0 (https://github.com/folio-org/ui-search/tree/v1.2.0) (2018-09-12)
 [Full Changelog](https://github.com/folio-org/ui-search/compare/v1.1.0...v1.2.0)
 
