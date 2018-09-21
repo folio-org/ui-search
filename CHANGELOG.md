@@ -43,6 +43,7 @@
 * Bump stripes-components dependency to `^3.0.7`, pulling in the STCOM-321 regression fix, which makes ISSN searching work again. Fixes UISE-82. Available from v1.1.2.
 * Removed unused react-bootstrap dep that was pulling in an incompatible babel-runtime release. Refs FOLIO-1425.
 * Change default search-area message not to refer to selecting filter. Fixes UISE-81. Available from v1.1.3.
+* Updated AppIcon implementation in Search
 
 ## [1.1.0](https://github.com/folio-org/ui-search/tree/v1.1.0) (2017-12-05)
 [Full Changelog](https://github.com/folio-org/ui-search/compare/v1.0.0...v1.1.0)
