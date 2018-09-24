@@ -2,6 +2,8 @@ import _ from 'lodash';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
+import { injectIntl, intlShape } from 'react-intl'; /* eslint-disable-line import/no-extraneous-dependencies */
+import { compose } from 'redux'; /* eslint-disable-line import/no-extraneous-dependencies */
 import { makeQueryFunction, SearchAndSort } from '@folio/stripes-smart-components';
 import { filterState } from '@folio/stripes-components/lib/FilterGroups';
 import AppIcon from '@folio/stripes-components/lib/AppIcon';
@@ -100,6 +102,7 @@ const availableIndexes = [
 
 class Search extends React.Component {
   static propTypes = {
+    intl: intlShape,
     resources: PropTypes.shape({
       query: PropTypes.shape({
         qindex: PropTypes.string,
@@ -188,6 +191,8 @@ class Search extends React.Component {
   }
 
   render() {
+    const { intl } = this.props;
+
     const resultsFormatter = {
       source: x => (
         <AppIcon
@@ -235,6 +240,11 @@ class Search extends React.Component {
       resultCountIncrement={30}
       viewRecordComponent={ViewRecord}
       visibleColumns={['source', 'title', 'contributor']}
+      columnMapping={{
+        source: intl.formatMessage({ id: 'ui-search.column.source' }),
+        title: intl.formatMessage({ id: 'ui-search.column.title' }),
+        contributor: intl.formatMessage({ id: 'ui-search.column.contributor' }),
+      }}
       columnWidths={{ source: '10%', title: '40%', contributor: '50%' }}
       resultsFormatter={resultsFormatter}
       onSelectRow={this.onSelectRow}
@@ -247,4 +257,7 @@ class Search extends React.Component {
   }
 }
 
-export default withRouter(Search);
+export default compose(
+  injectIntl,
+  withRouter,
+)(Search);

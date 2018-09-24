@@ -1,3 +1,6 @@
 {
-  "meta.title": "Codex Search"
+  "meta.title": "Codex Search",
+  "column.source": "Source", 
+  "column.title": "Title",
+  "column.contributor": "Contributor"
 }
