@@ -92,6 +92,7 @@
   "dependencies": {
     "lodash": "^4.17.4",
     "prop-types": "^15.5.10",
+    "react-hot-loader": "^4.3.12",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.0.0"
   },
