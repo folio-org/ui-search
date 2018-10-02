@@ -80,27 +80,25 @@
   },
   "devDependencies": {
     "@folio/eslint-config-stripes": "^3.2.1",
-    "@folio/stripes-cli": "^1.4.0",
-    "@folio/stripes-connect": "^3.1.2",
-    "@folio/stripes-core": "^2.12.0",
-    "@folio/stripes-logger": "^0.0.2",
     "babel-eslint": "^9.0.0",
     "eslint": "^5.5.0",
     "react": "^16.5.0",
     "react-dom": "^16.5.0"
   },
   "dependencies": {
-    "@folio/stripes-components": "^3.1.0",
-    "@folio/stripes-smart-components": "^1.8.0",
+    "@folio/stripes-cli": "^1.4.0",
+    "@folio/stripes": "^1.0.0",
     "lodash": "^4.17.4",
     "prop-types": "^15.5.10",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.0.0"
   },
   "peerDependencies": {
-    "@folio/stripes-connect": "^3.1.2",
-    "@folio/stripes-core": "^2.12.0",
-    "@folio/stripes-logger": "^0.0.2",
+    "@folio/stripes-smart-components": "*",
+    "@folio/stripes-components": "*",
+    "@folio/stripes-connect": "*",
+    "@folio/stripes-core": "*",
+    "@folio/stripes-logger": "*",
     "mocha": "^5.0.0",
     "nightmare": "^2.10.0",
     "react": "*"
