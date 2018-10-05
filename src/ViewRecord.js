@@ -1,10 +1,11 @@
-import _ from 'lodash';
+import get from 'lodash/get';
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import Pane from '@folio/stripes-components/lib/Pane';
-import Icon from '@folio/stripes-components/lib/Icon';
-import KeyValue from '@folio/stripes-components/lib/KeyValue';
-
+import {
+  Pane,
+  Icon,
+  KeyValue,
+} from '@folio/stripes/components';
 
 function renderContributors(contributors) {
   if (!contributors) return '(none)';
@@ -68,7 +69,7 @@ class ViewRecord extends React.Component {
   });
 
   render() {
-    const records = _.get(this.props.resources, ['record', 'records']) || [];
+    const records = get(this.props.resources, ['record', 'records']) || [];
     const record = records[0];
 
     return (

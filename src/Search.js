@@ -2,9 +2,14 @@ import _ from 'lodash';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
-import { makeQueryFunction, SearchAndSort } from '@folio/stripes-smart-components';
-import { filterState } from '@folio/stripes-components/lib/FilterGroups';
-import AppIcon from '@folio/stripes-components/lib/AppIcon';
+import {
+  makeQueryFunction,
+  SearchAndSort
+} from '@folio/stripes/smart-components';
+import {
+  filterState,
+  AppIcon,
+} from '@folio/stripes/components';
 import ViewRecord from './ViewRecord';
 import redirectParams from './redirectParams';
 import packageInfo from '../package';
