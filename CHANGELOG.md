@@ -1,5 +1,7 @@
 # Change history for ui-search
-## 1.3.0
+## 1.3.0 (https://github.com/folio-org/ui-search/tree/v1.3.0) (2018-10-5)
+[Full Changelog](https://github.com/folio-org/ui-search/compare/v1.2.0...v1.3.0)
+
 * Conform references to stripes-components and stripes-smart-components to use new stripes framework.
 
 ## 1.2.0 (https://github.com/folio-org/ui-search/tree/v1.2.0) (2018-09-12)
