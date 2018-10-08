@@ -97,7 +97,7 @@ const availableIndexes = [
   { label: 'ISBN', value: 'identifier/type=isbn' },
   { label: 'ISSN', value: 'identifier/type=issn' },
   { label: 'Contributor', value: 'contributor', localOnly: true },
-  { label: 'Subject', value: 'subject', localOnly: true },
+  { label: 'Subject', value: 'subject' },
   { label: 'Classification', value: 'classification', localOnly: true },
   { label: 'Publisher', value: 'publisher' },
 ];
