@@ -1,6 +1,4 @@
-const Nightmare = require('nightmare');
-const { describe, it, before, after } = require('mocha');
-
+/* global it describe Nightmare before after */
 module.exports.test = (context) => {
   describe('Codex Search by title', function titleSearchTest() {
     const { config, helpers: { login, logout, openApp }, meta: { testVersion } } = context;
