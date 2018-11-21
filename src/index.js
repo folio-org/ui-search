@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Route from 'react-router-dom/Route';
 import Switch from 'react-router-dom/Switch';
+import { hot } from 'react-hot-loader';
 import Search from './Search';
 import Settings from './settings';
 
@@ -36,4 +37,4 @@ class Routing extends React.Component {
   }
 }
 
-export default Routing;
+export default hot(module)(Routing);
