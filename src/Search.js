@@ -200,7 +200,7 @@ class Search extends React.Component {
           iconKey={x.source === 'local' ? 'instance' : 'app'}
           size="small"
         >
-          {x.source === 'local' ? 'Local' : 'KB'}
+          {x.source === 'local' ? 'Local' : x.source }
         </AppIcon>
       ),
       contributor: x => (x.contributor || []).map(y => `'${y.name}'`).join(', '),
