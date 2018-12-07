@@ -1,6 +1,5 @@
-import _ from 'lodash';
-import { filterState } from '@folio/stripes-components/lib/FilterGroups';
-
+import get from 'lodash/get';
+import { filterState } from '@folio/stripes/components';
 
 // 'filters' is a comma-separated list of 'FILTER.VALUE'
 //  e.g. 'available.Available online,source.Local,type.Books,type.eBooks'
@@ -48,9 +47,9 @@ function redirectParamsKB(record, resources) {
     _path: `/eholdings/titles/${record.id}`,
     qindex: null,
     searchType: 'titles',
-    q: _.get(resources, ['query', 'query']),
+    q: get(resources, ['query', 'query']),
     query: null,
-    filters: mapFilters(_.get(resources, ['query', 'filters']), {
+    filters: mapFilters(get(resources, ['query', 'filters']), {
       // We would like to add a configuration for this, but it turns
       // out that the eHoldings app represents its filters in a
       // radically different way from mainstream Stripes apps, and in
@@ -68,7 +67,7 @@ function redirectParamsLocal(record, resources) {
     _path: `/inventory/view/${record.id}`,
     qindex: null,
     // The 'query' parameter takes the same value in inventory as here
-    filters: mapFilters(_.get(resources, ['query', 'filters']), {
+    filters: mapFilters(get(resources, ['query', 'filters']), {
       source: null,
       type: {
         name: 'resource',

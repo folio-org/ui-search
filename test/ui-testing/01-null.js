@@ -1,4 +1,4 @@
-const { describe, it } = require('mocha');
+/* global it describe */
 
 module.exports.test = (context) => {
   describe('Testing apparatus', function nullTest() {
