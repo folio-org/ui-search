@@ -30,6 +30,9 @@ const {
   LANGUAGE,
 } = filterNames;
 
+const LOCAL_SOURCE = sources[0].value;
+const KB_SOURCE = sources[1].value;
+
 export default class Filters extends React.Component {
   static propTypes = {
     activeFilters: PropTypes.objectOf(PropTypes.array),
@@ -78,17 +81,17 @@ export default class Filters extends React.Component {
 
   isHoldingStatusFilterDisabled = () => {
     const influencedFilter = this.props.activeFilters[SOURCE];
-    return influencedFilter && influencedFilter.includes('local');
+    return influencedFilter && influencedFilter.includes(LOCAL_SOURCE);
   }
 
   isLocationFilterDisabled = () => {
     const influencedFilter = this.props.activeFilters[SOURCE];
-    return influencedFilter && influencedFilter.includes('kb');
+    return influencedFilter && influencedFilter.includes(KB_SOURCE);
   }
 
   isLanguageFilterDisabled = () => {
     const influencedFilter = this.props.activeFilters[SOURCE];
-    return influencedFilter && influencedFilter.includes('kb');
+    return influencedFilter && influencedFilter.includes(KB_SOURCE);
   }
 
   render() {

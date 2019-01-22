@@ -173,7 +173,7 @@ class Search extends React.Component {
     const newFilters = [];
 
     for (const filterName in updatedActiveFilters) {
-      if (filterName in updatedActiveFilters) {
+      if (Object.prototype.hasOwnProperty.call(updatedActiveFilters, filterName)) {
         const filtersString = updatedActiveFilters[filterName].map(filterValue => `${filterName}.${filterValue}`);
         newFilters.push(filtersString);
       }
