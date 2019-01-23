@@ -12,103 +12,20 @@ import {
 
 import { filterState } from '@folio/stripes/components';
 
-import packageInfo from '../package';
+import packageInfo from '../../package';
+
+import ViewRecord from '../ViewRecord';
 import {
+  Filters,
   filterNames,
-} from './filters/model';
+} from '../Filters';
 
-import ViewRecord from './ViewRecord';
-import redirectParams from './redirectParams';
-import Filters from './filters';
-import parseFiltersString from './parseFiltersString';
-
-const filterConfig = [
-  {
-    label: 'Source',
-    name: 'source',
-    cql: 'source',
-    values: [
-      { name: 'Local', cql: 'local' },
-      { name: 'Knowledge Base', cql: 'kb' },
-    ],
-    restrictWhenAllSelected: true,
-  },
-  {
-    label: 'Resource Type',
-    name: 'type',
-    cql: 'resourceType',
-    values: [
-      { name: 'Audio', cql: 'audio' },
-      { name: 'Audiobooks', cql: 'audiobooks' },
-      { name: 'Books', cql: 'books' },
-      { name: 'Bookseries', cql: 'bookseries' },
-      { name: 'Databases', cql: 'databases' },
-      { name: 'eBooks', cql: 'ebooks' },
-      { name: 'Kits', cql: 'kits' },
-      { name: 'Maps', cql: 'maps' },
-      { name: 'Music', cql: 'music' },
-      { name: 'Newspapers', cql: 'newspapers' },
-      { name: 'Newsletters', cql: 'newsletters' },
-      { name: 'Periodicals', cql: 'periodicals' },
-      { name: 'Posters', cql: 'posters' },
-      { name: 'Reports', cql: 'reports' },
-      { name: 'Proceedings', cql: 'proceedings' },
-      { name: 'Thesis and Dissertation', cql: 'thesisanddissertation' },
-      { name: 'Unspecified', cql: 'unspecified' },
-      { name: 'Video', cql: 'video' },
-      { name: 'Web Resources', cql: 'webresources' },
-    ],
-  },
-  {
-    label: 'Location',
-    name: 'location',
-    cql: 'location',
-    values: [
-      { name: 'Annex', cql: '1' },
-      { name: 'Main Library', cql: '2' },
-      { name: 'ORWIG ETHNO CD', cql: '3' },
-      { name: 'Popular Reading Collection', cql: '4' },
-      { name: 'SECOND FLOOR', cql: '5' },
-    ],
-  },
-  {
-    label: 'Holding Status',
-    name: 'available',
-    cql: 'ext.selected',
-    values: [
-      { name: 'Available online', cql: 'true' },
-      { name: 'Not Available', cql: 'false' },
-    ],
-  },
-  {
-    label: 'Language',
-    name: 'lang',
-    cql: 'ext.available',
-    values: [
-      { name: 'English', cql: 'en' },
-      { name: 'Spanish', cql: 'es' },
-      { name: 'French', cql: 'fr' },
-      { name: 'German', cql: 'de' },
-      { name: 'Mandarin', cql: 'zh' },
-      { name: 'Russian', cql: 'ru' },
-      { name: 'Arabic', cql: 'ar' },
-    ],
-  },
-];
-
-
-const availableIndexes = [
-  { label: 'Search all fields', value: '', localOnly: true },
-  { label: 'FOLIO ID', value: 'id' },
-  { label: 'Title', value: 'title' },
-  { label: 'Identifier', value: 'identifier' },
-  { label: 'ISBN', value: 'identifier/type=isbn' },
-  { label: 'ISSN', value: 'identifier/type=issn' },
-  { label: 'Contributor', value: 'contributor', localOnly: true },
-  { label: 'Subject', value: 'subject' },
-  { label: 'Classification', value: 'classification', localOnly: true },
-  { label: 'Publisher', value: 'publisher' },
-];
+import {
+  redirectParams,
+  parseFiltersString,
+  availableIndexes,
+  filterConfig,
+} from './model';
 
 
 class Search extends React.Component {
