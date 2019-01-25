@@ -2,6 +2,7 @@
 
 ## 1.5.0 IN PROGRESS
 
+* Upgrade to stripes v2.0.0.
 
 ## [1.4.0](https://github.com/folio-org/ui-search/tree/v1.4.0) (2018-12-13)
 [Full Changelog](https://github.com/folio-org/ui-search/compare/v1.3.0...v1.4.0)
