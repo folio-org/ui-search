@@ -32,7 +32,7 @@ export default [
   },
   {
     name: LANGUAGE,
-    cql: 'ext.available',
+    cql: 'language',
     values: [],
   },
 ];

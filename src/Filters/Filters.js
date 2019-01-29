@@ -90,8 +90,9 @@ export default class Filters extends React.Component {
   }
 
   isLanguageFilterDisabled = () => {
-    const influencedFilter = this.props.activeFilters[SOURCE];
-    return influencedFilter && influencedFilter.includes(KB_SOURCE);
+    const sourceFilter = this.props.activeFilters[SOURCE];
+
+    return !sourceFilter || sourceFilter.includes(KB_SOURCE);
   }
 
   render() {

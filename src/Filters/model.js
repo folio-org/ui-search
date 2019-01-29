@@ -133,30 +133,30 @@ export const holdingStatuses = [
 export const languages = [
   {
     label: 'English',
-    value: 'en'
+    value: 'eng'
   },
   {
     label: 'Spanish',
-    value: 'es'
+    value: 'spa'
   },
   {
     label: 'French',
-    value: 'fr',
+    value: 'fre',
   },
   {
     label: 'German',
-    value: 'de'
+    value: 'ger'
   },
   {
     label: 'Mandarin',
-    value: 'zh'
+    value: 'chi'
   },
   {
     label: 'Russian',
-    value: 'ru'
+    value: 'rus'
   },
   {
     label: 'Arabic',
-    value: 'ar'
+    value: 'ara'
   },
 ];
