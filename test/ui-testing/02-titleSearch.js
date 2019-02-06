@@ -6,6 +6,12 @@ module.exports.test = (context) => {
     const nightmare = new Nightmare(config.nightmare);
     this.timeout(Number(config.test_timeout));
 
+    const forContent = (c) => {
+      const re = new RegExp(c, 'i');
+      return !!Array.from(document.querySelectorAll('#list-search div[role="row"] > a div[role="gridcell"]'))
+        .find(e => re.test(e.textContent));
+    };
+
     describe('Login > Check app > Inventory search > Cross-search > Logout', () => {
       before(done => login(nightmare, config, done));
       after(done => logout(nightmare, config, done));
@@ -24,7 +30,9 @@ module.exports.test = (context) => {
           .select('#input-record-search-qindex', 'title')
           .click('#clickable-filter-source-Local')
           .insert('#input-record-search', 'monster')
-          .wait('div[role="listitem"] div[title*="comics"]')
+          .wait('button[type=submit]')
+          .click('button[type=submit]')
+          .wait(forContent, 'comics')
           .then(done)
           .catch(done);
       });
@@ -33,30 +41,39 @@ module.exports.test = (context) => {
       // If the last one succeeds and this fails, it may be a changing-content issue.
       it('should find "a" title', (done) => {
         nightmare
+          .wait('#clickable-reset-all')
+          .click('#clickable-reset-all')
           .click('#clickable-filter-source-Local')
           .insert('#input-record-search', false)
           .insert('#input-record-search', 'a')
-          .wait('div[role="listitem"] div[title*="14 cows"]') // Inventory
-          .wait('div[role="listitem"] div[title*="Assholeology"]') // ESBCO KB
+          .wait('button[type=submit]')
+          .click('button[type=submit]')
+          .wait(forContent, '14 cows')  // Inventory
+          // .wait(forContent, 'Assholeology')  // EBSCO KB
           .then(done)
           .catch(done);
       });
 
       it('should link into the Inventory app and return', (done) => {
         nightmare
-          .click('div[role="listitem"] div[title*="14 cows"]')
+          .click('div[role="row"] div[title*="14 cows"]')
           .wait('#inventory-module-display')
-          .wait('div[role="gridcell"][title*="Deedy"]')
+          .wait('#list-inventory')
+          .wait((c) => {
+            const re = new RegExp(c, 'i');
+            return !!Array.from(document.querySelectorAll('#list-inventory div[role="row"] > a div[role="gridcell"]'))
+              .find(e => re.test(e.textContent));
+          }, 'Deedy')
           // This would be a good moment to verify the state of the filters
           .back()
-          .wait('div[role="listitem"] div[title*="14 cows"]')
+          .wait(forContent, '14 cows')
           .then(done)
           .catch(done);
       });
 
       it('should link into the eHoldings app and return', (done) => {
         nightmare
-          .click('div[role="listitem"] div[title*="Assholeology"]')
+          .click('div[role="row"] div[title*="Assholeology"]')
           .wait('#eholdings-module-display')
           .wait('h1[data-test-eholdings-details-view-name="title"]')
           .evaluate(() => {
@@ -68,7 +85,7 @@ module.exports.test = (context) => {
           })
           // This would be a good moment to verify the state of the filters
           .back()
-          .wait('div[role="listitem"] div[title*="Assholeology"]')
+          .wait('div[role="row"] div[title*="Assholeology"]')
           .then(done)
           .catch(done);
       });
