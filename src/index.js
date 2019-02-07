@@ -4,7 +4,7 @@ import Route from 'react-router-dom/Route';
 import Switch from 'react-router-dom/Switch';
 import { hot } from 'react-hot-loader';
 import Search from './Search';
-import Settings from './settings';
+import Settings from './Settings';
 
 class Routing extends React.Component {
   static propTypes = {

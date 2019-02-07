@@ -2,103 +2,30 @@ import _ from 'lodash';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
+
+import { AppIcon } from '@folio/stripes/core';
+
 import {
   makeQueryFunction,
   SearchAndSort
 } from '@folio/stripes/smart-components';
+
 import { filterState } from '@folio/stripes/components';
-import { AppIcon } from '@folio/stripes/core';
-import ViewRecord from './ViewRecord';
-import redirectParams from './redirectParams';
-import packageInfo from '../package';
 
-const filterConfig = [
-  {
-    label: 'Source',
-    name: 'source',
-    cql: 'source',
-    values: [
-      { name: 'Local', cql: 'local' },
-      { name: 'Knowledge Base', cql: 'kb' },
-    ],
-    restrictWhenAllSelected: true,
-  },
-  {
-    label: 'Resource Type',
-    name: 'type',
-    cql: 'resourceType',
-    values: [
-      { name: 'Audio', cql: 'audio' },
-      { name: 'Audiobooks', cql: 'audiobooks' },
-      { name: 'Books', cql: 'books' },
-      { name: 'Bookseries', cql: 'bookseries' },
-      { name: 'Databases', cql: 'databases' },
-      { name: 'eBooks', cql: 'ebooks' },
-      { name: 'Kits', cql: 'kits' },
-      { name: 'Maps', cql: 'maps' },
-      { name: 'Music', cql: 'music' },
-      { name: 'Newspapers', cql: 'newspapers' },
-      { name: 'Newsletters', cql: 'newsletters' },
-      { name: 'Periodicals', cql: 'periodicals' },
-      { name: 'Posters', cql: 'posters' },
-      { name: 'Reports', cql: 'reports' },
-      { name: 'Proceedings', cql: 'proceedings' },
-      { name: 'Thesis and Dissertation', cql: 'thesisanddissertation' },
-      { name: 'Unspecified', cql: 'unspecified' },
-      { name: 'Video', cql: 'video' },
-      { name: 'Web Resources', cql: 'webresources' },
-    ],
-  },
-  {
-    label: 'Location',
-    name: 'location',
-    cql: 'location',
-    values: [
-      { name: 'Annex', cql: '1' },
-      { name: 'Main Library', cql: '2' },
-      { name: 'ORWIG ETHNO CD', cql: '3' },
-      { name: 'Popular Reading Collection', cql: '4' },
-      { name: 'SECOND FLOOR', cql: '5' },
-    ],
-  },
-  {
-    label: 'Holding Status',
-    name: 'available',
-    cql: 'ext.selected',
-    values: [
-      { name: 'Available online', cql: 'true' },
-      { name: 'Not Available', cql: 'false' },
-    ],
-  },
-  {
-    label: 'Language',
-    name: 'lang',
-    cql: 'ext.available',
-    values: [
-      { name: 'English', cql: 'en' },
-      { name: 'Spanish', cql: 'es' },
-      { name: 'French', cql: 'fr' },
-      { name: 'German', cql: 'de' },
-      { name: 'Mandarin', cql: 'zh' },
-      { name: 'Russian', cql: 'ru' },
-      { name: 'Arabic', cql: 'ar' },
-    ],
-  },
-];
+import packageInfo from '../../package';
 
+import ViewRecord from '../ViewRecord';
+import {
+  Filters,
+  filterNames,
+} from '../Filters';
 
-const availableIndexes = [
-  { label: 'Search all fields', value: '', localOnly: true },
-  { label: 'FOLIO ID', value: 'id' },
-  { label: 'Title', value: 'title' },
-  { label: 'Identifier', value: 'identifier' },
-  { label: 'ISBN', value: 'identifier/type=isbn' },
-  { label: 'ISSN', value: 'identifier/type=issn' },
-  { label: 'Contributor', value: 'contributor', localOnly: true },
-  { label: 'Subject', value: 'subject' },
-  { label: 'Classification', value: 'classification', localOnly: true },
-  { label: 'Publisher', value: 'publisher' },
-];
+import {
+  redirectParams,
+  parseFiltersString,
+  availableIndexes,
+  filterConfig,
+} from './model';
 
 
 class Search extends React.Component {
@@ -145,17 +72,39 @@ class Search extends React.Component {
     },
   });
 
-  onChangeIndex = (e) => {
-    const qindex = e.target.value;
-    const logger = this.props.stripes.logger;
-    logger.log('action', `changed query-index to '${qindex}'`);
-    this.props.mutator.query.update({ qindex });
-  }
+  onFilterChangeHandler = ({ name, values }) => {
+    const {
+      resources,
+      mutator,
+    } = this.props;
 
-  filtersHaveChanged = (newFilters) => {
-    if (newFilters['source.Local'] && !newFilters['source.Knowledge Base']) return;
+    const filters = parseFiltersString(_.get(resources, 'query.filters', ''));
 
-    const qindex = _.get(this.props.resources.query, 'qindex') || '';
+    const updatedActiveFilters = values.length !== 0
+      ? {
+        ...filters,
+        [name]: values,
+      }
+      : _.omit(filters, [name]);
+
+    const newFilters = [];
+
+    for (const filterName in updatedActiveFilters) {
+      if (Object.prototype.hasOwnProperty.call(updatedActiveFilters, filterName)) {
+        const filtersString = updatedActiveFilters[filterName].map(filterValue => `${filterName}.${filterValue}`);
+        newFilters.push(filtersString);
+      }
+    }
+
+    mutator.query.update({ filters: newFilters.join(',') });
+
+    if (_.get(updatedActiveFilters, [filterNames.SOURCE], []).join('') === 'local') {
+      this.updateQIndex();
+    }
+  };
+
+  updateQIndex() {
+    const qindex = _.get(this.props.resources.query, 'qindex', '');
     let indexObject;
     for (const index of availableIndexes) {
       if (index.value === qindex) {
@@ -176,6 +125,13 @@ class Search extends React.Component {
     }
   }
 
+  onChangeIndex = (e) => {
+    const qindex = e.target.value;
+    const logger = this.props.stripes.logger;
+    logger.log('action', `changed query-index to '${qindex}'`);
+    this.props.mutator.query.update({ qindex });
+  }
+
   onSelectRow = (e, record) => {
     const logger = this.props.stripes.logger;
 
@@ -188,6 +144,15 @@ class Search extends React.Component {
     }
 
     return false;
+  }
+
+  renderFilters = (onChange) => {
+    return (
+      <Filters
+        activeFilters={parseFiltersString(_.get(this.props, 'resources.query.filters', ''))}
+        onChange={onChange}
+      />
+    );
   }
 
   render() {
@@ -207,20 +172,11 @@ class Search extends React.Component {
     const searchableIndexes = availableIndexes.map(index => Object.assign({}, index));
     const filters = _.get(this.props.resources, ['query', 'filters']);
     const filterKeys = filterState(filters);
+
     if (!filterKeys['source.Local'] || filterKeys['source.Knowledge Base']) {
       for (const index of searchableIndexes) {
         if (index.localOnly) index.disabled = true;
       }
-    }
-
-    const disableFilters = {};
-    if (filters === 'source.Local') {
-      disableFilters.available = true;
-    } else if (filters === 'source.Knowledge Base') {
-      disableFilters.location = true;
-      disableFilters.lang = true;
-    } else {
-      disableFilters.lang = true;
     }
 
     return (<SearchAndSort
@@ -230,16 +186,15 @@ class Search extends React.Component {
       selectedIndex={_.get(this.props.resources.query, 'qindex')}
       searchableIndexesPlaceholder={null}
       onChangeIndex={this.onChangeIndex}
+      onFilterChange={this.onFilterChangeHandler}
       maxSortKeys={1}
-      filterConfig={filterConfig}
-      disableFilters={disableFilters}
-      filterChangeCallback={this.filtersHaveChanged}
       initialResultCount={30}
       resultCountIncrement={30}
       viewRecordComponent={ViewRecord}
       visibleColumns={['source', 'title', 'contributor']}
       columnWidths={{ source: '10%', title: '40%', contributor: '50%' }}
       resultsFormatter={resultsFormatter}
+      renderFilters={this.renderFilters}
       onSelectRow={this.onSelectRow}
       viewRecordPerms="users.item.get"
       disableRecordCreation
