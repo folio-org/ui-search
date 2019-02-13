@@ -76,18 +76,27 @@
   "scripts": {
     "start": "stripes serve",
     "lint": "eslint .",
-    "test": "stripes test nightmare"
+    "test": "stripes test karma"
   },
   "devDependencies": {
+    "@bigtest/interactor": "^0.9.2",
+    "@bigtest/mirage": "^0.0.1",
+    "@bigtest/mocha": "^0.5.2",
+    "@bigtest/react": "^0.1.2",
     "@folio/eslint-config-stripes": "^3.2.1",
     "@folio/stripes": "^2.0.0",
     "@folio/stripes-cli": "^1.4.0",
+    "@folio/stripes-core": "^3.0.2",
     "babel-eslint": "^9.0.0",
+    "babel-polyfill": "^6.26.0",
+    "chai": "^4.2.0",
     "eslint": "^5.5.0",
+    "mocha": "^5.2.0",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
     "react-redux": "^5.0.7",
-    "redux": "^4.0.0"
+    "redux": "^4.0.0",
+    "sinon": "^7.2.3"
   },
   "dependencies": {
     "lodash": "^4.17.4",

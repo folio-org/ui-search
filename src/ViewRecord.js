@@ -75,6 +75,7 @@ class ViewRecord extends React.Component {
     return (
       <Pane
         id="pane-recorddetails"
+        data-test-search-instance-details
         defaultWidth={this.props.paneWidth}
         paneTitle={(
           <span>
