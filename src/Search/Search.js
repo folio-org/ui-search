@@ -179,29 +179,33 @@ class Search extends React.Component {
       }
     }
 
-    return (<SearchAndSort
-      packageInfo={packageInfo}
-      objectName="record"
-      searchableIndexes={searchableIndexes}
-      selectedIndex={_.get(this.props.resources.query, 'qindex')}
-      searchableIndexesPlaceholder={null}
-      onChangeIndex={this.onChangeIndex}
-      onFilterChange={this.onFilterChangeHandler}
-      maxSortKeys={1}
-      initialResultCount={30}
-      resultCountIncrement={30}
-      viewRecordComponent={ViewRecord}
-      visibleColumns={['source', 'title', 'contributor']}
-      columnWidths={{ source: '10%', title: '40%', contributor: '50%' }}
-      resultsFormatter={resultsFormatter}
-      renderFilters={this.renderFilters}
-      onSelectRow={this.onSelectRow}
-      viewRecordPerms="users.item.get"
-      disableRecordCreation
-      parentResources={this.props.resources}
-      parentMutator={this.props.mutator}
-      notLoadedMessage="Enter search query to show results"
-    />);
+    return (
+      <div data-test-search>
+        <SearchAndSort
+          packageInfo={packageInfo}
+          objectName="record"
+          searchableIndexes={searchableIndexes}
+          selectedIndex={_.get(this.props.resources.query, 'qindex')}
+          searchableIndexesPlaceholder={null}
+          onChangeIndex={this.onChangeIndex}
+          onFilterChange={this.onFilterChangeHandler}
+          maxSortKeys={1}
+          initialResultCount={30}
+          resultCountIncrement={30}
+          viewRecordComponent={ViewRecord}
+          visibleColumns={['source', 'title', 'contributor']}
+          columnWidths={{ source: '10%', title: '40%', contributor: '50%' }}
+          resultsFormatter={resultsFormatter}
+          renderFilters={this.renderFilters}
+          onSelectRow={this.onSelectRow}
+          viewRecordPerms="users.item.get"
+          disableRecordCreation
+          parentResources={this.props.resources}
+          parentMutator={this.props.mutator}
+          notLoadedMessage="Enter search query to show results"
+        />
+      </div>
+    );
   }
 }
 
