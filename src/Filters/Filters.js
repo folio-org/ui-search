@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
 
 import _ from 'lodash';
 
@@ -103,7 +104,7 @@ export default class Filters extends React.Component {
     return (
       <React.Fragment>
         <Accordion
-          label="Source"
+          label={<FormattedMessage id="ui-search.filters.source" />}
           id={SOURCE}
           name={SOURCE}
           separator={false}
@@ -120,7 +121,7 @@ export default class Filters extends React.Component {
           />
         </Accordion>
         <Accordion
-          label="Resource type"
+          label={<FormattedMessage id="ui-search.filters.resourceType" />}
           id={RESOURCE_TYPE}
           name={RESOURCE_TYPE}
           separator={false}
@@ -137,7 +138,7 @@ export default class Filters extends React.Component {
         </Accordion>
         <Accordion
           disabled={this.isLocationFilterDisabled()}
-          label="Location"
+          label={<FormattedMessage id="ui-search.filters.location" />}
           id={LOCATION}
           name={LOCATION}
           separator={false}
@@ -171,7 +172,7 @@ export default class Filters extends React.Component {
         </Accordion>
         <Accordion
           disabled={this.isLanguageFilterDisabled()}
-          label="Language"
+          label={<FormattedMessage id="ui-search.filters.language" />}
           id={LANGUAGE}
           name={LANGUAGE}
           separator={false}
