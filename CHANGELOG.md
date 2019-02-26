@@ -4,6 +4,7 @@
 
 * Move AppIcon import to `@folio/stripes/core`. Refs STCOM-411.
 * Update integration tests to accommodate MCL aria changes. Fixes UISE-102.
+* Extract static strings for translation. Fixes UIREQ-219.
 
 ## [1.5.0](https://github.com/folio-org/ui-search/tree/v1.5.0) (2019-01-25)
 [Full Changelog](https://github.com/folio-org/ui-search/compare/v1.4.0...v1.5.0)
