@@ -2,6 +2,7 @@ import _ from 'lodash';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
+import { FormattedMessage } from 'react-intl';
 
 import { AppIcon } from '@folio/stripes/core';
 
@@ -202,7 +203,7 @@ class Search extends React.Component {
           disableRecordCreation
           parentResources={this.props.resources}
           parentMutator={this.props.mutator}
-          notLoadedMessage="Enter search query to show results"
+          notLoadedMessage={<FormattedMessage id="ui-search.notLoadedMessage" />}
         />
       </div>
     );

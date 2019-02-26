@@ -1,6 +1,8 @@
 {
   "meta.title": "Codex Search", 
   
+  "notLoadedMessage": "Enter search query to show results",
+
   "filters.source": "Source",
   "filters.resourceType": "Resource type",
   "filters.location": "Location",
