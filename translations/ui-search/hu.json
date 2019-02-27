@@ -1,3 +1,9 @@
 {
-    "meta.title": "Codex keresés"
+    "meta.title": "Codex keresés",
+    "filters.source": "Source",
+    "filters.resourceType": "Resource type",
+    "filters.location": "Location",
+    "filters.holdingStatus": "Holding Status",
+    "filters.language": "Language",
+    "notLoadedMessage": "Enter search query to show results"
 }
