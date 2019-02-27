@@ -1,3 +1,9 @@
 {
-    "meta.title": "بحث كودكس"
+    "meta.title": "بحث كودكس",
+    "filters.source": "مصدر",
+    "filters.resourceType": "نوع المورد",
+    "filters.location": "الموقع",
+    "filters.holdingStatus": "حالة المقتنيات",
+    "filters.language": "اللغة",
+    "notLoadedMessage": "قم بإدخال استعلام بحث لعرض النتائج"
 }

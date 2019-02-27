@@ -1,3 +1,9 @@
 {
-    "meta.title": "Pesquisa no Codex"
+    "meta.title": "Pesquisa no Codex",
+    "filters.source": "Fonte",
+    "filters.resourceType": "Tipo de recurso",
+    "filters.location": "Localização",
+    "filters.holdingStatus": "Status do acervo",
+    "filters.language": "Idioma",
+    "notLoadedMessage": "Insira a consulta de pesquisa para mostrar os resultados"
 }
