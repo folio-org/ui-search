@@ -136,7 +136,7 @@ class Search extends React.Component {
   onSelectRow = (e, record) => {
     const logger = this.props.stripes.logger;
 
-    const obj = redirectParams(record, this.props.resources);
+    const obj = redirectParams(record);
     logger.log('action', `clicked ${record.id}, jumping to '${record.source}' version with obj`, obj);
     if (obj) {
       this.props.mutator.query.update(obj);
