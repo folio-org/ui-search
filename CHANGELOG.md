@@ -1,10 +1,13 @@
 # Change history for ui-search
 
-## 1.6.0 [IN PROGRESS]
+## [1.6.0](https://github.com/folio-org/ui-search/tree/v1.6.0) (2019-03-17)
+[Full Changelog](https://github.com/folio-org/ui-search/compare/v1.5.0...v1.6.0)
 
+* Refactor filters. UISE-97.
 * Move AppIcon import to `@folio/stripes/core`. Refs STCOM-411.
 * Update integration tests to accommodate MCL aria changes. Fixes UISE-102.
 * Extract static strings for translation. Fixes UISE-105.
+* Add test coverage. UISE-90.
 
 ## [1.5.0](https://github.com/folio-org/ui-search/tree/v1.5.0) (2019-01-25)
 [Full Changelog](https://github.com/folio-org/ui-search/compare/v1.4.0...v1.5.0)
