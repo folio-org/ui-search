@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
 import { FormattedMessage } from 'react-intl';
 
-import { AppIcon } from '@folio/stripes/core';
+import { AppIcon, IntlConsumer } from '@folio/stripes/core';
 
 import {
   makeQueryFunction,
@@ -182,29 +182,38 @@ class Search extends React.Component {
 
     return (
       <div data-test-search>
-        <SearchAndSort
-          packageInfo={packageInfo}
-          objectName="record"
-          searchableIndexes={searchableIndexes}
-          selectedIndex={_.get(this.props.resources.query, 'qindex')}
-          searchableIndexesPlaceholder={null}
-          onChangeIndex={this.onChangeIndex}
-          onFilterChange={this.onFilterChangeHandler}
-          maxSortKeys={1}
-          initialResultCount={30}
-          resultCountIncrement={30}
-          viewRecordComponent={ViewRecord}
-          visibleColumns={['source', 'title', 'contributor']}
-          columnWidths={{ source: '10%', title: '40%', contributor: '50%' }}
-          resultsFormatter={resultsFormatter}
-          renderFilters={this.renderFilters}
-          onSelectRow={this.onSelectRow}
-          viewRecordPerms="users.item.get"
-          disableRecordCreation
-          parentResources={this.props.resources}
-          parentMutator={this.props.mutator}
-          notLoadedMessage={<FormattedMessage id="ui-search.notLoadedMessage" />}
-        />
+        <IntlConsumer>
+          {intl => (
+            <SearchAndSort
+              packageInfo={packageInfo}
+              objectName="record"
+              searchableIndexes={searchableIndexes}
+              selectedIndex={_.get(this.props.resources.query, 'qindex')}
+              searchableIndexesPlaceholder={null}
+              onChangeIndex={this.onChangeIndex}
+              onFilterChange={this.onFilterChangeHandler}
+              maxSortKeys={1}
+              initialResultCount={30}
+              resultCountIncrement={30}
+              viewRecordComponent={ViewRecord}
+              visibleColumns={['source', 'title', 'contributor']}
+              columnMapping={{
+                source: intl.formatMessage({ id: 'ui-search.header.source' }),
+                title: intl.formatMessage({ id: 'ui-search.header.title' }),
+                contributor: intl.formatMessage({ id: 'ui-search.header.contributor' }),
+              }}
+              columnWidths={{ source: '10%', title: '40%', contributor: '50%' }}
+              resultsFormatter={resultsFormatter}
+              renderFilters={this.renderFilters}
+              onSelectRow={this.onSelectRow}
+              viewRecordPerms="users.item.get"
+              disableRecordCreation
+              parentResources={this.props.resources}
+              parentMutator={this.props.mutator}
+              notLoadedMessage={<FormattedMessage id="ui-search.notLoadedMessage" />}
+            />
+          )}
+        </IntlConsumer>
       </div>
     );
   }
