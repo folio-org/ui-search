@@ -5,5 +5,8 @@
     "filters.location": "الموقع",
     "filters.holdingStatus": "حالة المقتنيات",
     "filters.language": "اللغة",
-    "notLoadedMessage": "قم بإدخال استعلام بحث لعرض النتائج"
+    "notLoadedMessage": "قم بإدخال استعلام بحث لعرض النتائج",
+    "header.source": "Source",
+    "header.title": "Title",
+    "header.contributor": "Contributor"
 }
