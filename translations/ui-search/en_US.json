@@ -5,5 +5,8 @@
     "filters.location": "Location",
     "filters.holdingStatus": "Holding status",
     "filters.language": "Language",
-    "notLoadedMessage": "Enter search query to show results"
+    "notLoadedMessage": "Enter search query to show results",
+    "header.source": "Source",
+    "header.title": "Title",
+    "header.contributor": "Contributor"
 }
