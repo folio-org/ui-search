@@ -6,7 +6,7 @@
     "filters.holdingStatus": "حالة المقتنيات",
     "filters.language": "اللغة",
     "notLoadedMessage": "قم بإدخال استعلام بحث لعرض النتائج",
-    "header.source": "Source",
-    "header.title": "Title",
-    "header.contributor": "Contributor"
+    "header.source": "المصدر",
+    "header.title": "العنوان",
+    "header.contributor": "المساهم"
 }
