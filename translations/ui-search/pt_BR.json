@@ -6,7 +6,7 @@
     "filters.holdingStatus": "Status do acervo",
     "filters.language": "Idioma",
     "notLoadedMessage": "Insira a consulta de pesquisa para mostrar os resultados",
-    "header.source": "Source",
-    "header.title": "Title",
-    "header.contributor": "Contributor"
+    "header.source": "Fonte",
+    "header.title": "Título",
+    "header.contributor": "Colaborador"
 }
