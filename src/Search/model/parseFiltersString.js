@@ -1,5 +1,5 @@
 export default function parseFiltersString(filters) {
-  if (filters.length === 0) {
+  if (!filters || filters.length === 0) {
     return undefined;
   }
 
