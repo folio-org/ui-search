@@ -1,6 +1,7 @@
 # Change history for ui-search
 
-## 1.7.0 (IN PROGRESS)
+## [1.6.1](https://github.com/folio-org/ui-search/tree/v1.6.1) (2019-04-11)
+[Full Changelog](https://github.com/folio-org/ui-search/compare/v1.6.0...v1.6.1)
 
 * Gracefully handle missing filters. Refs UISE-110.
 * Correctly link to eholdings. Refs UISE-110.
