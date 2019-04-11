@@ -2,7 +2,7 @@
 
 function redirectParamsKB(record) {
   const obj = {
-    _path: `/inventory/view/${record.id}`,
+    _path: `/eholdings/titles/${record.id}`,
     qindex: null,
     filters: null,
     sort: null,
