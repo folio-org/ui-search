@@ -2,6 +2,7 @@
 
 ## 1.7.0 (IN PROGRESS)
 
+* Translate column headers. Fixes UISE-107.
 * Gracefully handle missing filters. Refs UISE-110.
 * Correctly link to eholdings. Refs UISE-110.
 
