@@ -1,0 +1,12 @@
+{
+    "meta.title": "Codex Search",
+    "filters.source": "Source",
+    "filters.resourceType": "Resource type",
+    "filters.location": "Location",
+    "filters.holdingStatus": "Holding Status",
+    "filters.language": "Language",
+    "notLoadedMessage": "Enter search query to show results",
+    "header.source": "Source",
+    "header.title": "Title",
+    "header.contributor": "Contributor"
+}
