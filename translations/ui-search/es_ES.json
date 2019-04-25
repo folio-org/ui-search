@@ -6,7 +6,7 @@
     "filters.holdingStatus": "Holding Status",
     "filters.language": "Language",
     "notLoadedMessage": "Enter search query to show results",
-    "header.source": "Source",
-    "header.title": "Title",
-    "header.contributor": "Contributor"
+    "header.source": "Fuente",
+    "header.title": "Título",
+    "header.contributor": "Colaborador"
 }
