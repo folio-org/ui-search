@@ -1,5 +1,9 @@
 # Change history for ui-search
 
+## 1.8.0 (in progress)
+
+* i18n search-field menu. Fixes UISE-107.
+
 ## [1.7.0](https://github.com/folio-org/ui-search/tree/v1.7.0) (2019-05-09)
 [Full Changelog](https://github.com/folio-org/ui-search/compare/v1.6.0...v1.7.0)
 
