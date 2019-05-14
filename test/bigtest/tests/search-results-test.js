@@ -21,6 +21,34 @@ describe('Search results', () => {
     expect(Search.instances().length).to.equal(0);
   });
 
+  it('has a search filter with a "title" option', function () {
+    expect(Search.filter.title).to.equal('Title');
+  });
+
+  it('has a search filter with a "Folio ID" option', function () {
+    expect(Search.filter.folioId).to.equal('FOLIO ID');
+  });
+
+  it('has a search filter with an "identifier" option', function () {
+    expect(Search.filter.identifier).to.equal('Identifier');
+  });
+
+  it('has a search filter with a "isbn" option', function () {
+    expect(Search.filter.isbn).to.equal('ISBN');
+  });
+
+  it('has a search filter with a "issn" option', function () {
+    expect(Search.filter.issn).to.equal('ISSN');
+  });
+
+  it('has a search filter with a "subject" option', function () {
+    expect(Search.filter.subject).to.equal('Subject');
+  });
+
+  it('has a search filter with a "publisher" option', function () {
+    expect(Search.filter.publisher).to.equal('Publisher');
+  });
+
   describe('on search', () => {
     beforeEach(async () => {
       await Search
