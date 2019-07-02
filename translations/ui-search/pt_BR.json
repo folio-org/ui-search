@@ -8,5 +8,15 @@
     "notLoadedMessage": "Insira a consulta de pesquisa para mostrar os resultados",
     "header.source": "Fonte",
     "header.title": "Título",
-    "header.contributor": "Colaborador"
+    "header.contributor": "Autor",
+    "searchableIndexes.all": "Pesquisar em todos os campos",
+    "searchableIndexes.folioId": "ID do FOLIO",
+    "searchableIndexes.title": "Título",
+    "searchableIndexes.identifier": "Identificador",
+    "searchableIndexes.isbn": "ISBN",
+    "searchableIndexes.issn": "ISSN",
+    "searchableIndexes.contributor": "Autor",
+    "searchableIndexes.subject": "Assunto",
+    "searchableIndexes.classification": "Classificação",
+    "searchableIndexes.publisher": "Editora"
 }
