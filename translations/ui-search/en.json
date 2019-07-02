@@ -11,5 +11,16 @@
 
   "header.source": "Source",
   "header.title": "Title",
-  "header.contributor": "Contributor"
+  "header.contributor": "Contributor",
+
+  "searchableIndexes.all": "Search all fields",
+  "searchableIndexes.folioId": "FOLIO ID",
+  "searchableIndexes.title": "Title",
+  "searchableIndexes.identifier": "Identifier",
+  "searchableIndexes.isbn": "ISBN",
+  "searchableIndexes.issn": "ISSN",
+  "searchableIndexes.contributor": "Contributor",
+  "searchableIndexes.subject": "Subject",
+  "searchableIndexes.classification": "Classification",
+  "searchableIndexes.publisher": "Publisher"
 }

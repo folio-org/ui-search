@@ -2,7 +2,7 @@ import _ from 'lodash';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 
 import { AppIcon, IntlConsumer } from '@folio/stripes/core';
 
@@ -47,6 +47,7 @@ class Search extends React.Component {
         log: PropTypes.func.isRequired,
       }).isRequired,
     }).isRequired,
+    intl: intlShape,
   }
 
   static manifest = Object.freeze({
@@ -180,6 +181,16 @@ class Search extends React.Component {
       }
     }
 
+    const translatedSearchableIndexes = searchableIndexes.map(i => {
+      const { value, label, ...rest } = i;
+      return {
+        label: this.props.intl.formatMessage({ id: `ui-search.searchableIndexes.${label}` }),
+        value,
+        ...rest
+      };
+    });
+
+
     return (
       <div data-test-search>
         <IntlConsumer>
@@ -187,7 +198,7 @@ class Search extends React.Component {
             <SearchAndSort
               packageInfo={packageInfo}
               objectName="record"
-              searchableIndexes={searchableIndexes}
+              searchableIndexes={translatedSearchableIndexes}
               selectedIndex={_.get(this.props.resources.query, 'qindex')}
               searchableIndexesPlaceholder={null}
               onChangeIndex={this.onChangeIndex}
@@ -219,4 +230,4 @@ class Search extends React.Component {
   }
 }
 
-export default withRouter(Search);
+export default withRouter(injectIntl(Search));
