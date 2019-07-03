@@ -9,14 +9,14 @@
     "header.source": "المصدر",
     "header.title": "العنوان",
     "header.contributor": "المساهم",
-    "searchableIndexes.all": "Search all fields",
-    "searchableIndexes.folioId": "FOLIO ID",
-    "searchableIndexes.title": "Title",
-    "searchableIndexes.identifier": "Identifier",
+    "searchableIndexes.all": "بحث كل الحقول",
+    "searchableIndexes.folioId": "معرّف فوليو",
+    "searchableIndexes.title": "العنوان",
+    "searchableIndexes.identifier": "المعرّف",
     "searchableIndexes.isbn": "ISBN",
     "searchableIndexes.issn": "ISSN",
-    "searchableIndexes.contributor": "Contributor",
-    "searchableIndexes.subject": "Subject",
-    "searchableIndexes.classification": "Classification",
-    "searchableIndexes.publisher": "Publisher"
+    "searchableIndexes.contributor": "المساهم",
+    "searchableIndexes.subject": "الموضوع",
+    "searchableIndexes.classification": "التصنيف",
+    "searchableIndexes.publisher": "الناشر"
 }
