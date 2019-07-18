@@ -13,7 +13,7 @@
     "searchableIndexes.folioId": "معرّف فوليو",
     "searchableIndexes.title": "العنوان",
     "searchableIndexes.identifier": "المعرّف",
-    "searchableIndexes.isbn": "ISBN",
+    "searchableIndexes.isbn": "ردمك",
     "searchableIndexes.issn": "ISSN",
     "searchableIndexes.contributor": "المساهم",
     "searchableIndexes.subject": "الموضوع",
