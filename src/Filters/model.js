@@ -8,90 +8,90 @@ export const filterNames = {
 
 export const resourceTypes = [
   {
-    label: 'Audio',
+    label: 'audio',
     value: 'audio',
   },
   {
-    label: 'Books',
+    label: 'books',
     value: 'books',
   },
   {
-    label: 'Audiobooks',
+    label: 'audiobooks',
     value: 'audiobooks',
   },
   {
-    label: 'Bookseries',
+    label: 'bookseries',
     value: 'bookseries',
   },
   {
-    label: 'Databases',
+    label: 'databases',
     value: 'databases',
   },
   {
-    label: 'eBooks',
+    label: 'ebooks',
     value: 'ebooks',
   },
   {
-    label: 'Kits',
+    label: 'kits',
     value: 'kits',
   },
   {
-    label: 'Maps',
+    label: 'maps',
     value: 'maps',
   },
   {
-    label: 'Music',
+    label: 'music',
     value: 'music',
   },
   {
-    label: 'Newspapers',
+    label: 'newspapers',
     value: 'newspapers',
   },
   {
-    label: 'Newsletters',
+    label: 'newsletters',
     value: 'newsletters',
   },
   {
-    label: 'Periodicals',
+    label: 'periodicals',
     value: 'periodicals',
   },
   {
-    label: 'Posters',
+    label: 'posters',
     value: 'posters',
   },
   {
-    label: 'Reports',
+    label: 'reports',
     value: 'reports',
   },
   {
-    label: 'Proceedings',
+    label: 'proceedings',
     value: 'proceedings',
   },
   {
-    label: 'Thesis and Dissertation',
+    label: 'thesisAndDissertation',
     value: 'thesisanddissertation',
   },
   {
-    label: 'Unspecified',
+    label: 'unspecified',
     value: 'unspecified',
   },
   {
-    label: 'Video',
+    label: 'video',
     value: 'video',
   },
   {
-    label: 'Web Resources',
+    label: 'webResources',
     value: 'webresources',
   },
 ];
 
 export const sources = [
   {
-    label: 'Local',
+    label: 'local',
     value: 'local',
   },
   {
-    label: 'Knowledge Base',
+    label: 'knowledgeBase',
     value: 'kb',
   },
 ];
@@ -114,49 +114,49 @@ export const locations = [
     value: '4',
   },
   {
-    label: 'SECOND FLOOR',
+    label: 'Second Floor',
     value: '5',
   },
 ];
 
 export const holdingStatuses = [
   {
-    label: 'Available online',
+    label: 'availableOnline',
     value: 'true',
   },
   {
-    label: 'Not Available',
+    label: 'notAvailable',
     value: 'false',
   },
 ];
 
 export const languages = [
   {
-    label: 'English',
+    label: 'english',
     value: 'eng'
   },
   {
-    label: 'Spanish',
+    label: 'spanish',
     value: 'spa'
   },
   {
-    label: 'French',
+    label: 'french',
     value: 'fre',
   },
   {
-    label: 'German',
+    label: 'german',
     value: 'ger'
   },
   {
-    label: 'Mandarin',
+    label: 'mandarin',
     value: 'chi'
   },
   {
-    label: 'Russian',
+    label: 'russian',
     value: 'rus'
   },
   {
-    label: 'Arabic',
+    label: 'arabic',
     value: 'ara'
   },
 ];

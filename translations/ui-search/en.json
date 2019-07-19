@@ -22,5 +22,39 @@
   "searchableIndexes.contributor": "Contributor",
   "searchableIndexes.subject": "Subject",
   "searchableIndexes.classification": "Classification",
-  "searchableIndexes.publisher": "Publisher"
+  "searchableIndexes.publisher": "Publisher",
+
+  "filters.sources.local": "Local",
+  "filters.sources.knowledgeBase": "Knowledge Base",
+
+  "filters.resourceTypes.audio": "Audio",
+  "filters.resourceTypes.books": "Books",
+  "filters.resourceTypes.audiobooks": "Audiobooks",
+  "filters.resourceTypes.bookseries": "Bookseries",
+  "filters.resourceTypes.databases": "Databases",
+  "filters.resourceTypes.ebooks": "eBooks",
+  "filters.resourceTypes.kits": "Kits",
+  "filters.resourceTypes.maps": "Maps",
+  "filters.resourceTypes.music": "Music",
+  "filters.resourceTypes.newspapers": "Newspapers",
+  "filters.resourceTypes.newsletters": "Newsletters",
+  "filters.resourceTypes.periodicals": "Periodicals",
+  "filters.resourceTypes.posters": "Posters",
+  "filters.resourceTypes.reports": "Reports",
+  "filters.resourceTypes.proceedings": "Proceedings",
+  "filters.resourceTypes.thesisAndDissertation": "Thesis and Dissertation",
+  "filters.resourceTypes.unspecified": "Unspecified",
+  "filters.resourceTypes.video": "Video",
+  "filters.resourceTypes.webResources": "Web Resources",
+
+  "filters.holdingStatus.availableOnline": "Available online",
+  "filters.holdingStatus.notAvailable": "Not available",
+
+  "filters.languages.english": "English",
+  "filters.languages.spanish": "Spanish",
+  "filters.languages.french": "French",
+  "filters.languages.german": "German",
+  "filters.languages.mandarin": "Mandarin",
+  "filters.languages.russian": "Russian",
+  "filters.languages.arabic": "Arabic"
 }
