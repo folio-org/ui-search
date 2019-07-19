@@ -15,6 +15,10 @@ import {
 } from '@folio/stripes/smart-components';
 
 import {
+  IntlConsumer
+} from '@folio/stripes/core';
+
+import {
   sources,
   locations,
   resourceTypes,
@@ -59,6 +63,20 @@ export default class Filters extends React.Component {
     return _.get(this.props.activeFilters, [filterName, 'length']) > 0;
   }
 
+  getSourceDataOptions(intl) {
+    return sources.map((source) => ({
+      label: intl.formatMessage({ id: `ui-search.filters.sources.${source.value}` }),
+      value: source.value,
+    }));
+  }
+
+  getResourceTypeDataOptions(intl) {
+    return resourceTypes.map((resourceType) => ({
+      label: intl.formatMessage({ id: `ui-search.filters.resourceTypes.${resourceType.value}` }),
+      value: resourceType.value,
+    }));
+  }
+
   getLocationDataOptions() {
     return locations.map((location) => ({
       ...location,
@@ -66,16 +84,18 @@ export default class Filters extends React.Component {
     }));
   }
 
-  getHoldingStatusDataOptions() {
+  getHoldingStatusDataOptions(intl) {
     return holdingStatuses.map((holdingStatus) => ({
-      ...holdingStatus,
+      label: intl.formatMessage({ id: `ui-search.filters.holdingStatus.${holdingStatus.label}` }),
+      value: holdingStatus.value,
       disabled: this.isHoldingStatusFilterDisabled(),
     }));
   }
 
-  getLanguageDataOptions() {
+  getLanguageDataOptions(intl) {
     return languages.map((language) => ({
-      ...language,
+      label: intl.formatMessage({ id: `ui-search.filters.languages.${language.value}` }),
+      value: language.value,
       disabled: this.isLanguageFilterDisabled(),
     }));
   }
@@ -112,13 +132,17 @@ export default class Filters extends React.Component {
           displayClearButton={this.isFilterNotEmpty(SOURCE)}
           onClearFilter={this.createOnClearFilterHandler(SOURCE)}
         >
-          <CheckboxFilter
-            name={SOURCE}
-            fullWidth
-            dataOptions={sources}
-            selectedValues={activeFilters[SOURCE]}
-            onChange={this.onChangeHandler}
-          />
+          <IntlConsumer>
+            {intl => (
+              <CheckboxFilter
+                name={SOURCE}
+                fullWidth
+                dataOptions={this.getSourceDataOptions(intl)}
+                selectedValues={activeFilters[SOURCE]}
+                onChange={this.onChangeHandler}
+              />
+            )}
+          </IntlConsumer>
         </Accordion>
         <Accordion
           label={<FormattedMessage id="ui-search.filters.resourceType" />}
@@ -129,12 +153,16 @@ export default class Filters extends React.Component {
           displayClearButton={this.isFilterNotEmpty(RESOURCE_TYPE)}
           onClearFilter={this.createOnClearFilterHandler(RESOURCE_TYPE)}
         >
-          <CheckboxFilter
-            name={RESOURCE_TYPE}
-            dataOptions={resourceTypes}
-            selectedValues={activeFilters[RESOURCE_TYPE]}
-            onChange={this.onChangeHandler}
-          />
+          <IntlConsumer>
+            {intl => (
+              <CheckboxFilter
+                name={RESOURCE_TYPE}
+                dataOptions={this.getResourceTypeDataOptions(intl)}
+                selectedValues={activeFilters[RESOURCE_TYPE]}
+                onChange={this.onChangeHandler}
+              />
+            )}
+          </IntlConsumer>
         </Accordion>
         <Accordion
           disabled={this.isLocationFilterDisabled()}
@@ -163,12 +191,16 @@ export default class Filters extends React.Component {
           displayClearButton={this.isFilterNotEmpty(HOLDING_STATUS)}
           onClearFilter={this.createOnClearFilterHandler(HOLDING_STATUS)}
         >
-          <CheckboxFilter
-            name={HOLDING_STATUS}
-            dataOptions={this.getHoldingStatusDataOptions()}
-            selectedValues={activeFilters[HOLDING_STATUS]}
-            onChange={this.onChangeHandler}
-          />
+          <IntlConsumer>
+            {intl => (
+              <CheckboxFilter
+                name={HOLDING_STATUS}
+                dataOptions={this.getHoldingStatusDataOptions(intl)}
+                selectedValues={activeFilters[HOLDING_STATUS]}
+                onChange={this.onChangeHandler}
+              />
+            )}
+          </IntlConsumer>
         </Accordion>
         <Accordion
           disabled={this.isLanguageFilterDisabled()}
@@ -180,12 +212,16 @@ export default class Filters extends React.Component {
           displayClearButton={this.isFilterNotEmpty(LANGUAGE)}
           onClearFilter={this.createOnClearFilterHandler(LANGUAGE)}
         >
-          <MultiSelectionFilter
-            name={LANGUAGE}
-            dataOptions={this.getLanguageDataOptions()}
-            selectedValues={activeFilters[LANGUAGE]}
-            onChange={this.onChangeHandler}
-          />
+          <IntlConsumer>
+            {intl => (
+              <MultiSelectionFilter
+                name={LANGUAGE}
+                dataOptions={this.getLanguageDataOptions(intl)}
+                selectedValues={activeFilters[LANGUAGE]}
+                onChange={this.onChangeHandler}
+              />
+            )}
+          </IntlConsumer>
         </Accordion>
       </React.Fragment>
     );

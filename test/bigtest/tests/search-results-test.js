@@ -5,7 +5,15 @@ import { expect } from 'chai';
 import setupApplication from '../helpers/setup-application';
 import SearchInteractor from '../interactors/search';
 
-describe('Search results', () => {
+import {
+  resourceTypes,
+  sources,
+  locations,
+  holdingStatuses,
+  languages,
+} from '../../../src/Filters/model';
+
+describe.only('Search results', () => {
   setupApplication();
 
   const Search = new SearchInteractor();
@@ -47,6 +55,36 @@ describe('Search results', () => {
 
   it('has a search filter with a "publisher" option', function () {
     expect(Search.filter.publisher).to.equal('Publisher');
+  });
+
+  describe('Renders a Source menu', () => {
+    it('should display source filters', () => {
+      expect(Search.sourceList.items().length).to.equal(sources.length);
+    });
+  });
+
+  describe('Renders a Resource type menu', () => {
+    it('should display resource type filters', () => {
+      expect(Search.resourceTypeList.items().length).to.equal(resourceTypes.length);
+    });
+  });
+
+  describe('Renders a Location menu', () => {
+    it('should display location filters', () => {
+      expect(Search.locationList.items().length).to.equal(locations.length);
+    });
+  });
+
+  describe('Renders a Holding Status menu', () => {
+    it('should display holding status activeFilters', () => {
+      expect(Search.holdingStatusList.items().length).to.equal(holdingStatuses.length);
+    });
+  });
+
+  describe('Renders a Languages menu', () => {
+    it('should display language filters', () => {
+      expect(Search.languageList().length).to.equal(languages.length);
+    });
   });
 
   describe('on search', () => {
