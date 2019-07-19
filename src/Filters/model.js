@@ -8,90 +8,69 @@ export const filterNames = {
 
 export const resourceTypes = [
   {
-    label: 'audio',
     value: 'audio',
   },
   {
-    label: 'books',
     value: 'books',
   },
   {
-    label: 'audiobooks',
     value: 'audiobooks',
   },
   {
-    label: 'bookseries',
     value: 'bookseries',
   },
   {
-    label: 'databases',
     value: 'databases',
   },
   {
-    label: 'ebooks',
     value: 'ebooks',
   },
   {
-    label: 'kits',
     value: 'kits',
   },
   {
-    label: 'maps',
     value: 'maps',
   },
   {
-    label: 'music',
     value: 'music',
   },
   {
-    label: 'newspapers',
     value: 'newspapers',
   },
   {
-    label: 'newsletters',
     value: 'newsletters',
   },
   {
-    label: 'periodicals',
     value: 'periodicals',
   },
   {
-    label: 'posters',
     value: 'posters',
   },
   {
-    label: 'reports',
     value: 'reports',
   },
   {
-    label: 'proceedings',
     value: 'proceedings',
   },
   {
-    label: 'thesisAndDissertation',
     value: 'thesisanddissertation',
   },
   {
-    label: 'unspecified',
     value: 'unspecified',
   },
   {
-    label: 'video',
     value: 'video',
   },
   {
-    label: 'webResources',
     value: 'webresources',
   },
 ];
 
 export const sources = [
   {
-    label: 'local',
     value: 'local',
   },
   {
-    label: 'knowledgeBase',
     value: 'kb',
   },
 ];
@@ -132,31 +111,24 @@ export const holdingStatuses = [
 
 export const languages = [
   {
-    label: 'english',
     value: 'eng'
   },
   {
-    label: 'spanish',
     value: 'spa'
   },
   {
-    label: 'french',
     value: 'fre',
   },
   {
-    label: 'german',
     value: 'ger'
   },
   {
-    label: 'mandarin',
     value: 'chi'
   },
   {
-    label: 'russian',
     value: 'rus'
   },
   {
-    label: 'arabic',
     value: 'ara'
   },
 ];
