@@ -25,7 +25,7 @@
   "searchableIndexes.publisher": "Publisher",
 
   "filters.sources.local": "Local",
-  "filters.sources.knowledgeBase": "Knowledge Base",
+  "filters.sources.kb": "Knowledge Base",
 
   "filters.resourceTypes.audio": "Audio",
   "filters.resourceTypes.books": "Books",
@@ -42,19 +42,19 @@
   "filters.resourceTypes.posters": "Posters",
   "filters.resourceTypes.reports": "Reports",
   "filters.resourceTypes.proceedings": "Proceedings",
-  "filters.resourceTypes.thesisAndDissertation": "Thesis and Dissertation",
+  "filters.resourceTypes.thesisanddissertation": "Thesis and Dissertation",
   "filters.resourceTypes.unspecified": "Unspecified",
   "filters.resourceTypes.video": "Video",
-  "filters.resourceTypes.webResources": "Web Resources",
+  "filters.resourceTypes.webresources": "Web Resources",
 
   "filters.holdingStatus.availableOnline": "Available online",
   "filters.holdingStatus.notAvailable": "Not available",
 
-  "filters.languages.english": "English",
-  "filters.languages.spanish": "Spanish",
-  "filters.languages.french": "French",
-  "filters.languages.german": "German",
-  "filters.languages.mandarin": "Mandarin",
-  "filters.languages.russian": "Russian",
-  "filters.languages.arabic": "Arabic"
+  "filters.languages.eng": "English",
+  "filters.languages.spa": "Spanish",
+  "filters.languages.fre": "French",
+  "filters.languages.ger": "German",
+  "filters.languages.chi": "Mandarin",
+  "filters.languages.rus": "Russian",
+  "filters.languages.ara": "Arabic"
 }

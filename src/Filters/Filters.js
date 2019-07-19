@@ -65,14 +65,14 @@ export default class Filters extends React.Component {
 
   getSourceDataOptions(intl) {
     return sources.map((source) => ({
-      label: intl.formatMessage({ id: `ui-search.filters.sources.${source.label}` }),
+      label: intl.formatMessage({ id: `ui-search.filters.sources.${source.value}` }),
       value: source.value,
     }));
   }
 
   getResourceTypeDataOptions(intl) {
     return resourceTypes.map((resourceType) => ({
-      label: intl.formatMessage({ id: `ui-search.filters.resourceTypes.${resourceType.label}` }),
+      label: intl.formatMessage({ id: `ui-search.filters.resourceTypes.${resourceType.value}` }),
       value: resourceType.value,
     }));
   }
@@ -94,7 +94,7 @@ export default class Filters extends React.Component {
 
   getLanguageDataOptions(intl) {
     return languages.map((language) => ({
-      label: intl.formatMessage({ id: `ui-search.filters.languages.${language.label}` }),
+      label: intl.formatMessage({ id: `ui-search.filters.languages.${language.value}` }),
       value: language.value,
       disabled: this.isLanguageFilterDisabled(),
     }));
