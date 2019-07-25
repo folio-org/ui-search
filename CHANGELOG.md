@@ -1,8 +1,9 @@
 # Change history for ui-search
 
-## 1.8.0 (in progress)
+## [1.8.0](https://github.com/folio-org/ui-search/tree/v1.8.0) (2019-07-24)
+[Full Changelog](https://github.com/folio-org/ui-search/compare/v1.7.0...v1.8.0)
 
-* i18n search-field menu items. Fixes UISE-107.
+* Support translation of filtering option labels. Refs UISE-107.
 
 ## [1.7.0](https://github.com/folio-org/ui-search/tree/v1.7.0) (2019-05-09)
 [Full Changelog](https://github.com/folio-org/ui-search/compare/v1.6.0...v1.7.0)
