@@ -1,10 +1,10 @@
 {
     "meta.title": "Codex Search",
-    "filters.source": "Source",
+    "filters.source": "Fonte",
     "filters.resourceType": "Tipologia risorsa",
     "filters.location": "Location",
     "filters.holdingStatus": "Holding Status",
-    "filters.language": "Language",
+    "filters.language": "Lingua",
     "notLoadedMessage": "Enter search query to show results",
     "header.source": "Source",
     "header.title": "Title",
@@ -42,11 +42,11 @@
     "filters.resourceTypes.webresources": "Web Resources",
     "filters.holdingStatus.availableOnline": "Available online",
     "filters.holdingStatus.notAvailable": "Not available",
-    "filters.languages.eng": "English",
-    "filters.languages.spa": "Spanish",
-    "filters.languages.fre": "French",
-    "filters.languages.ger": "German",
-    "filters.languages.chi": "Mandarin",
-    "filters.languages.rus": "Russian",
-    "filters.languages.ara": "Arabic"
+    "filters.languages.eng": "Inglese",
+    "filters.languages.spa": "Spagnolo",
+    "filters.languages.fre": "Francese",
+    "filters.languages.ger": "Tedesco",
+    "filters.languages.chi": "Mandarino",
+    "filters.languages.rus": "Russo",
+    "filters.languages.ara": "Arabo"
 }
