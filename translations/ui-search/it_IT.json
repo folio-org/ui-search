@@ -24,7 +24,7 @@
     "filters.resourceTypes.audio": "Audio",
     "filters.resourceTypes.books": "Libri",
     "filters.resourceTypes.audiobooks": "Audiolibri",
-    "filters.resourceTypes.bookseries": "Serie editoriale",
+    "filters.resourceTypes.bookseries": "Serie",
     "filters.resourceTypes.databases": "Banche dati",
     "filters.resourceTypes.ebooks": "eBooks",
     "filters.resourceTypes.kits": "Kit",
