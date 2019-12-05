@@ -1,5 +1,12 @@
 # Change history for ui-search
 
+## 1.11.0 (IN PROGRESS)
+
+## [1.10.0](https://github.com/folio-org/ui-search/tree/v1.10.0) (2019-12-05)
+[Full Changelog](https://github.com/folio-org/ui-search/compare/v1.9.0...v1.10.0)
+
+* Update of translations
+
 ## [1.9.0](https://github.com/folio-org/ui-search/tree/v1.9.0) (2019-09-10)
 [Full Changelog](https://github.com/folio-org/ui-search/compare/v1.8.0...v1.9.0)
 
