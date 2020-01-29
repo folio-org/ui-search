@@ -1,5 +1,5 @@
 import get from 'lodash/get';
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
   Pane,
@@ -23,7 +23,7 @@ function renderContributors(contributors) {
 function renderBody(record) {
   if (!record) return '(unknown)';
   return (
-    <Fragment>
+    <>
       <KeyValue label="ID">
         {record.id}
       </KeyValue>
@@ -47,7 +47,7 @@ function renderBody(record) {
       <KeyValue label="Contributors">
         {renderContributors(record.contributor)}
       </KeyValue>
-    </Fragment>
+    </>
   );
 }
 

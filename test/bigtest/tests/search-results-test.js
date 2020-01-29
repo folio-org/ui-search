@@ -13,7 +13,7 @@ import {
   languages,
 } from '../../../src/Filters/model';
 
-describe.only('Search results', () => {
+describe('Search results', () => {
   setupApplication();
 
   const Search = new SearchInteractor();

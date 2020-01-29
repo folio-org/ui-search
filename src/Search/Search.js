@@ -108,6 +108,7 @@ class Search extends React.Component {
   updateQIndex() {
     const qindex = _.get(this.props.resources.query, 'qindex', '');
     let indexObject;
+
     for (const index of availableIndexes) {
       if (index.value === qindex) {
         indexObject = index;
@@ -171,7 +172,7 @@ class Search extends React.Component {
       contributor: x => (x.contributor || []).map(y => `'${y.name}'`).join(', '),
     };
 
-    const searchableIndexes = availableIndexes.map(index => Object.assign({}, index));
+    const searchableIndexes = availableIndexes.map(index => ({ ...index }));
     const filters = _.get(this.props.resources, ['query', 'filters']);
     const filterKeys = filterState(filters);
 
