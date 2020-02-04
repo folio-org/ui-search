@@ -122,7 +122,7 @@ export default class Filters extends React.Component {
     } = this.props;
 
     return (
-      <React.Fragment>
+      <>
         <Accordion
           label={<FormattedMessage id="ui-search.filters.source" />}
           id={SOURCE}
@@ -223,7 +223,7 @@ export default class Filters extends React.Component {
             )}
           </IntlConsumer>
         </Accordion>
-      </React.Fragment>
+      </>
     );
   }
 }

@@ -1,5 +1,4 @@
 
-
 function redirectParamsKB(record) {
   const obj = {
     _path: `/eholdings/titles/${record.id}`,
