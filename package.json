@@ -94,6 +94,7 @@
     "mocha": "^5.2.0",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
+    "react-router-dom": "^4.0.0",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",
     "sinon": "^7.2.3"
@@ -101,13 +102,13 @@
   "dependencies": {
     "lodash": "^4.17.4",
     "prop-types": "^15.5.10",
-    "react-hot-loader": "^4.3.12",
-    "react-intl": "^2.9.0",
-    "react-router": "^4.2.0",
-    "react-router-dom": "^4.0.0"
+    "react-hot-loader": "^4.3.12"
   },
   "peerDependencies": {
     "@folio/stripes": "^3.0.0",
+    "react-intl": "^2.9.0",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.0.0",
     "react": "*"
   }
 }
