@@ -84,9 +84,9 @@
     "@bigtest/mocha": "^0.5.2",
     "@bigtest/react": "^0.1.2",
     "@folio/eslint-config-stripes": "^5.0.0",
-    "@folio/stripes": "^2.0.0",
+    "@folio/stripes": "^3.0.0",
     "@folio/stripes-cli": "^1.4.0",
-    "@folio/stripes-core": "^3.0.2",
+    "@folio/stripes-core": "^4.0.0",
     "babel-eslint": "^10.0.3",
     "babel-polyfill": "^6.26.0",
     "chai": "^4.2.0",
@@ -94,6 +94,7 @@
     "mocha": "^5.2.0",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
+    "react-router-dom": "^4.0.0",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",
     "sinon": "^7.2.3"
@@ -101,13 +102,13 @@
   "dependencies": {
     "lodash": "^4.17.4",
     "prop-types": "^15.5.10",
-    "react-hot-loader": "^4.3.12",
-    "react-intl": "^2.8.0",
-    "react-router": "^4.2.0",
-    "react-router-dom": "^4.0.0"
+    "react-hot-loader": "^4.3.12"
   },
   "peerDependencies": {
-    "@folio/stripes": "^2.0.0",
+    "@folio/stripes": "^3.0.0",
+    "react-intl": "^2.9.0",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.0.0",
     "react": "*"
   }
 }
