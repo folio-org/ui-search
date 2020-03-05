@@ -3,12 +3,12 @@
 ## 1.11.0 (IN PROGRESS)
 
 * Update eslint to v6.2.1
+* Update "stripes" to 'v3.0.0', "stripes-core" to '4.0.0' and "react-intl" to '2.9.0'. Refs UISE-122.
 
 ## [1.10.0](https://github.com/folio-org/ui-search/tree/v1.10.0) (2019-12-05)
 [Full Changelog](https://github.com/folio-org/ui-search/compare/v1.9.0...v1.10.0)
 
 * Update of translations
-* Update "stripes" to 'v3.0.0', "stripes-core" to '4.0.0' and "react-intl" to '2.9.0'. Refs UISE-122.
 
 ## [1.9.0](https://github.com/folio-org/ui-search/tree/v1.9.0) (2019-09-10)
 [Full Changelog](https://github.com/folio-org/ui-search/compare/v1.8.0...v1.9.0)
