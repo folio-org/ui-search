@@ -3,7 +3,7 @@
     "filters.source": "Source",
     "filters.resourceType": "Resource type",
     "filters.location": "Location",
-    "filters.holdingStatus": "Holding Status",
+    "filters.holdingStatus": "所蔵状況",
     "filters.language": "言語",
     "notLoadedMessage": "Enter search query to show results",
     "header.source": "Source",
