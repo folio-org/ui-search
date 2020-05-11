@@ -2,7 +2,7 @@ import _ from 'lodash';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
+import { FormattedMessage, injectIntl } from 'react-intl';
 
 import { AppIcon, IntlConsumer } from '@folio/stripes/core';
 
@@ -47,7 +47,7 @@ class Search extends React.Component {
         log: PropTypes.func.isRequired,
       }).isRequired,
     }).isRequired,
-    intl: intlShape,
+    intl: PropTypes.object,
   }
 
   static manifest = Object.freeze({
