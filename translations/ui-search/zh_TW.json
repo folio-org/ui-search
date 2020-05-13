@@ -12,7 +12,7 @@
     "searchableIndexes.all": "查詢所有欄位",
     "searchableIndexes.folioId": "FOLIO ID",
     "searchableIndexes.title": "題名",
-    "searchableIndexes.identifier": "标识符",
+    "searchableIndexes.identifier": "識別號",
     "searchableIndexes.isbn": "國際標準書號",
     "searchableIndexes.issn": "國際標準期刊號",
     "searchableIndexes.contributor": "作者",
