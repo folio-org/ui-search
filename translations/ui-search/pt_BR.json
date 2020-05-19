@@ -3,7 +3,7 @@
     "filters.source": "Fonte",
     "filters.resourceType": "Tipo de recurso",
     "filters.location": "Localização",
-    "filters.holdingStatus": "Status do acervo",
+    "filters.holdingStatus": "Status do holding",
     "filters.language": "Idioma",
     "notLoadedMessage": "Insira a consulta de pesquisa para mostrar os resultados",
     "header.source": "Fonte",
