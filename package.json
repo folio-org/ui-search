@@ -32,10 +32,53 @@
       {
         "permissionName": "module.search.enabled",
         "displayName": "UI: Codex Search module is enabled",
+        "visible": true
+      },
+      {
+        "permissionName": "ui-search.codex-mux.instances",
+        "visible": false,
+        "subPermissions": [
+          "codex-mux.instances.collection.get",
+          "codex-mux.instances.item.get",
+          "codex-mux.instances-sources.collection.get"
+        ]
+      },
+      {
+        "permissionName": "ui-search.codex-mux.packages",
+        "visible": false,
+        "subPermissions": [
+          "codex-mux.packages.collection.get",
+          "codex-mux.packages.item.get",
+          "codex-mux.packages-sources.collection.get"
+        ]
+      },
+      {
+        "permissionName": "ui-search.codex-ekb.instances",
+        "visible": false,
+        "subPermissions": [
+          "codex-ekb.instances.collection.get",
+          "codex-ekb.instances.item.get",
+          "codex-ekb.instances-sources.collection.get"
+        ]
+      },
+      {
+        "permissionName": "ui-search.codex-ekb.packages",
+        "visible": false,
+        "subPermissions": [
+          "codex-ekb.packages.collection.get",
+          "codex-ekb.packages.item.get",
+          "codex-ekb.packages-sources.collection.get"
+        ]
+      },
+      {
+        "permissionName": "ui-search.codexsearch",
+        "displayName": "Search: Can search using the Codex with all back-ends",
         "visible": true,
         "subPermissions": [
-          "codex-mux.all",
-          "codex-ekb.all"
+          "ui-search.codex-mux.instances",
+          "ui-search.codex-mux.packages",
+          "ui-search.codex-ekb.instances",
+          "ui-search.codex-ekb.packages"
         ]
       }
     ],
