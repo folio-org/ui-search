@@ -48,5 +48,6 @@
     "filters.languages.ger": "德語",
     "filters.languages.chi": "漢語",
     "filters.languages.rus": "俄語",
-    "filters.languages.ara": "阿拉伯語"
+    "filters.languages.ara": "阿拉伯語",
+    "permission.codexsearch": "Search: Can search using the Codex with all back-ends"
 }

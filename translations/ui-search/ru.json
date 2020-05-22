@@ -48,5 +48,6 @@
     "filters.languages.ger": "Немецкий",
     "filters.languages.chi": "Мандаринский",
     "filters.languages.rus": "Русский",
-    "filters.languages.ara": "Арабский"
+    "filters.languages.ara": "Арабский",
+    "permission.codexsearch": "Search: Can search using the Codex with all back-ends"
 }
