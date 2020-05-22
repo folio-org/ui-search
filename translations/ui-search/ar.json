@@ -48,5 +48,6 @@
     "filters.languages.ger": "الألمانية",
     "filters.languages.chi": "الماندرين (الصينية)",
     "filters.languages.rus": "الروسية",
-    "filters.languages.ara": "العربية"
+    "filters.languages.ara": "العربية",
+    "permission.codexsearch": "Search: Can search using the Codex with all back-ends"
 }
