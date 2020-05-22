@@ -32,7 +32,11 @@
       {
         "permissionName": "module.search.enabled",
         "displayName": "UI: Codex Search module is enabled",
-        "visible": true
+        "visible": true,
+        "subPermissions": [
+          "codex-mux.all",
+          "codex-ekb.all"
+        ]
       }
     ],
     "translations": {
