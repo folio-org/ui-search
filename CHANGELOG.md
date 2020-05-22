@@ -3,7 +3,7 @@
 ## 2.1.0 (IN PROGRESS)
 * Purge `intlShape` in prep for `react-intl` `v4` migration. Refs STRIPES-672.
 * Update `stripes` to `v4.0.0`, `stripes-core` to `5.0.0` and added `react-intl` to dev dependencies. UISE-124.
-* Add codex subpermissions to `module.search.enabled` permission. UISE-119.
+* Add `ui-search.codexsearch` permission. UISE-119.
 
 ## [2.0.0](https://github.com/folio-org/ui-search/tree/v1.10.0) (2020-03-12)
 [Full Changelog](https://github.com/folio-org/ui-search/compare/v1.10.0...v2.0.0)
