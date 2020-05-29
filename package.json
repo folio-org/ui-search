@@ -16,14 +16,15 @@
     "email": "mike@indexdata.com"
   },
   "stripes": {
-    "type": "app",
+    "actsAs": [
+      "app"
+    ],
     "displayName": "ui-search.meta.title",
     "fullName": "Codex Search",
     "defaultPreviewWidth": "40%",
     "helpPage": "https://wiki.folio.org/pages/viewpage.action?pageId=1415393",
     "route": "/codexsearch",
     "home": "/codexsearch?filters=available.true&qindex=title&query=&sort=title",
-    "hasSettings": false,
     "queryResource": "query",
     "okapiInterfaces": {
       "codex": "3.0"
