@@ -51,7 +51,6 @@ function renderBody(record) {
   );
 }
 
-
 class ViewRecord extends React.Component {
   static propTypes = {
     paneWidth: PropTypes.string.isRequired,

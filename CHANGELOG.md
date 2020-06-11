@@ -1,10 +1,14 @@
 # Change history for ui-search
 
-## 2.1.0 (IN PROGRESS)
+## 3.1.0 (IN PROGRESS)
+
+## [3.0.0](https://github.com/folio-org/ui-search/tree/v3.0.0) (2020-06-11)
+[Full Changelog](https://github.com/folio-org/ui-search/compare/v2.0.0...v3.0.0)
 * Purge `intlShape` in prep for `react-intl` `v4` migration. Refs STRIPES-672.
 * Update `stripes` to `v4.0.0`, `stripes-core` to `5.0.0` and added `react-intl` to dev dependencies. UISE-124.
 * Add `ui-search.codexsearch` permission. UISE-119.
 * Prefer `stripes.actsAs` to the deprecated `stripes.type` in `package.json`. Refs STCOR-148.
+* Update translations
 
 ## [2.0.0](https://github.com/folio-org/ui-search/tree/v1.10.0) (2020-03-12)
 [Full Changelog](https://github.com/folio-org/ui-search/compare/v1.10.0...v2.0.0)

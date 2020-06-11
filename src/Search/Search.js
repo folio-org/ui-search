@@ -28,7 +28,6 @@ import {
   filterConfig,
 } from './model';
 
-
 class Search extends React.Component {
   static propTypes = {
     resources: PropTypes.shape({
@@ -190,7 +189,6 @@ class Search extends React.Component {
         ...rest
       };
     });
-
 
     return (
       <div data-test-search>

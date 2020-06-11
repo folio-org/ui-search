@@ -1,4 +1,3 @@
-
 function redirectParamsKB(record) {
   const obj = {
     _path: `/eholdings/titles/${record.id}`,
@@ -10,7 +9,6 @@ function redirectParamsKB(record) {
 
   return obj;
 }
-
 
 function redirectParamsLocal(record) {
   const obj = {
@@ -33,6 +31,5 @@ function redirectParams(record) {
     return null;
   }
 }
-
 
 export default redirectParams;
