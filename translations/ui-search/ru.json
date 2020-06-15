@@ -2,7 +2,7 @@
     "meta.title": "Codex Search",
     "filters.source": "Источник",
     "filters.resourceType": "Resource type",
-    "filters.location": "Местоположение",
+    "filters.location": "Местонахождение",
     "filters.holdingStatus": "Holding Status",
     "filters.language": "Язык",
     "notLoadedMessage": "Введите запрос, чтобы показать результаты поиска.",
