@@ -3,7 +3,7 @@
     "filters.source": "Источник",
     "filters.resourceType": "Resource type",
     "filters.location": "Местонахождение",
-    "filters.holdingStatus": "Holding Status",
+    "filters.holdingStatus": "Статус холдинга",
     "filters.language": "Язык",
     "notLoadedMessage": "Введите запрос, чтобы показать результаты поиска.",
     "header.source": "Source",
