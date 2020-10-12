@@ -2,6 +2,7 @@
 
 ## 3.1.0 (IN PROGRESS)
 * Refactor to `miragejs` from `bigtest/mirage`
+* Increment `@folio/stripes` to `v5.0.0`. UISE-127.
 
 ## [3.0.0](https://github.com/folio-org/ui-search/tree/v3.0.0) (2020-06-11)
 [Full Changelog](https://github.com/folio-org/ui-search/compare/v2.0.0...v3.0.0)
