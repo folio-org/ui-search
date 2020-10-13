@@ -1,6 +1,9 @@
 # Change history for ui-search
 
-## 3.1.0 (IN PROGRESS)
+## 3.2.0 (IN PROGRESS)
+
+## [3.1.0](https://github.com/folio-org/ui-search/tree/v3.1.0) (2020-10-13)
+[Full Changelog](https://github.com/folio-org/ui-search/compare/v3.0.0...v3.1.0)
 * Refactor to `miragejs` from `bigtest/mirage`
 * Increment `@folio/stripes` to `v5.0.0`, increment `react-intl` to `v5.7.0` UISE-127.
 

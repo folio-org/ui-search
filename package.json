@@ -1,6 +1,6 @@
 {
   "name": "@folio/search",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Search across the Codex",
   "repository": "folio-org/ui-search",
   "publishConfig": {
