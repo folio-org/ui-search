@@ -1,5 +1,5 @@
 {
-    "meta.title": "Cerca in Codex",
+    "meta.title": "Codex",
     "filters.source": "Fonte",
     "filters.resourceType": "Tipologia risorsa",
     "filters.location": "Sezione",
@@ -9,7 +9,7 @@
     "header.source": "Fonte",
     "header.title": "Titolo",
     "header.contributor": "Autore",
-    "searchableIndexes.all": "Cerca tutti i campi",
+    "searchableIndexes.all": "Cerca in tutti i campi",
     "searchableIndexes.folioId": "Id FOLIO",
     "searchableIndexes.title": "Titolo",
     "searchableIndexes.identifier": "Identificativo",
