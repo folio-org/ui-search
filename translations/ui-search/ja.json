@@ -17,7 +17,7 @@
     "searchableIndexes.issn": "ISSN",
     "searchableIndexes.contributor": "寄与者",
     "searchableIndexes.subject": "サブジェクト",
-    "searchableIndexes.classification": "Classification",
+    "searchableIndexes.classification": "分類",
     "searchableIndexes.publisher": "出版社",
     "filters.sources.local": "Local",
     "filters.sources.kb": "Knowledge Base",
