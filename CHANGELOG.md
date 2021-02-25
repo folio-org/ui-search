@@ -2,6 +2,7 @@
 
 ## 3.2.0 (IN PROGRESS)
 * Update `stripes` to `v6.0.0`. UISE-136.
+* Update `stripes-cli` to `v2.0.0`. UISE-138.
 
 ## [3.1.0](https://github.com/folio-org/ui-search/tree/v3.1.0) (2020-10-13)
 [Full Changelog](https://github.com/folio-org/ui-search/compare/v3.0.0...v3.1.0)
