@@ -1,8 +1,12 @@
 # Change history for ui-search
 
-## 3.2.0 (IN PROGRESS)
+## 4.1.0 (IN PROGRESS)
+
+## [4.0.0](https://github.com/folio-org/ui-search/tree/v4.0.0) (2020-03-04)
+[Full Changelog](https://github.com/folio-org/ui-search/compare/v3.1.0...v4.0.0)
 * Update `stripes` to `v6.0.0`. UISE-136.
 * Update `stripes-cli` to `v2.0.0`. UISE-138.
+* Update translations
 
 ## [3.1.0](https://github.com/folio-org/ui-search/tree/v3.1.0) (2020-10-13)
 [Full Changelog](https://github.com/folio-org/ui-search/compare/v3.0.0...v3.1.0)
