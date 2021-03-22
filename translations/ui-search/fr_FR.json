@@ -3,7 +3,7 @@
     "filters.source": "Source",
     "filters.resourceType": "Type de ressource",
     "filters.location": "Emplacement",
-    "filters.holdingStatus": "Statut ",
+    "filters.holdingStatus": "Statut",
     "filters.language": "Langue",
     "notLoadedMessage": "Saisir une recherche pour afficher les résultats",
     "header.source": "Source",
