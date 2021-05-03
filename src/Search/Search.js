@@ -220,7 +220,7 @@ class Search extends React.Component {
               disableRecordCreation
               parentResources={this.props.resources}
               parentMutator={this.props.mutator}
-              notLoadedMessage={<FormattedMessage id="ui-search.notLoadedMessage" />}
+              notLoadedMessage={intl.formatMessage({ id: 'ui-search.notLoadedMessage' })}
             />
           )}
         </IntlConsumer>
