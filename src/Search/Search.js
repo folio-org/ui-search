@@ -2,7 +2,7 @@ import _ from 'lodash';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
-import { FormattedMessage, injectIntl } from 'react-intl';
+import { injectIntl } from 'react-intl';
 
 import { AppIcon, IntlConsumer } from '@folio/stripes/core';
 
@@ -220,7 +220,7 @@ class Search extends React.Component {
               disableRecordCreation
               parentResources={this.props.resources}
               parentMutator={this.props.mutator}
-              notLoadedMessage={<FormattedMessage id="ui-search.notLoadedMessage" />}
+              notLoadedMessage={intl.formatMessage({ id: 'ui-search.notLoadedMessage' })}
             />
           )}
         </IntlConsumer>
