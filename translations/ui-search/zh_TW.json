@@ -1,12 +1,12 @@
 {
     "meta.title": "Codex 查詢",
-    "filters.source": "来源",
+    "filters.source": "來源",
     "filters.resourceType": "資源類型",
     "filters.location": "館藏地",
     "filters.holdingStatus": "館藏狀態",
     "filters.language": "語系",
     "notLoadedMessage": "輸入查詢以顯示查詢結果",
-    "header.source": "来源",
+    "header.source": "來源",
     "header.title": "題名",
     "header.contributor": "作者",
     "searchableIndexes.all": "查詢所有欄位",
@@ -49,5 +49,5 @@
     "filters.languages.chi": "漢語",
     "filters.languages.rus": "俄語",
     "filters.languages.ara": "阿拉伯語",
-    "permission.codexsearch": "Search: Can search using the Codex with all back-ends"
+    "permission.codexsearch": "搜索：可以使用带有所有后端的Codex进行搜索"
 }
