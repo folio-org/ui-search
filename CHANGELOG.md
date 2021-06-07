@@ -1,6 +1,11 @@
 # Change history for ui-search
 
-## 4.1.0 (IN PROGRESS)
+## 4.2.0 (IN PROGRESS)
+
+## [4.1.0](https://github.com/folio-org/ui-search/tree/v4.1.0) (2021-06-07)
+[Full Changelog](https://github.com/folio-org/ui-search/compare/v4.0.0...v4.1.0)
+* Correctly provide `notLoadedMessage` in `Search` component
+* Update translations
 
 ## [4.0.0](https://github.com/folio-org/ui-search/tree/v4.0.0) (2020-03-04)
 [Full Changelog](https://github.com/folio-org/ui-search/compare/v3.1.0...v4.0.0)
