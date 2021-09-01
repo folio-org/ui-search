@@ -42,12 +42,12 @@
     "filters.resourceTypes.webresources": "Web Resources",
     "filters.holdingStatus.availableOnline": "Available online",
     "filters.holdingStatus.notAvailable": "Not available",
-    "filters.languages.eng": "English",
-    "filters.languages.spa": "Spanish",
-    "filters.languages.fre": "French",
-    "filters.languages.ger": "German",
+    "filters.languages.eng": "Englisch",
+    "filters.languages.spa": "Spanisch",
+    "filters.languages.fre": "Französisch",
+    "filters.languages.ger": "Deutsch",
     "filters.languages.chi": "Mandarin",
-    "filters.languages.rus": "Russian",
-    "filters.languages.ara": "Arabic",
+    "filters.languages.rus": "Russisch",
+    "filters.languages.ara": "Arabisch",
     "permission.codexsearch": "Search: Can search using the Codex with all back-ends"
 }
