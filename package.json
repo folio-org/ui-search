@@ -1,6 +1,6 @@
 {
   "name": "@folio/search",
-  "version": "4.1.0",
+  "version": "5.0.0",
   "description": "Search across the Codex",
   "repository": "folio-org/ui-search",
   "publishConfig": {
@@ -131,9 +131,9 @@
     "@bigtest/mocha": "^0.5.2",
     "@bigtest/react": "^0.1.2",
     "@folio/eslint-config-stripes": "^5.0.0",
-    "@folio/stripes": "^6.0.0",
+    "@folio/stripes": "^7.0.0",
     "@folio/stripes-cli": "^2.0.0",
-    "@folio/stripes-core": "^7.0.0",
+    "@folio/stripes-core": "^8.0.0",
     "babel-eslint": "^10.0.3",
     "babel-polyfill": "^6.26.0",
     "chai": "^4.2.0",
@@ -142,8 +142,8 @@
     "inflected": "^2.0.4",
     "miragejs": "^0.1.40",
     "mocha": "^5.2.0",
-    "react": "^16.5.0",
-    "react-dom": "^16.5.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-intl": "^5.7.0",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.2.0",
@@ -156,8 +156,9 @@
     "react-hot-loader": "^4.3.12"
   },
   "peerDependencies": {
-    "@folio/stripes": "^6.0.0",
-    "react": "*",
+    "@folio/stripes": "^7.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-intl": "^5.7.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0"
