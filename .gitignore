@@ -3,3 +3,7 @@ yarn.lock
 .DS_Store
 yarn-error.log
 .idea
+
+# Stripescli
+.stripesclirc
+stripes.config.js.local

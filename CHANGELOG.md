@@ -1,6 +1,7 @@
 # Change history for ui-search
 
-## 4.2.0 (IN PROGRESS)
+## 5.0.0 (IN PROGRESS)
+* Increment stripes to v7. UISE-142
 
 ## [4.1.0](https://github.com/folio-org/ui-search/tree/v4.1.0) (2021-06-07)
 [Full Changelog](https://github.com/folio-org/ui-search/compare/v4.0.0...v4.1.0)
