@@ -5,4 +5,4 @@ import './stripesSmartComponents.mock';
 import './stripesComponents.mock';
 import './currencyData.mock';
 import './reactIntl.mock';
-
+import './matchMedia.mock';

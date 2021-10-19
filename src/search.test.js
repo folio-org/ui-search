@@ -1,7 +1,7 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router';
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+// import userEvent from '@testing-library/user-event';
 
 import '../test/jest/__mock__';
 import buildStripes from '../test/jest/__mock__/stripesCore.mock';
@@ -12,6 +12,26 @@ const stripes = buildStripes();
 const match = {
   path:'/codexsearch',
 };
+
+jest.mock('@folio/stripes-core', () => ({
+  ...jest.requireActual('@folio/stripes-core'),
+  withStripes : Component => ({ ...rest }) => {
+    const fakeStripes = {
+      connect: component => component,
+      hasPerm: () => true,
+      logger: {
+        log: jest.fn(),
+      }
+    };
+
+    return (
+      <Component
+        {...rest}
+        stripes={fakeStripes}
+      />
+    );
+  },
+}));
 
 const renderRouting = (showSettings) => (
   render(

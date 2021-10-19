@@ -124,8 +124,7 @@
   "scripts": {
     "start": "stripes serve",
     "lint": "eslint .",
-    "test:jest": "jest --ci --coverage",
-    "test": "stripes test karma"
+    "test": "jest --ci --coverage"
   },
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.15.8",
