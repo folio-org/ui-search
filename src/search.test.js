@@ -55,6 +55,6 @@ describe('Routing', () => {
   it('should render search', () => {
     renderRouting(false);
 
-    expect(screen.getByRole('button', { name: 'test' }));
+    expect(screen.getByRole('region', { name: /source filter list/ })).toBeVisible();
   });
 });
