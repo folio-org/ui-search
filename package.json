@@ -33,7 +33,7 @@
       {
         "permissionName": "module.search.enabled",
         "displayName": "UI: Codex Search module is enabled",
-        "visible": true
+        "visible": false
       },
       {
         "permissionName": "ui-search.codex-mux.instances",
@@ -73,13 +73,15 @@
       },
       {
         "permissionName": "ui-search.codexsearch",
-        "displayName": "Search: Can search using the Codex with all back-ends",
+        "displayName": "Codex: Search with all back-ends",
         "visible": true,
         "subPermissions": [
           "ui-search.codex-mux.instances",
           "ui-search.codex-mux.packages",
           "ui-search.codex-ekb.instances",
-          "ui-search.codex-ekb.packages"
+          "ui-search.codex-ekb.packages",
+          "module.search.enabled",
+          "users.item.get"
         ]
       }
     ],

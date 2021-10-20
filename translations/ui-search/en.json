@@ -58,5 +58,5 @@
   "filters.languages.rus": "Russian",
   "filters.languages.ara": "Arabic",
 
-  "permission.codexsearch": "Search: Can search using the Codex with all back-ends"
+  "permission.codexsearch": "Codex: Search with all back-ends"
 }
