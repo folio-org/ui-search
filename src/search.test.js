@@ -73,6 +73,7 @@ const resources = {
   records: {
     records,
     hasLoaded: true,
+    isPending: false,
     other: {
       totalRecords: 3
     }
@@ -155,16 +156,17 @@ describe('Routing', () => {
     renderRouting(false);
 
     const inputSearch = screen.getByRole('searchbox', { name: /searchFieldLabel/ });
-    const localCheckbox = screen.getByRole('checkbox', { name: /sources.local/ });
+    const localCheckbox = screen.getByRole('checkbox', { name: 'Main Library' });
     const indexSelect = screen.getByRole('combobox', { name: /searchFieldIndex/ });
     // const titleOption = screen.getByRole('option', { name: /searchableIndexes.subject/ });
-
 
     // user.click(indexSelect);
     // user.click(titleOption);
     user.selectOptions(indexSelect, 'ui-search.searchableIndexes.identifier');
     user.type(inputSearch, 'test');
     user.click(localCheckbox);
+    console.log(`localCheckbox`, localCheckbox)
+
 
     expect(screen.getByRole('gridcell', { name: 'Record title 1' })).toBeVisible();
   });
