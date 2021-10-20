@@ -65,7 +65,7 @@ const records = [
 
 const resources = {
   query: {
-    filters: 'available.true,source.local',
+    filters: 'available.true',
     qindex: 'title',
     query: 'e',
     sort: 'title',
@@ -129,6 +129,11 @@ jest.mock('@folio/stripes-core', () => ({
   },
 }));
 
+jest.mock('lodash', () => ({
+  ...jest.requireActual('lodash'),
+  defer: jest.fn(fn => fn())
+}));
+
 const renderRouting = (showSettings, route) => {
   const path = ['/codexsearch', route].join('');
 
@@ -156,17 +161,16 @@ describe('Routing', () => {
     renderRouting(false);
 
     const inputSearch = screen.getByRole('searchbox', { name: /searchFieldLabel/ });
-    const localCheckbox = screen.getByRole('checkbox', { name: 'Main Library' });
+    const localCheckbox = screen.getByRole('checkbox', { name: /sources.kb/ });
     const indexSelect = screen.getByRole('combobox', { name: /searchFieldIndex/ });
     // const titleOption = screen.getByRole('option', { name: /searchableIndexes.subject/ });
 
     // user.click(indexSelect);
     // user.click(titleOption);
+    // console.log(`localCheckbox`, localCheckbox)
     user.selectOptions(indexSelect, 'ui-search.searchableIndexes.identifier');
     user.type(inputSearch, 'test');
     user.click(localCheckbox);
-    console.log(`localCheckbox`, localCheckbox)
-
 
     expect(screen.getByRole('gridcell', { name: 'Record title 1' })).toBeVisible();
   });
