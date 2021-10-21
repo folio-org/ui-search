@@ -163,11 +163,7 @@ describe('Routing', () => {
     const inputSearch = screen.getByRole('searchbox', { name: /searchFieldLabel/ });
     const localCheckbox = screen.getByRole('checkbox', { name: /sources.kb/ });
     const indexSelect = screen.getByRole('combobox', { name: /searchFieldIndex/ });
-    // const titleOption = screen.getByRole('option', { name: /searchableIndexes.subject/ });
 
-    // user.click(indexSelect);
-    // user.click(titleOption);
-    // console.log(`localCheckbox`, localCheckbox)
     user.selectOptions(indexSelect, 'ui-search.searchableIndexes.identifier');
     user.type(inputSearch, 'test');
     user.click(localCheckbox);
