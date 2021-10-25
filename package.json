@@ -128,7 +128,7 @@
     "lint": "eslint .",
     "test": "jest --ci --coverage",
     "build-mod-descriptor": "stripes mod descriptor --full --strict | jq '.[]' > module-descriptor.json ",
-    "formatjs-compile": "formatjs compile-folder --ast --format simple ./translations/ui-users ./translations/users/compiled"
+    "formatjs-compile": "formatjs compile-folder --ast --format simple ./translations/ui-search ./translations/ui-search/compiled"
   },
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.15.8",
