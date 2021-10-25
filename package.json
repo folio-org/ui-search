@@ -126,7 +126,9 @@
   "scripts": {
     "start": "stripes serve",
     "lint": "eslint .",
-    "test": "jest --ci --coverage"
+    "test": "jest --ci --coverage",
+    "build-mod-descriptor": "stripes mod descriptor --full --strict | jq '.[]' > module-descriptor.json ",
+    "formatjs-compile": "formatjs compile-folder --ast --format simple ./translations/ui-users ./translations/users/compiled"
   },
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.15.8",
@@ -137,6 +139,7 @@
     "@folio/stripes": "^7.0.0",
     "@folio/stripes-cli": "^2.0.0",
     "@folio/stripes-core": "^8.0.0",
+    "@formatjs/cli": "^4.2.20",
     "@testing-library/dom": "^8.10.1",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.1.2",
