@@ -49,5 +49,5 @@
     "filters.languages.chi": "汉语",
     "filters.languages.rus": "俄语",
     "filters.languages.ara": "阿拉伯语",
-    "permission.codexsearch": "搜索：可以使用带有所有后端的Codex进行搜索"
+    "permission.codexsearch": "Codex：使用所有后端进行搜索"
 }
