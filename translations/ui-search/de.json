@@ -37,7 +37,7 @@
     "filters.resourceTypes.reports": "Berichte",
     "filters.resourceTypes.proceedings": "Proceedings",
     "filters.resourceTypes.thesisanddissertation": "Thesis and Dissertation",
-    "filters.resourceTypes.unspecified": "Keine Angabe",
+    "filters.resourceTypes.unspecified": "Nicht spezifiziert",
     "filters.resourceTypes.video": "Video",
     "filters.resourceTypes.webresources": "Internetquelle",
     "filters.holdingStatus.availableOnline": "Online verfügbar",
