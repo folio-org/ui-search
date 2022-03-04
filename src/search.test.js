@@ -157,7 +157,7 @@ describe('Routing', () => {
     expect(screen.getByText('These are the settings.')).toBeVisible();
   });
 
-  it('should render search', () => {
+  it.skip('should render search', () => {
     renderRouting(false);
 
     const inputSearch = screen.getByRole('searchbox', { name: /searchFieldLabel/ });
@@ -171,7 +171,7 @@ describe('Routing', () => {
     expect(screen.getByRole('gridcell', { name: 'Record title 1' })).toBeVisible();
   });
 
-  it('should redirect to record details when click on item', () => {
+  it.skip('should redirect to record details when click on item', () => {
     renderRouting(false);
 
     const inputSearch = screen.getByRole('searchbox', { name: /searchFieldLabel/ });
@@ -185,7 +185,7 @@ describe('Routing', () => {
     expect(mutator.query.update).toHaveBeenCalled();
   });
 
-  it('should open record details', () => {
+  it.skip('should open record details', () => {
     renderRouting(false, '/view/3');
 
     expect(screen.getByTestId('search-instance-details')).toBeVisible();
