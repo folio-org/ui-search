@@ -2,7 +2,7 @@
 
 ## IN PROGRESS
 
-## [5.1.0](https://github.com/folio-org/ui-search/tree/v5.1.0) (2022-03-03)
+## [5.1.0](https://github.com/folio-org/ui-search/tree/v5.1.0) (2022-03-04)
 [Full Changelog](https://github.com/folio-org/ui-search/compare/v5.0.0...v5.1.0)
 * Hide or fix the permissions related to Codex. UISE-139
 * Remove Bigtest tests. UISE-146
