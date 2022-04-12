@@ -49,5 +49,5 @@
     "filters.languages.chi": "Mandarin",
     "filters.languages.rus": "Russian",
     "filters.languages.ara": "Arabic",
-    "permission.codexsearch": "Codex: Search with all back-ends"
+    "permission.codexsearch": "Codex: Vyhledávání se všemi back-endy"
 }
