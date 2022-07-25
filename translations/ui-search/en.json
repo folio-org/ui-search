@@ -1,12 +1,12 @@
 {
-  "meta.title": "Codex Search",
+  "meta.title": "Codex search",
 
   "notLoadedMessage": "Enter search query to show results",
 
   "filters.source": "Source",
   "filters.resourceType": "Resource type",
   "filters.location": "Location",
-  "filters.holdingStatus": "Holding Status",
+  "filters.holdingStatus": "Holding status",
   "filters.language": "Language",
 
   "header.source": "Source",
@@ -25,7 +25,7 @@
   "searchableIndexes.publisher": "Publisher",
 
   "filters.sources.local": "Local",
-  "filters.sources.kb": "Knowledge Base",
+  "filters.sources.kb": "Knowledge base",
 
   "filters.resourceTypes.audio": "Audio",
   "filters.resourceTypes.books": "Books",
@@ -42,10 +42,10 @@
   "filters.resourceTypes.posters": "Posters",
   "filters.resourceTypes.reports": "Reports",
   "filters.resourceTypes.proceedings": "Proceedings",
-  "filters.resourceTypes.thesisanddissertation": "Thesis and Dissertation",
+  "filters.resourceTypes.thesisanddissertation": "Thesis and dissertation",
   "filters.resourceTypes.unspecified": "Unspecified",
   "filters.resourceTypes.video": "Video",
-  "filters.resourceTypes.webresources": "Web Resources",
+  "filters.resourceTypes.webresources": "Web resources",
 
   "filters.holdingStatus.availableOnline": "Available online",
   "filters.holdingStatus.notAvailable": "Not available",
