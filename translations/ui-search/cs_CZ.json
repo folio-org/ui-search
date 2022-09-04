@@ -5,7 +5,7 @@
     "filters.location": "Umístění",
     "filters.holdingStatus": "Stav holdingu",
     "filters.language": "Jazyk",
-    "notLoadedMessage": "Enter search query to show results",
+    "notLoadedMessage": "Zadejte vyhledávací dotaz pro zobrazení výsledků",
     "header.source": "Zdroj",
     "header.title": "Název",
     "header.contributor": "Přispěvatel",
