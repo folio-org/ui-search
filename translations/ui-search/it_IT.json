@@ -12,7 +12,7 @@
     "searchableIndexes.all": "Cerca in tutti i campi",
     "searchableIndexes.folioId": "Id FOLIO",
     "searchableIndexes.title": "Titolo",
-    "searchableIndexes.identifier": "Identificativo",
+    "searchableIndexes.identifier": "Identificatore",
     "searchableIndexes.isbn": "ISBN",
     "searchableIndexes.issn": "ISSN",
     "searchableIndexes.contributor": "Autore",
