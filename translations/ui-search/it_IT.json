@@ -49,5 +49,5 @@
     "filters.languages.chi": "Mandarino",
     "filters.languages.rus": "Russo",
     "filters.languages.ara": "Arabo",
-    "permission.codexsearch": "Cerca: può eseguire ricerche utilizzando il Codex con tutti i back-end"
+    "permission.codexsearch": "Cerca: eseguire ricerche utilizzando il Codex con tutti i back-end"
 }
